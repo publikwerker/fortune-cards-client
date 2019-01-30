@@ -1,0 +1,6 @@
+.card {
+  background: linen;
+  border-radius: 5px;
+  border:1px solid rgba(250, 240, 230, 0.084);
+  color: #242424;
+}

@@ -1,0 +1,19 @@
+
+.App-header {
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.banner {
+  text-shadow: 2px;
+}
+
+.header-link {
+  color: #242424;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
