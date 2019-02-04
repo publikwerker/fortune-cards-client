@@ -1,0 +1,10 @@
+export const GET_DECK = 'GET_DECK';
+export const get_deck = () => ({
+  type: GET_DECK
+});
+
+export const TRIM_DECK = 'TRIM_DECK';
+export const trim_deck = (values)  => ({
+  type:  TRIM_DECK,
+  values
+});

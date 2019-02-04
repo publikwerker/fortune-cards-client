@@ -1,8 +1,11 @@
 import React from 'react';
 import './spread.css';
+import { connect } from 'react-redux';
 import Card from './card';
 
-export default function Spread(props) {
+export function Spread(props) {
+
+
 
   const cards = 
     props.cardsDealt.map((card) => {
@@ -24,3 +27,11 @@ export default function Spread(props) {
     </div>
   );
 }
+
+function mapStateToProps(state) {
+return {
+  cardsDealt:state.deck.deck.slice(0, state.deck.spreadNumber)
+};
+};
+
+export default connect(mapStateToProps)(Spread);
