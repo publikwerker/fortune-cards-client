@@ -13,6 +13,7 @@ componentDidMount() {
   this.loadDeck();
 }
 
+// grab a fresh deck from the server
 loadDeck(){
   return fetch(`${API_BASE_URL}/tarotDeck`)
     .then(res => {
@@ -32,8 +33,6 @@ loadDeck(){
 }
   
   render() {
-  console.log(this.state);
-
     return (
       <div className="App">
         <Header />

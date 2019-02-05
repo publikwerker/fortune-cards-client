@@ -1,25 +1,38 @@
 import React from 'react';
 import './spread.css';
 import { connect } from 'react-redux';
-import Card from './card';
+import {CardImages, CardDescriptions } from './card';
 
 export function Spread(props) {
-  const cards = 
-    props.cardsDealt.map((card) => {
+  function direction(){
+    return Math.floor(Math.random() * Math.floor(4));
+  }
+  const cardImages = props.cardsDealt.map((card)=> {
+    card.direction = direction();
+    console.log(card.direction);
+    return (
+      <li className="card-image">
+        <CardImages {...card}/>
+      </li>
+    )
+  });
+
+  const cardDescriptions = 
+    props.cardsDealt.map((card, index) => {
       return(
-      <li>
-        {card.id}
-      <Card {...card}/>
-      {card.desc}
+      <li className="card-description">
+      Card position: {index+1}
+      <CardDescriptions {...card}/>
     </li>
       )
-    });
+  });
 
   return (
     <div>
-      <h3>Your Reading</h3>
+      <h2>Your Reading</h2>
       <ul className="spread">
-        {cards}
+        {cardImages}
+        {cardDescriptions}
       </ul>
     </div>
   );
