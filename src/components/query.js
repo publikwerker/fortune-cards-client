@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {trim_deck}  from '../actions/index.js';
 import './query.css';
-import store from './store.js';
+//import store from './store.js';
 
 class Query extends React.Component {
   render () {
@@ -19,10 +18,10 @@ class Query extends React.Component {
   );
 }
 }
+
 export default reduxForm({
   form: 'query',
-  onSubmit: (values, dispatch) => {
-    console.log(dispatch); 
+  onSubmit: (values, dispatch) => { 
     dispatch(trim_deck(values.spreadNumber));
-    console.log(values)}
+    console.log('values: ' + values)}
 })(Query);

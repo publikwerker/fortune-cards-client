@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import Card from './card';
 
 export function Spread(props) {
-
-
-
   const cards = 
     props.cardsDealt.map((card) => {
       return(
@@ -30,7 +27,7 @@ export function Spread(props) {
 
 function mapStateToProps(state) {
 return {
-  cardsDealt:state.deck.deck.slice(0, state.deck.spreadNumber)
+  cardsDealt:state.tarot.deck.slice(0, state.tarot.spreadNumber)
 };
 };
 

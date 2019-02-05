@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { set_deck } from './actions/index.js';
 import { API_BASE_URL } from './config.js';
 import Query from './components/query.js';
 import Header from './components/header.js';
 import Spread from './components/spread.js';
 
-export default class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-    };
-  }
+class App extends Component {
 
 componentDidMount() {
   this.loadDeck();
@@ -23,12 +20,10 @@ loadDeck(){
         return Promise.reject(res.statusText);
       }
       return res.json();
-    })
-    .then(tarotDeck =>
-      this.setState({
-        deck: tarotDeck
-      })
-    )
+    })   
+    .then((data) =>{
+      console.log(data);
+    return this.props.dispatch(set_deck(data.deck))})
     .catch(err =>
       this.setState({
         error: 'could not load deck'
@@ -37,7 +32,6 @@ loadDeck(){
 }
   
   render() {
-
   console.log(this.state);
 
     return (
@@ -49,3 +43,11 @@ loadDeck(){
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    deck: state.tarot.deck,
+  };
+}
+
+export default connect(mapStateToProps)(App);

@@ -1,4 +1,4 @@
-import { GET_DECK, TRIM_DECK} from '../actions/index.js';
+import { SET_DECK, GET_DECK, TRIM_DECK} from '../actions/index.js';
 const shuffle = require('shuffle-array');
 
 const initialState = {
@@ -75,6 +75,11 @@ deck: [
 
 export const deckReducer = (state=initialState, action) => {
   let shuffledDeck= shuffle(state.deck);
+  if(action.type === SET_DECK){
+    return Object.assign({}, state, {
+      deck: [...action.deck]
+    });
+  }
   if(action.type === GET_DECK){
   return Object.assign({}, state, {
     ...shuffledDeck});

@@ -8,3 +8,9 @@ export const trim_deck = (values)  => ({
   type:  TRIM_DECK,
   values
 });
+
+export const SET_DECK = 'SET_DECK';
+export const set_deck = (deck) => ({
+  type: SET_DECK,
+  deck
+});
