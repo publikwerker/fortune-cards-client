@@ -1,6 +1,26 @@
-.cardDescription {
+.card-description {
   background: linen;
   border-radius: 5px;
   border:1px solid rgba(250, 240, 230, 0.084);
   color: #242424;
+}
+
+.card-image {
+  width: 25vw;
+}
+
+.rotate0{
+  transform: rotate(0deg);
+}
+
+.rotate1{
+  transform: rotate(90deg);
+}
+
+.rotate2{
+  transform: rotate(180deg);
+}
+
+.rotate3{
+  transform: rotate(-90deg);
 }
