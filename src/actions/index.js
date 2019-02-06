@@ -14,3 +14,9 @@ export const set_deck = (deck) => ({
   type: SET_DECK,
   deck
 });
+
+export const TAKE_QUERY = 'TAKE_QUERY';
+export const take_query = (textQuery) => ({
+  type: TAKE_QUERY,
+  textQuery
+});
