@@ -17,7 +17,7 @@ export function CardImages(props){
   let classes = `card-image rotate${props.direction}`
   return (
     <div>
-      <img className={classes} src={props.img} alt={props.name} />
+        <img className={classes} src={props.img} alt={props.name} />
     </div>
   )
 }

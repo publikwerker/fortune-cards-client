@@ -32,6 +32,8 @@ export function Spread(props) {
       <h2>Your Reading</h2>
       <ul className="spread">
         {cardImages}
+      </ul>
+      <ul className="spread">
         {cardDescriptions}
       </ul>
     </div>

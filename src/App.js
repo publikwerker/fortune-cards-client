@@ -24,7 +24,8 @@ loadDeck(){
     })   
     .then((data) =>{
       console.log(data);
-    return this.props.dispatch(set_deck(data.deck))})
+      return this.props.dispatch(set_deck(data))
+    })
     .catch(err =>
       this.setState({
         error: 'could not load deck'
