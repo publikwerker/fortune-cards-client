@@ -20,3 +20,9 @@ export const take_query = (textQuery) => ({
   type: TAKE_QUERY,
   textQuery
 });
+
+export const MAKE_SEARCH = 'MAKE_SEARCH';
+export const make_search = (searchTerm) => ({
+  type: MAKE_SEARCH,
+  searchTerm
+});

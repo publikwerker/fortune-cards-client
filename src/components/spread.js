@@ -12,7 +12,6 @@ export function Spread(props) {
 
   //display heading if cards have been dealt
   function yourReading(){
-    console.log(props.cardsDealt.length);
     if (props.cardsDealt.length>0){
       return (
         <h2 className="reading-heading">Your Reading</h2>

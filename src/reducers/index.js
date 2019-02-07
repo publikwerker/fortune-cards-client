@@ -1,4 +1,9 @@
-import { SET_DECK, GET_DECK, TRIM_DECK, TAKE_QUERY } from '../actions/index.js';
+import { 
+  SET_DECK, 
+  GET_DECK, 
+  TRIM_DECK, 
+  TAKE_QUERY, 
+  MAKE_SEARCH } from '../actions/index.js';
 const shuffle = require('shuffle-array');
 
 const initialState = {
@@ -85,14 +90,21 @@ export const deckReducer = (state=initialState, action) => {
     ...shuffledDeck});
   }
   if(action.type === TRIM_DECK){
-    return Object.assign({}, state, {spreadNumber: action.values
+    return Object.assign({}, state, {
+      spreadNumber: action.values
     });
   }
   if(action.type === TAKE_QUERY){
-  console.log('action ran');
-    return Object.assign({}, state, {textQuery: action.textQuery
+    return Object.assign({}, state, {
+      textQuery: action.textQuery
     });
-}
+  }
+  if(action.type === MAKE_SEARCH){
+    console.log('action ran');
+    return Object.assign({}, state, {
+      searchTerm: action.searchTerm
+    });
+  }
 
   return state;
-  };
+};
