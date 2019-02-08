@@ -26,3 +26,8 @@ export const make_search = (searchTerm) => ({
   type: MAKE_SEARCH,
   searchTerm
 });
+
+export const TOGGLE_LOGIN ='TOGGLE_LOGIN';
+export const toggle_login = () => ({
+  type: TOGGLE_LOGIN
+})

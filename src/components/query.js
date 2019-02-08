@@ -6,10 +6,10 @@ import './query.css';
 
 class Query extends React.Component {
   render () {
-    const { handleSubmit} = this.props;
+    const { handleSubmit } = this.props;
     return (
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={ handleSubmit }>
         <Field component="input"
           name="textQuery"
           className="textQuery"

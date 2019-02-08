@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { set_deck } from './actions/index.js';
 import { API_BASE_URL } from './config.js';
@@ -35,11 +36,13 @@ loadDeck(){
   
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Query />
-        <Spread />
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Query />
+          <Spread />
+        </div>
+      </Router>
     );
   }
 }

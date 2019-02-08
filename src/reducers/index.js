@@ -3,7 +3,8 @@ import {
   GET_DECK, 
   TRIM_DECK, 
   TAKE_QUERY, 
-  MAKE_SEARCH } from '../actions/index.js';
+  MAKE_SEARCH,
+  TOGGLE_LOGIN } from '../actions/index.js';
 const shuffle = require('shuffle-array');
 
 const initialState = {
@@ -100,9 +101,14 @@ export const deckReducer = (state=initialState, action) => {
     });
   }
   if(action.type === MAKE_SEARCH){
-    console.log('action ran');
     return Object.assign({}, state, {
       searchTerm: action.searchTerm
+    });
+  }
+  if(action.type === TOGGLE_LOGIN){
+    console.log('action ran');
+    return Object.assign({}, state, {
+      login: true
     });
   }
 
