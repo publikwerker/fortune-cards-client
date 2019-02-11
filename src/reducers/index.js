@@ -5,6 +5,7 @@ import {
   TAKE_QUERY, 
   MAKE_SEARCH,
   TOGGLE_LOGIN } from '../actions/index.js';
+
 const shuffle = require('shuffle-array');
 
 const initialState = {
@@ -79,8 +80,8 @@ deck: [
 ]
 };
 
+let shuffledDeck= shuffle(initialState.deck);
 export const deckReducer = (state=initialState, action) => {
-  let shuffledDeck= shuffle(state.deck);
   if(action.type === SET_DECK){
     return Object.assign({}, state, {
       deck: [...action.deck]
@@ -106,7 +107,12 @@ export const deckReducer = (state=initialState, action) => {
     });
   }
   if(action.type === TOGGLE_LOGIN){
-    console.log('action ran');
+    if(state.login === true){
+      let notLogin = !state.login;
+      return Object.assign({}, state, {
+        login: notLogin
+      })
+    } else
     return Object.assign({}, state, {
       login: true
     });

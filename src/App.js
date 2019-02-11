@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { set_deck } from './actions/index.js';
 import { API_BASE_URL } from './config.js';
-import Query from './components/query.js';
-import Header from './components/header.js';
-import Spread from './components/spread.js';
+import  Login  from './components/login.js';
+import  Query  from './components/query.js';
+import  Header  from './components/header.js';
+import  Spread  from './components/spread.js';
 
 class App extends Component {
 
@@ -32,13 +33,14 @@ loadDeck(){
         error: 'could not load deck'
       })
     );
-}
+  }
   
   render() {
     return (
       <Router>
         <div className="App">
           <Header />
+          <Login />
           <Query />
           <Spread />
         </div>

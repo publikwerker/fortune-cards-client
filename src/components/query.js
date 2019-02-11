@@ -8,21 +8,22 @@ class Query extends React.Component {
   render () {
     const { handleSubmit } = this.props;
     return (
-      <div>
+      <div className="query-container">
         <form onSubmit={ handleSubmit }>
         <Field component="input"
           name="textQuery"
-          className="textQuery"
+          className="text-query"
           type="text"
           placeholder="What is your query?"
         />
+        <label>number of cards to deal: </label>
         <Field component="input" 
           name="spreadNumber" 
-          className="spreadNumber" 
+          className="spread-number" 
           type="number" 
           min={1} max={78}
-        />
-          <button className="deal-button">Deal</button>
+        /><br />
+          <button name="deal-button" type="submit" className="deal-button">Deal</button>
         </form>
       </div>
     );

@@ -1,8 +1,12 @@
 .card-description {
-  background: linen;
+  display: block;
+  background-color: #242424;
   border-radius: 5px;
   border:1px solid rgba(250, 240, 230, 0.084);
-  color: #242424;
+  color: white;
+  max-width: 300px;
+  margin-left:auto;
+  margin-right: auto;
 }
 
 .card-image {

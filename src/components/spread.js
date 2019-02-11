@@ -36,7 +36,7 @@ export function Spread(props) {
     props.cardsDealt.map((card, index) => {
       return(
       <li className="card-description" key={card.name}>
-      Card position: {index+1}
+      <span className="position-indicator">Card position: {index+1}</span>
       <CardDescriptions {...card}/>
     </li>
       )
