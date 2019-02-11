@@ -9,4 +9,5 @@ const rootReducer = combineReducers({
   form: formReducer,
   tarot: deckReducer,
 });
+//check for localStorage.authToken and login
 export default createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
