@@ -7,7 +7,7 @@ import './login.css';
 
 import {required, nonEmpty} from '../validators';
 
-function submit(values, dispatch, formProps) {
+function submit(values, dispatch) {
   console.log('onSubmit ran');
   dispatch(toggle_login());
   return dispatch(Login(values.username, values.password));
