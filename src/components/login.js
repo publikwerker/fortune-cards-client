@@ -1,25 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import{ Field, reduxForm, focus } from 'redux-form';
-import { login } from '../actions/protected.js';
+import { toggle_login } from '../actions/index.js';
+import { Login } from '../actions/protected.js';
 import './login.css';
 
 import {required, nonEmpty} from '../validators';
 
+function submit(values, dispatch, formProps) {
+  console.log('onSubmit ran');
+  dispatch(toggle_login());
+  return dispatch(Login(values.username, values.password));
+}
 
-class Login extends React.Component {
-  onSubmit(values) {
-    console.log('onSubmit ran')
-    return this.props.dispatch(login(values.username, values.password));
-  }
+class LoginWindow extends React.Component {
   
+
   render() {
-    if (this.props.login === false || !this.props.login)
-      {return (
+    let error;
+    const {handleSubmit}= this.props;
+    if (this.props.error) {
+      error = (
+        <div className="form-error" aria-live="polite">
+          {this.props.error}
+          </div>
+      );
+    }
+    if (this.props.login === true){
+      return (
         <div className="login-container">
-          <form className="form-container"  onSubmit={
-            this.props.handleSubmit(values =>
-            this.onSubmit(values)
-          )}>
+          <form className="form-container"  
+            onSubmit={handleSubmit}>
+          {error}
           <label className="label">User Name</label>
           <Field component="input"
             name="username"
@@ -42,12 +54,22 @@ class Login extends React.Component {
           >Sign In</button>
           </form>
         </div>
-      )} else return (<div></div>)
+      );
+    } else return (<div></div>);
   }
 }
 
-export default reduxForm({
+const loginForm = reduxForm({
   form: 'login',
+  onSubmit: submit,
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
   }
-)(Login);
+)(LoginWindow);
+
+function mapStatetoProps(state){
+  return {
+    login: state.tarot.login
+  };
+};
+
+export default connect(mapStatetoProps)(loginForm);

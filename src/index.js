@@ -8,10 +8,10 @@ import store from './components/store';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Provider store={store}>
+ ( <Provider store={store}>
     <Router>
       <App />
     </Router>
-  </Provider>, document.getElementById('root'));
+  </Provider>), document.getElementById('root'));
 
 serviceWorker.unregister();

@@ -1,13 +1,22 @@
-import jwtDecode from 'jwt-decode';
-import { SubmissionError } from 'redux-form';
 import { API_BASE_URL } from '../config.js';
+
+import jwtDecode from 'jwt-decode';
+
+import { SubmissionError } from 'redux-form';
 import { normalizeResponseErrors } from './utils';
+
 import { saveAuthToken, clearAuthToken } from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
     type: SET_AUTH_TOKEN,
     authToken
+});
+
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const setCurrentUser = currentUser => ({
+    type: SET_CURRENT_USER,
+    currentUser
 });
 
 export const CLEAR_AUTH = 'CLEAR_AUTH';
@@ -32,6 +41,8 @@ export const authError = error => ({
     error
 });
 
+// Stores the auth token in state and localStorage, and decodes and stores
+// the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
   dispatch(setAuthToken(authToken));
@@ -39,7 +50,7 @@ const storeAuthInfo = (authToken, dispatch) => {
   saveAuthToken(authToken);
 };
 
-export const login = (username, password) => dispatch => {
+export const Login = (username, password) => dispatch => {
   console.log('login ran');
   dispatch(authRequest());
   return (
@@ -73,7 +84,6 @@ export const login = (username, password) => dispatch => {
 };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
-  dispatch(authRequest());
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/auth/refresh`, {
     method: 'POST',
@@ -85,8 +95,6 @@ export const refreshAuthToken = () => (dispatch, getState) => {
   .then(res => res.json())
   .then(({authToken}) => storeAuthInfo(authToken, dispatch))
   .catch(err => {
-    dispatch(authError(err));
-    dispatch(clearAuth());
     clearAuthToken(authToken);
   });
 };

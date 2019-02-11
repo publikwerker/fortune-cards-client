@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { set_deck } from './actions/index.js';
 import { API_BASE_URL } from './config.js';
-import  Login  from './components/login.js';
+import  LoginWindow  from './components/login.js';
 import  Query  from './components/query.js';
 import  Header  from './components/header.js';
 import  Spread  from './components/spread.js';
@@ -40,7 +40,7 @@ loadDeck(){
       <Router>
         <div className="App">
           <Header />
-          <Login />
+          <LoginWindow />
           <Query />
           <Spread />
         </div>

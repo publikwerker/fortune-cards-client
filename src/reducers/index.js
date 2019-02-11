@@ -4,7 +4,8 @@ import {
   TRIM_DECK, 
   TAKE_QUERY, 
   MAKE_SEARCH,
-  TOGGLE_LOGIN } from '../actions/index.js';
+  TOGGLE_LOGIN,
+  OPEN_LOGIN, } from '../actions/index.js';
 
 const shuffle = require('shuffle-array');
 
@@ -106,7 +107,13 @@ export const deckReducer = (state=initialState, action) => {
       searchTerm: action.searchTerm
     });
   }
+  if(action.type=== OPEN_LOGIN){
+    return Object.assign({}, state, {
+      login: true
+    });
+  }
   if(action.type === TOGGLE_LOGIN){
+    console.log('toggle ran');
     if(state.login === true){
       let notLogin = !state.login;
       return Object.assign({}, state, {

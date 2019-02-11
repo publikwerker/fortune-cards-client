@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { trim_deck, take_query }  from '../actions/index.js';
 import './query.css';
@@ -6,7 +7,8 @@ import './query.css';
 
 class Query extends React.Component {
   render () {
-    const { handleSubmit } = this.props;
+    if (this.props.login !== true)
+    {const { handleSubmit } = this.props;
     return (
       <div className="query-container">
         <form onSubmit={ handleSubmit }>
@@ -27,13 +29,25 @@ class Query extends React.Component {
         </form>
       </div>
     );
+  } else {
+    return (<div></div>);
+  }
 }
 }
 
-export default reduxForm({
+
+const queryForm = reduxForm({
   form: 'query',
   onSubmit: (values, dispatch) => { 
     dispatch(trim_deck(values.spreadNumber));
     dispatch(take_query(values.textQuery));
   }
 })(Query);
+
+function mapStateToProps(state){
+  return {
+    login: state.tarot.login
+  };
+}
+
+export default connect(mapStateToProps)(queryForm);
