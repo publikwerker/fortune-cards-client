@@ -1,11 +1,10 @@
 import { 
   SET_AUTH_TOKEN,
-  SET_CURRENT_USER,
   CLEAR_AUTH,
   AUTH_REQUEST,
   AUTH_SUCCESS,
   AUTH_ERROR
-} from '../actions/auth';
+} from '../actions/protected.js';
 
 const initialState = {
   authToken:  null,
@@ -18,10 +17,6 @@ export default function reducer(state = initialState, action){
   if (action.type === SET_AUTH_TOKEN){
     return Object.assign({}, state, {
       authToken: action.authToken,
-    });
-  } else if (action.type === SET_CURRENT_USER){
-    return Object.assign({}, state, {
-      currentUser: action.currentUser,
     });
   } else if (action.type === CLEAR_AUTH){
     return Object.assign({}, state, {

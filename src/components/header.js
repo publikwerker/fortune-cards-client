@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import MemberButton from './memberButton.js';
 import { make_search, open_login } from '../actions/index.js';
 import './header.css';
 
@@ -12,8 +13,7 @@ class Header extends React.Component {
           <nav>
             <a className="header-link"
               href="https://www.publikwerks.com/thelema-tarot-deck/tarot-deck-pre-order">Purchase Deck</a>
-            <button className="header-link"
-              href="#" onClick={(e)=>this.props.dispatch(open_login())}>Member Login</button>
+            <MemberButton />
           </nav>
           <form className="searchBar" onSubmit={handleSubmit}>
             <Field component="input" 

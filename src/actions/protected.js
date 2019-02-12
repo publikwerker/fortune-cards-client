@@ -13,12 +13,6 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
-export const SET_CURRENT_USER = 'SET_CURRENT_USER';
-export const setCurrentUser = currentUser => ({
-    type: SET_CURRENT_USER,
-    currentUser
-});
-
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
     type: CLEAR_AUTH
@@ -45,8 +39,9 @@ export const authError = error => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
+  const currentUser = (decodedToken.user.username);
   dispatch(setAuthToken(authToken));
-  dispatch(authSuccess(decodedToken.user));
+  dispatch(authSuccess(currentUser));
   saveAuthToken(authToken);
 };
 
@@ -70,7 +65,9 @@ export const Login = (username, password) => dispatch => {
       console.log(res);
       return res;
     })
-    .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+    .then(({authToken}) => {
+      console.log(authToken);
+      storeAuthInfo(authToken, dispatch)})
     .catch(err => {
       const { code } = err;
       const message =
