@@ -8,7 +8,7 @@ class Header extends React.Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div>
+      <div className="header-container">
         <header className="App-header">
           <nav>
             <a className="header-link"

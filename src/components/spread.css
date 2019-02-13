@@ -1,5 +1,5 @@
 .card-description {
-  padding: 5px;
+ 
   margin-top: 5px;
 }
 .card-image {
@@ -19,6 +19,7 @@ ul {
 .history-form {
   height: 100px;
 }
+
 label {
   display: block;
 }

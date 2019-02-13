@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
     const user = this.props.user;
     if(this.props.readingHistory === true){
       return (
-        <div>
+        <div className="history-container">
           <h2>{user}'s reading history</h2>
         </div>
       );

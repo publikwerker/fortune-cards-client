@@ -9,7 +9,19 @@
   margin-right: auto;
   align-content: center;
   align-items: center;
+  padding: 5px;
+}
 
+.card-description-box {
+  display: block;
+  background-color: #242424;
+  border-radius: 5px;
+  border:1px solid rgba(250, 240, 230, 0.084);
+  color: white;
+  margin-left:auto;
+  margin-right: auto;
+  align-content: center;
+  align-items: center;
 }
 
 .card-image {
@@ -20,6 +32,7 @@
 
 .desc-text {
   text-align: left;
+  padding: 5px;
 }
 
 .rotate0{

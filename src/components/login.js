@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import{ Field, reduxForm, focus } from 'redux-form';
 import { toggle_login } from '../actions/index.js';
 import { Login } from '../actions/protected.js';
+import  Register  from './register.js';
 import './login.css';
 
-import {required, nonEmpty} from '../validators';
+import { required, nonEmpty } from '../validators';
+
 
 function submit(values, dispatch) {
   console.log('onSubmit ran');
@@ -14,7 +16,18 @@ function submit(values, dispatch) {
 }
 
 class LoginWindow extends React.Component {
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      signUp: false
+    };
+  }
+
+  setSignUp(signUp){
+    this.setState({
+      signUp
+    });
+  }
 
   render() {
     let error;
@@ -27,11 +40,21 @@ class LoginWindow extends React.Component {
       );
     }
     if (this.props.login === true){
-      return (
+      if (this.state.signUp === true){
+        return (
+          <Register />
+        );
+      } else {
+        return (
         <div className="login-container">
           <form className="form-container"  
             onSubmit={handleSubmit}>
           {error}
+          <button name="newuser-button"
+            type="button"
+            className="newuser-button"
+            onClick={()=>this.setSignUp(true)}
+          >Register</button>
           <label className="label">User Name</label>
           <Field component="input"
             name="username"
@@ -54,7 +77,8 @@ class LoginWindow extends React.Component {
           >Sign In</button>
           </form>
         </div>
-      );
+        );
+    }
     } else return (<div></div>);
   }
 }
@@ -70,6 +94,6 @@ function mapStatetoProps(state){
   return {
     login: state.tarot.login
   };
-};
+}
 
 export default connect(mapStatetoProps)(loginForm);

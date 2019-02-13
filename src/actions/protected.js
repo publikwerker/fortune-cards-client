@@ -44,6 +44,22 @@ const storeAuthInfo = (authToken, dispatch) => {
   dispatch(authSuccess(currentUser));
   saveAuthToken(authToken);
 };
+export const CreateUser = (username, password) => {
+  console.log('createUser ran');
+  return (
+    fetch(`${API_BASE_URL}/users`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    })
+  )
+  .then((username, password) => Login(username, password))
+};
 
 export const Login = (username, password) => dispatch => {
   console.log('login ran');
