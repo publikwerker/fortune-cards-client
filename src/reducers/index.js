@@ -138,9 +138,15 @@ export const deckReducer = (state=initialState, action) => {
     });
   }
   if(action.type === OPEN_HISTORY){
-    return Object.assign({}, state, {
-      readingHistory: true
-    });
+    if (!state.readingHistory || state.readingHistory === false){
+      return Object.assign({}, state, {
+        readingHistory: true
+      });
+    } else {
+      return Object.assign({}, state, {
+        readingHistory: false
+      });
+    }
   }
 
   return state;

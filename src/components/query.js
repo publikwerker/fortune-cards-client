@@ -7,34 +7,34 @@ import './query.css';
 
 class Query extends React.Component {
   render () {
-    if (this.props.login !== true)
-    {const { handleSubmit } = this.props;
-    return (
-      <div className="query-container">
-        <form onSubmit={ handleSubmit }>
-        <Field component="input"
-          name="textQuery"
-          className="text-query"
-          type="text"
-          placeholder="What is your query?"
-        />
-        <label>number of cards to deal: </label>
-        <Field component="input" 
-          name="spreadNumber" 
-          className="spread-number" 
-          type="number" 
-          min={1} max={78}
-        /><br />
-          <button name="deal-button" type="submit" className="deal-button">Deal</button>
-        </form>
-      </div>
-    );
-  } else {
-    return (<div></div>);
+    if (this.props.login !== true){
+      const { handleSubmit } = this.props;
+      return (
+        <div className="query-container">
+          <form onSubmit={ handleSubmit }>
+          <Field component="input"
+            name="textQuery"
+            className="text-query"
+            type="text"
+            placeholder="What would you ask the cards?"
+          />
+          <label>number of cards to deal: </label>
+          <Field component="input" 
+            name="spreadNumber" 
+            className="spread-number" 
+            type="number" 
+            placeholder="0"
+            min={1} max={78}
+          /><br />
+            <button name="deal-button" type="submit"  className="deal-button">Deal</button>
+          </form>
+        </div>
+      );
+    } else {
+      return (<div></div>);
+    }
   }
 }
-}
-
 
 const queryForm = reduxForm({
   form: 'query',

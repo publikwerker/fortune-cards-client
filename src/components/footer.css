@@ -1,0 +1,11 @@
+.footer {
+  position: relative;
+  bottom: 10px;
+  align-content: center;
+  padding-top: 20px;
+}
+.copy-info {
+  margin-left: auto;
+  margin-right: auto;
+  text-justify: center;
+}

@@ -9,6 +9,7 @@ import  Query  from './components/query.js';
 import  Header  from './components/header.js';
 import  Spread  from './components/spread.js';
 import ReadingHistory from './components/readingHistory.js';
+import Footer from './components/footer.js';
 
 class App extends Component {
 
@@ -45,6 +46,7 @@ loadDeck(){
           <Query />
           <Spread />
           <ReadingHistory />
+          <Footer />
         </div>
       </Router>
     );
