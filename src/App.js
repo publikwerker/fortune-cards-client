@@ -8,6 +8,7 @@ import  LoginWindow  from './components/login.js';
 import  Query  from './components/query.js';
 import  Header  from './components/header.js';
 import  Spread  from './components/spread.js';
+import ReadingHistory from './components/readingHistory.js';
 
 class App extends Component {
 
@@ -43,6 +44,7 @@ loadDeck(){
           <LoginWindow />
           <Query />
           <Spread />
+          <ReadingHistory />
         </div>
       </Router>
     );

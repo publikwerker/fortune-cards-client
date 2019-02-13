@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import MemberButton from './memberButton.js';
-import { make_search, open_login } from '../actions/index.js';
+import { make_search } from '../actions/index.js';
 import './header.css';
 
 class Header extends React.Component {

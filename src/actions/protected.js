@@ -99,3 +99,30 @@ export const refreshAuthToken = () => (dispatch, getState) => {
     clearAuthToken(authToken);
   });
 };
+
+export const addReadingToHistory = () => (dispatch, getState) => {
+  const username = getState().auth.currentUser;
+  const authToken = getState().auth.authToken;
+  const cards = getState().tarot.spreadNumber;
+  const spread = getState().tarot.deck.slice(0, cards); 
+  const query = getState().tarot.textQuery;
+
+  return fetch(`${API_BASE_URL}/auth/add`, {
+    method: 'PUT',
+    headers: {
+      authorization: `Bearer ${authToken}`,
+    },
+    body: {
+      comments: '',
+      query,
+      spread,
+      userId:'',
+    }
+  })
+  .then(res => normalizeResponseErrors(res))
+  .then(res => res.json())
+  .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+  .catch(err => {
+    clearAuthToken(authToken);
+  });
+}
