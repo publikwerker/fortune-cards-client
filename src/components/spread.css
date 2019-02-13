@@ -16,6 +16,13 @@ ul {
   padding-inline-start: 0;
 }
 
+.history-form {
+  height: 100px;
+}
+label {
+  display: block;
+}
+
 li {
   display: inline-block;
   margin-left: auto;

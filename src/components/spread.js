@@ -42,6 +42,23 @@ export function Spread(props) {
       )
   });
 
+  //display the comment and save form
+  function saveToHistory() {
+    if (props.cardsDealt.length>0){
+      return (
+        <div className="history-form">
+        <form>
+          <label>Comments:</label>
+          <input type="text"></input>
+          <button>Save</button>
+        </form>
+        </div>
+      )
+    }
+  }
+
+  const historyForm = saveToHistory();
+
   return (
     <div className="reading-display">
         {theHeading}
@@ -51,6 +68,7 @@ export function Spread(props) {
       <ul className="spread">
         {cardDescriptions}
       </ul>
+        {historyForm}
     </div>
   );
 }
