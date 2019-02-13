@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus } from 'redux-form';
 import { toggle_login } from '../actions/index.js';
-import './login.css';
+import './register.css';
 import { CreateUser } from '../actions/protected.js';
 
 import { required, nonEmpty } from '../validators';
@@ -41,7 +41,7 @@ class Register extends React.Component{
               type="submit"
               className="signup-button"
               disabled={this.props.pristine || this.props.submitting}
-            >Sign Up</button>
+            >Join</button>
             </form>
           </div>
     );

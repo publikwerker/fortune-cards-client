@@ -18,7 +18,7 @@ class Query extends React.Component {
             type="text"
             placeholder="What would you ask the cards?"
           />
-          <label>number of cards to deal: </label>
+          <label className="spreadNumber-label">number of cards to deal: </label>
           <Field component="input" 
             name="spreadNumber" 
             className="spread-number" 

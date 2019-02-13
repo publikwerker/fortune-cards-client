@@ -49,7 +49,9 @@ export function Spread(props) {
         <div className="history-form">
         <form>
           <label>Comments:</label>
-          <input type="text"></input>
+          <input type="text"
+          className="comments"
+          placeholder="We'll see..."></input>
           <button>Save</button>
         </form>
         </div>
