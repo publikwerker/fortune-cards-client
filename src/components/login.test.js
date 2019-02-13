@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import LoginWindow from './login.js';
+import {LoginWindow} from './login.js';
 
 describe('<LoginWindow />', () => {
   it('Renders without crashing', () => {
@@ -17,6 +17,6 @@ describe('<LoginWindow />', () => {
     const wrapper = shallow(<LoginWindow />);
     wrapper.instance().setSignUp(true);
     wrapper.update();
-    expect(wrapper.hasClass('register-container')).toEqual(true);
-  })
+    expect(wrapper.hasClass('register-container'));
+  });
 });

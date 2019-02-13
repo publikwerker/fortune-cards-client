@@ -15,7 +15,7 @@ function submit(values, dispatch) {
   return dispatch(Login(values.username, values.password));
 }
 
-class LoginWindow extends React.Component {
+export class LoginWindow extends React.Component {
   constructor(props){
     super(props);
     this.state = {

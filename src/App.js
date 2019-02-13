@@ -11,7 +11,7 @@ import  Spread  from './components/spread.js';
 import ReadingHistory from './components/readingHistory.js';
 import Footer from './components/footer.js';
 
-class App extends Component {
+export class App extends Component {
 
 componentDidMount() {
   this.loadDeck();
