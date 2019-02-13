@@ -7,7 +7,7 @@ export function CardDescriptions(props) {
     <div className="card-description" id={props.id}>
       <h3>{props.id}</h3>
       <h4>{props.name}</h4>
-      {props.desc}
+      <p className="desc-text">{props.desc}</p>
     </div>
   );
 };

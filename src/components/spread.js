@@ -43,7 +43,7 @@ export function Spread(props) {
   });
 
   return (
-    <div>
+    <div className="reading-display">
         {theHeading}
       <ul className="spread">
         {cardImages}

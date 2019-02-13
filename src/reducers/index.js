@@ -1,6 +1,5 @@
 import { 
   SET_DECK, 
-  GET_DECK, 
   TRIM_DECK, 
   TAKE_QUERY, 
   MAKE_SEARCH,
@@ -94,16 +93,13 @@ deck: [
 ]
 };
 
-let shuffledDeck= shuffle(initialState.deck);
+
 export const deckReducer = (state=initialState, action) => {
   if(action.type === SET_DECK){
+    let shuffledDeck = shuffle(action.deck);
     return Object.assign({}, state, {
-      deck: [...action.deck]
+      deck: [...shuffledDeck]
     });
-  }
-  if(action.type === GET_DECK){
-  return Object.assign({}, state, {
-    ...shuffledDeck});
   }
   if(action.type === TRIM_DECK){
     return Object.assign({}, state, {
