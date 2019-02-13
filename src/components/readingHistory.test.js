@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
+import '../setupTests';
 import ReadingHistory from './readingHistory';
 
 describe('<ReadingHistory />', () => {
@@ -10,6 +10,6 @@ describe('<ReadingHistory />', () => {
 
   it('Should have class: history-container', () => {
     const wrapper = shallow(<ReadingHistory />);
-    expect(wrapper.hasClass('history-container'));
+    expect(wrapper.hasClass("history-container"));
   });
 });

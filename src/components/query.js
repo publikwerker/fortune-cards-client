@@ -23,7 +23,7 @@ class Query extends React.Component {
             name="spreadNumber" 
             className="spread-number" 
             type="number" 
-            placeholder="0"
+            placeholder="all"
             min={1} max={78}
           /><br />
             <button name="deal-button" type="submit"  className="deal-button">Deal</button>

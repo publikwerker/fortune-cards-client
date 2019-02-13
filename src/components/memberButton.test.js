@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
+import '../setupTests';
 import MemberButton from './memberButton.js';
 
 describe('<MemberButton />', () => {

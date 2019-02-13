@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
+import '../setupTests';
 import Query from './query';
 
 describe('<Query />', () => {
@@ -12,4 +12,6 @@ describe('<Query />', () => {
     const wrapper = shallow(<Query />);
     expect(wrapper.hasClass('query-container'));
   });
+
+
 });

@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
+import '../setupTests';
 import Spread from './spread.js';
-import { isTrimmed } from '../validators.js';
 
 describe('<Spread />', () => {
   it('Renders without crashing', () => {
