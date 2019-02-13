@@ -101,7 +101,7 @@ export const refreshAuthToken = () => (dispatch, getState) => {
 };
 
 export const addReadingToHistory = () => (dispatch, getState) => {
-  const username = getState().auth.currentUser;
+  const userId = getState().auth.currentUser;
   const authToken = getState().auth.authToken;
   const cards = getState().tarot.spreadNumber;
   const spread = getState().tarot.deck.slice(0, cards); 
