@@ -27,11 +27,6 @@ export const toggle_login = () => ({
   type: TOGGLE_LOGIN
 });
 
-export const OPEN_LOGIN ='OPEN_LOGIN';
-export const open_login = () => ({
-  type: OPEN_LOGIN
-});
-
 export const OPEN_HISTORY = 'OPEN_HISTORY';
 export const open_history = () => ({
   type: OPEN_HISTORY

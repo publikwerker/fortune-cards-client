@@ -1,5 +1,5 @@
 import { deckReducer } from './index.js';
-import { trim_deck, set_deck, take_query, make_search, toggle_login, open_login, open_history, toggle_signin } from '../actions/index.js';
+import { trim_deck, set_deck, take_query, make_search, toggle_login, open_history, toggle_signin } from '../actions/index.js';
 
 describe('deckReducer', () => {
   it('Should set the intitial state when nothing is passed in', () => {
@@ -180,7 +180,7 @@ describe('deckReducer', () => {
     expect(state.spreadNumber).toEqual(values);
   });
 
-  fit('Should handle the set_deck function', () => {
+  it('Should handle the set_deck function', () => {
     const deck = [
       {
         id:'Water of Air',
@@ -222,5 +222,22 @@ describe('deckReducer', () => {
       },]
     const state = deckReducer(undefined, set_deck(deck));
     expect(state.deck).toEqual(deck);
-  })
+  });
+
+  it('Should handle the take_query function', () => {
+    const textQuery = 'why not?';
+    const state = deckReducer(undefined, take_query(textQuery));
+    expect(state.textQuery).toEqual(textQuery);
+  });
+
+  it('Should handle the make_search action', () => {
+    const searchTerm = 'love';
+    const state = deckReducer(undefined, make_search(searchTerm));
+    expect(state.searchTerm).toEqual(searchTerm);
+  });
+
+  it('Should handle the toggle_login action', () => {
+    const state = deckReducer(undefined, toggle_login());
+    expect(state.login).toEqual(true);
+  });
 });
