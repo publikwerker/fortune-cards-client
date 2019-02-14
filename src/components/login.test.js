@@ -9,7 +9,7 @@ describe('<LoginWindow />', () => {
   });
 
   it('Should have class: login-container', () => {
-    const wrapper = shallow(<LoginWindow login={true}/>);
+    const wrapper = mount(<LoginWindow login={true}/>);
     console.log(wrapper.debug());
     expect(wrapper.find('div').hasClass('login-container')).to.equal(true);
   });
@@ -17,27 +17,15 @@ describe('<LoginWindow />', () => {
  it('setSignUp should change state', () => {
     const wrapper = shallow(<LoginWindow />);
     wrapper.instance().setSignUp(true);
-    expect(wrapper.state('signUp')).toEqual(true);
+    expect(wrapper.state('tarot.signUp')).toEqual(true);
   })
 
   it('Should render register form when signing up', () => {
     const login = true;
-    const wrapper = shallow(<LoginWindow login={login}/>);
+    const wrapper = mount(<LoginWindow login={login}/>);
     wrapper.instance().setSignUp(true);
-    //wrapper.update();
+    wrapper.update();
     console.log(wrapper.debug());
     expect(wrapper.hasClass('register-containers')).toEqual(true);
   });
-
-  it('Should set state intitially to signup: false', () => {
-    const wrapper = shallow(<LoginWindow />);
-    expect(wrapper.state('signUp')).toEqual(false);
-  })
-
-  it('Should render props correctly', () => {
-    const login = true;
-    const wrapper = shallow(<LoginWindow login={login}/>);
-   
-    
-  })
 });

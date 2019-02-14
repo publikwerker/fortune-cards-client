@@ -6,6 +6,7 @@ import {
   TOGGLE_LOGIN,
   OPEN_LOGIN, 
   OPEN_HISTORY,
+  TOGGLE_SIGNIN,
 } from '../actions/index.js';
 
 const shuffle = require('shuffle-array');
@@ -116,7 +117,7 @@ export const deckReducer = (state=initialState, action) => {
       searchTerm: action.searchTerm
     });
   }
-  if(action.type=== OPEN_LOGIN){
+  if(action.type === OPEN_LOGIN){
     return Object.assign({}, state, {
       login: true
     });
@@ -132,6 +133,18 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       login: true
     });
+  }
+  if(action.type === TOGGLE_SIGNIN){
+    console.log('toggle signin ran');
+    if(state.signin){
+      return Object.assign({}, state, {
+        signIn: !state.signIn
+      })
+    } else {
+      return Object.assign({}, state, {
+        signIn: true
+      });
+    }
   }
   if(action.type === OPEN_HISTORY){
     if (!state.readingHistory || state.readingHistory === false){

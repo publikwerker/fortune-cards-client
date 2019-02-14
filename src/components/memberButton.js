@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { toggle_login, open_history } from '../actions/index.js';
 
-class MemberButton extends React.Component {
+export class MemberButton extends React.Component {
   render (){
     console.log('current user is' + this.props.currentUser);
     if (this.props.currentUser){

@@ -9,14 +9,22 @@ describe('<MemberButton />', () => {
   });
 
   it('Should have class: header-link', () => {
-    const wrapper = shallow(<MemberButton />).dive().find('button');
-    console.log(wrapper.debug());
+    const wrapper = shallow(<MemberButton />);
     expect(wrapper.hasClass('header-link'));
   });
 
-  it('Should change login state to true when clicked', () => {
-    const wrapper = mount(<MemberButton />);
+  it('Should fire callback dispatch', () => {
+    const dispatch = jest.fn();
+    const wrapper = mount(<MemberButton dispatch={dispatch}/>);
     wrapper.find('button').simulate('click');
-    expect(wrapper.state('login')).toEqual(true);
-  })
+    expect(dispatch).toHaveBeenCalled();
+  });
+
+  it('Should change state to login: true', () => {
+    const dispatch = jest.fn();
+    const wrapper = mount(<MemberButton dispatch={dispatch}/>);
+    console.log(wrapper.debug());
+    wrapper.find('button').simulate('click');
+    expect(wrapper.state('tarot.login')).toEqual(true);
+  });
 });

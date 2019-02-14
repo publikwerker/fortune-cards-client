@@ -41,3 +41,8 @@ export const OPEN_HISTORY = 'OPEN_HISTORY';
 export const open_history = () => ({
   type: OPEN_HISTORY
 });
+
+export const TOGGLE_SIGNIN = 'TOGGLE_SIGNIN';
+export const toggle_signin = () => ({
+  type: TOGGLE_SIGNIN,
+});

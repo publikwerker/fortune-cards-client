@@ -44,6 +44,8 @@ const storeAuthInfo = (authToken, dispatch) => {
   dispatch(authSuccess(currentUser));
   saveAuthToken(authToken);
 };
+
+// create new user from register component
 export const CreateUser = (username, password) => {
   console.log('createUser ran');
   return (
@@ -58,7 +60,13 @@ export const CreateUser = (username, password) => {
       })
     })
   )
-  .then((username, password) => Login(username, password))
+  .then(res => normalizeResponseErrors(res))
+  .then(res => res.json())
+  .then(res => {
+    console.log(res);
+    return res;
+  })
+  
 };
 
 export const Login = (username, password) => dispatch => {
