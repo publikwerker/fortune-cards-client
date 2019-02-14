@@ -1,21 +1,14 @@
 import React from 'react';
 import {Field, reduxForm, focus } from 'redux-form';
-import { toggle_login, toggle_signin } from '../actions/index.js';
+import { toggle_signin } from '../actions/index.js';
 import './register.css';
 import { CreateUser, Login } from '../actions/protected.js';
 
 import { required, nonEmpty } from '../validators';
 import { connect } from 'react-redux';
 
-function submit(values, dispatch) {
-  console.log('onSubmit ran');
-  return function(values, dispatch){
-    dispatch(CreateUser(values.username, values.password))
-    dispatch(toggle_signin());
-    dispatch(toggle_login());
-}
-}
-class Register extends React.Component{
+
+export class Register extends React.Component{
   render(){
     let error;
     const {handleSubmit}=this.props;
@@ -52,7 +45,11 @@ class Register extends React.Component{
 
 const registerForm = reduxForm({
   form: 'register',
-  onSubmit: submit,
+  onSubmit: (values, dispatch) => {
+   return dispatch(CreateUser(values.username, values.password))
+   .then(() => dispatch(Login(values.username, values.password)))
+   .then(() => dispatch(toggle_signin()));
+  },
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(Register);
 

@@ -8,14 +8,11 @@ import './login.css';
 
 import { required, nonEmpty } from '../validators';
 
-
 function submit(values, dispatch) {
   console.log('onSubmit ran');
   dispatch(toggle_login());
   return dispatch(Login(values.username, values.password));
 }
-
-
 
 export class LoginWindow extends React.Component {
   render() {
@@ -47,6 +44,7 @@ export class LoginWindow extends React.Component {
             {error}
           <button 
             name="newuser-button"
+            id="newuser-button"
             type="button"
             className="newuser-button"
             onClick={signUp}
@@ -68,6 +66,7 @@ export class LoginWindow extends React.Component {
           /><br />
           <button 
             name="login-button"
+            id="login-button"
             type="submit"
             className="login-button"
             disabled={this.props.pristine || this.props.submitting}
@@ -80,7 +79,7 @@ export class LoginWindow extends React.Component {
   }
 }
 
-const loginForm = reduxForm({
+export const loginForm = reduxForm({
   form: 'login',
   onSubmit: submit,
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))

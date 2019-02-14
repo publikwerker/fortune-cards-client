@@ -93,7 +93,6 @@ deck: [
 ]
 };
 
-
 export const deckReducer = (state=initialState, action) => {
   if(action.type === SET_DECK){
     let shuffledDeck = shuffle(action.deck);

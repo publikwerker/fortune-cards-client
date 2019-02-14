@@ -6,6 +6,7 @@ import { SubmissionError } from 'redux-form';
 import { normalizeResponseErrors } from './utils';
 
 import { saveAuthToken, clearAuthToken } from '../local-storage';
+import { toggle_login  } from './index.js';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -35,6 +36,23 @@ export const authError = error => ({
     error
 });
 
+export const FETCH_HISTORY_REQUEST = 'FETCH_HISTORY';
+export const fetchHistoryRequest = () => ({
+  type: FETCH_HISTORY_REQUEST,
+});
+
+export const FETCH_HISTORY_SUCCESS = 'FETCH_HISTORY_SUCCESS';
+export const fetchHistorySuccess = history => ({
+  type: FETCH_HISTORY_SUCCESS,
+  history
+});
+
+export const FETCH_HISTORY_ERROR = 'FETCH_HISTORY_ERROR';
+export const fetchHistoryError = error => ({
+  type: FETCH_HISTORY_ERROR,
+  error
+});
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
@@ -46,7 +64,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 // create new user from register component
-export const CreateUser = (username, password) => {
+export const CreateUser = (username, password) => (dispatch) => {
   console.log('createUser ran');
   return (
     fetch(`${API_BASE_URL}/users`, {
@@ -65,6 +83,14 @@ export const CreateUser = (username, password) => {
   .then(res => {
     console.log(res);
     return res;
+  })
+  .catch(err => {
+    const { code } = err;
+    return Promise.reject(
+      new SubmissionError({
+        _error: code
+      })
+    );
   })
   
 };
@@ -85,12 +111,9 @@ export const Login = (username, password) => dispatch => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(res => {
-      console.log(res);
-      return res;
-    })
     .then(({authToken}) => {
       console.log(authToken);
+      dispatch(toggle_login());
       storeAuthInfo(authToken, dispatch)})
     .catch(err => {
       const { code } = err;
@@ -131,7 +154,7 @@ export const addReadingToHistory = () => (dispatch, getState) => {
   const spread = getState().tarot.deck.slice(0, cards); 
   const query = getState().tarot.textQuery;
 
-  return fetch(`${API_BASE_URL}/auth/add`, {
+  return fetch(`${API_BASE_URL}/auth/${userId}/add`, {
     method: 'PUT',
     headers: {
       authorization: `Bearer ${authToken}`,
@@ -150,3 +173,17 @@ export const addReadingToHistory = () => (dispatch, getState) => {
     clearAuthToken(authToken);
   });
 }
+
+export const fetchHistory = username => dispatch => {
+  dispatch(fetchHistoryRequest());
+  return fetch(`${API_BASE_URL}/auth/${username}/history`)
+    .then( res => {
+      if (!res.ok) {
+        return Promise.reject('Something went wrong');
+      }
+      return res.json();
+    })
+    .then(history => 
+      dispatch(fetchHistorySuccess(history.map(history => history.query))))
+    .catch(error => dispatch(fetchHistoryError(error)));
+};

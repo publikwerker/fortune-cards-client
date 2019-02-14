@@ -5,7 +5,7 @@ import { trim_deck, take_query }  from '../actions/index.js';
 import './query.css';
 //import store from './store.js';
 
-class Query extends React.Component {
+export class Query extends React.Component {
   render () {
     if (this.props.login !== true){
       const { handleSubmit } = this.props;
@@ -26,7 +26,10 @@ class Query extends React.Component {
             placeholder="all"
             min={1} max={78}
           /><br />
-            <button name="deal-button" type="submit"  className="deal-button">Deal</button>
+            <button 
+              name="deal-button" 
+              id="deal-button"
+              type="submit"  className="deal-button">Deal</button>
           </form>
         </div>
       );

@@ -12,4 +12,5 @@ describe('<Header />', () => {
     const wrapper = shallow(<Header />);
     expect(wrapper.hasClass('header-container')).toEqual(true);
   });
+  
 });

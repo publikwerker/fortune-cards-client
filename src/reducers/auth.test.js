@@ -41,10 +41,12 @@ describe('auth reducer', () => {
     const authState = {
       authToken: '7349er7y',
       currentUser: 'bob',
+      loading: false,
+      error: null
     }
-    const state = reducer(undefined, clearAuth());
+    const state = reducer(authState, clearAuth());
     expect(state).toEqual({
-       authToken:  null,
+      authToken:  null,
       currentUser: null,
       loading: false,
       error: null
