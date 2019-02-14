@@ -10,7 +10,8 @@ describe('<LoginWindow />', () => {
 
   it('Should have class: login-container', () => {
     const wrapper = shallow(<LoginWindow login={true}/>);
-    expect(wrapper.hasClass('login-container')).toEqual(true);
+    console.log(wrapper.debug());
+    expect(wrapper.find('div').hasClass('login-container')).to.equal(true);
   });
   
  it('setSignUp should change state', () => {
@@ -20,7 +21,8 @@ describe('<LoginWindow />', () => {
   })
 
   it('Should render register form when signing up', () => {
-    const wrapper = shallow(<LoginWindow login={true}/>);
+    const login = true;
+    const wrapper = shallow(<LoginWindow login={login}/>);
     wrapper.instance().setSignUp(true);
     //wrapper.update();
     console.log(wrapper.debug());
@@ -33,7 +35,9 @@ describe('<LoginWindow />', () => {
   })
 
   it('Should render props correctly', () => {
-    const wrapper = shallow(<LoginWindow />);
+    const login = true;
+    const wrapper = shallow(<LoginWindow login={login}/>);
    
+    
   })
 });
