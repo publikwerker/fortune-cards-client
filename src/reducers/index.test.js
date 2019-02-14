@@ -240,4 +240,14 @@ describe('deckReducer', () => {
     const state = deckReducer(undefined, toggle_login());
     expect(state.login).toEqual(true);
   });
+
+  it('Should handle toggle_signin action', () => {
+    const state = deckReducer(undefined, toggle_signin());
+    expect(state.signIn).toEqual(true);
+  });
+
+  it('Should handle open_history action', () => {
+    const state = deckReducer(undefined, open_history());
+    expect(state.readingHistory).toEqual(true);
+  });
 });

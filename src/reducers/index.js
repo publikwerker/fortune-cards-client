@@ -140,13 +140,13 @@ export const deckReducer = (state=initialState, action) => {
     }
   }
   if(action.type === OPEN_HISTORY){
-    if (!state.readingHistory || state.readingHistory === false){
+    if (state.readingHistory === true){
       return Object.assign({}, state, {
-        readingHistory: true
+        readingHistory: false,
       });
     } else {
       return Object.assign({}, state, {
-        readingHistory: false
+        readingHistory: true
       });
     }
   }

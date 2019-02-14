@@ -1,4 +1,4 @@
-import { TRIM_DECK, trim_deck, SET_DECK, set_deck, TAKE_QUERY, take_query, MAKE_SEARCH, make_search, TOGGLE_LOGIN, toggle_login, OPEN_LOGIN, open_login, OPEN_HISTORY, open_history, TOGGLE_SIGNIN, toggle_signin } from './index.js';
+import { TRIM_DECK, trim_deck, SET_DECK, set_deck, TAKE_QUERY, take_query, MAKE_SEARCH, make_search, TOGGLE_LOGIN, toggle_login, OPEN_HISTORY, open_history, TOGGLE_SIGNIN, toggle_signin } from './index.js';
 
 describe('TRIM_DECK action', () => {
   it('Should return the action', () => {
@@ -40,13 +40,6 @@ describe('TOGGLE_LOGIN action', () => {
   it('Should return the action', () => {
     const action = toggle_login();
     expect(action.type).toEqual(TOGGLE_LOGIN);
-  });
-});
-
-describe('OPEN_LOGIN action', () => {
-  it('Should return the action', () => {
-    const action = open_login();
-    expect(action.type).toEqual(OPEN_LOGIN);
   });
 });
 
