@@ -1,5 +1,5 @@
 import { deckReducer } from './index.js';
-import { trim_deck, set_deck, take_query, make_search, toggle_login, open_history, toggle_signin } from '../actions/index.js';
+import { reset, trim_deck, set_deck, take_query, make_search, toggle_login, open_history, toggle_signin } from '../actions/index.js';
 
 describe('deckReducer', () => {
   it('Should set the intitial state when nothing is passed in', () => {
@@ -175,6 +175,21 @@ describe('deckReducer', () => {
       ]
       });
   });
+
+  it('Should handle the reset function', () => {
+    const oldState = {
+      spreadNumber: 2,
+      login: true,
+      signIn: true,
+      textQuery: 'why',
+      readingHistory: true,
+    };
+    const state = deckReducer(oldState, reset());
+    expect(state.login).toEqual(null);
+    expect(state.signIn).toEqual(null);
+    expect(state.textQuery).toEqual(null);
+    expect(state.readingHistory).toEqual(null);
+  })
 
   it('Should handle the trim_deck function', () => {
     const values = 3;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { reset } from '../actions/index.js';
 import './clearButton.css';
 
-export class MemberButton extends React.Component {
+export class ClearButton extends React.Component {
   render (){
     return(
       <button
@@ -21,4 +21,4 @@ function mapStateToProps(state){
   };
 };
 
-export default connect(mapStateToProps)(MemberButton);
+export default connect(mapStateToProps)(ClearButton);
