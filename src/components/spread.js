@@ -36,11 +36,11 @@ export function Spread(props) {
   });
 
   //display the comment and save form
-  function saveToHistory() {
-    function handleSubmit(e) {
-      e.preventDefault();
-      console.log(e);
-    }
+  // function saveToHistory() {
+  //   function handleSubmit(e) {
+  //     e.preventDefault();
+  //     console.log(e);
+  //   }
 
     if (props.cardsDealt.length>0){
       return (
@@ -54,15 +54,15 @@ export function Spread(props) {
           className="save-history"
           id="save-history"
           type="submit"
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           >Save</button>
         </form>
         </div>
       )
     }
-  }
+  
 
-  const historyForm = saveToHistory();
+  // const historyForm = saveToHistory();
 
   return (
     <div className="reading-display">
