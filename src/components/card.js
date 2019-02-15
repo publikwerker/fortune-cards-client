@@ -13,8 +13,8 @@ export function CardDescriptions(props) {
 };
 
 export function CardImages(props){
-  console.log(props.direction);
-  let classes = `card-image rotate${props.direction}`
+  console.log(props.facing);
+  let classes = `card-image rotate${props.facing}`
   return (
     <div className="card-image-container">
         <img className={classes} src={props.img} alt={props.name} />

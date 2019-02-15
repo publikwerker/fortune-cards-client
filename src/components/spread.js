@@ -5,11 +5,6 @@ import {CardImages, CardDescriptions } from './card';
 
 export function Spread(props) {
 
-  //determines the facing of each card
-  function direction(){
-    return Math.floor(Math.random() * Math.floor(4));
-  }
-
   //display heading if cards have been dealt
   function yourReading(){
     if (props.cardsDealt.length>0){
@@ -22,8 +17,6 @@ export function Spread(props) {
   //display the card images on top
   const theHeading = yourReading();
   const cardImages = props.cardsDealt.map((card)=> {
-    card.direction = direction();
-    console.log(card.direction);
     return (
       <li className="card-image" key={card.name}>
         <CardImages {...card}/>
@@ -44,6 +37,10 @@ export function Spread(props) {
 
   //display the comment and save form
   function saveToHistory() {
+    function handleSubmit(e) {
+      console.log(e);
+    }
+
     if (props.cardsDealt.length>0){
       return (
         <div className="history-form">

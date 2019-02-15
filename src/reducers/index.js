@@ -96,6 +96,10 @@ deck: [
 export const deckReducer = (state=initialState, action) => {
   if(action.type === SET_DECK){
     let shuffledDeck = shuffle(action.deck);
+    function direction(){
+      return Math.floor(Math.random() * Math.floor(4));
+    }
+    shuffledDeck.map(card => card.facing = direction());
     return Object.assign({}, state, {
       deck: [...shuffledDeck]
     });
