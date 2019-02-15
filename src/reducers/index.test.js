@@ -5,6 +5,7 @@ describe('deckReducer', () => {
   it('Should set the intitial state when nothing is passed in', () => {
     const state = deckReducer(undefined, {});
     expect(state).toEqual({
+      history: [],
       spreadNumber: 0,
       deck: [
         {
@@ -91,6 +92,7 @@ describe('deckReducer', () => {
   it('Should return the current state on an unknown action', () => {
     const state = deckReducer(undefined, {type: 'UNKNOWN'});
     expect(state).toEqual({
+      history: [],
       spreadNumber: 0,
       deck: [
         {
