@@ -51,6 +51,7 @@ const queryForm = reduxForm({
   onSubmit: (values, dispatch) => { 
     dispatch(trim_deck(values.spreadNumber));
     dispatch(take_query(values.textQuery));
+    
     // dispatch(get_deck())
     // .then(data => dispatch(set_deck(data)));
   }
