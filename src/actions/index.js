@@ -1,3 +1,10 @@
+import {API_BASE_URL} from '../config';
+
+export const RESET = 'RESET';
+export const reset = () =>({
+  type: RESET,
+});
+
 export const TRIM_DECK = 'TRIM_DECK';
 export const trim_deck = (values)  => ({
   type:  TRIM_DECK,
@@ -41,3 +48,16 @@ export const OPEN_HISTORY = 'OPEN_HISTORY';
 export const open_history = () => ({
   type: OPEN_HISTORY
 });
+
+export const LOAD_DECK = 'LOAD_DECK';
+export const load_deck = () => ({
+  type: LOAD_DECK
+});
+
+//import fresh deck from server
+export const LoadDeck= () => (dispatch) => {
+  return fetch(`${API_BASE_URL}/tarotDeck`)
+    .then(res => {
+      return dispatch(set_deck(res));
+    });
+  };

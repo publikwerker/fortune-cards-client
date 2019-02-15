@@ -10,7 +10,6 @@ import { required, nonEmpty } from '../validators';
 
 function submit(values, dispatch) {
   console.log('onSubmit ran');
-  dispatch(toggle_login());
   return dispatch(Login(values.username, values.password));
 }
 

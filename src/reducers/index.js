@@ -1,8 +1,8 @@
-import { API_BASE_URL } from '../config.js';
+
 import { 
-  set_deck,
+  RESET,
+  LOAD_DECK,
   SET_DECK, 
-  GET_DECK,
   TRIM_DECK, 
   TAKE_QUERY, 
   MAKE_SEARCH,
@@ -98,13 +98,17 @@ deck: [
 };
 
 export const deckReducer = (state=initialState, action) => {
-  if(action.type === GET_DECK){
-    return fetch(`${API_BASE_URL}/tarotDeck`)
-    .then(res => {
-      if (!res.ok){
-        return Promise.reject(res.statusText);
-      }
-      return res.json();
+  if(action.type === RESET){
+    return Object.assign({}, state, {
+      login:  null,
+      signIn: null,
+      spreadNumber: 0,
+      readingHistory: null,
+      textQuery: null,
+    });
+  } else if(action.type === LOAD_DECK){
+    return Object.assign({}, state, {
+      deck: [...action.deck]
     });
   } else if(action.type === SET_DECK){
     let shuffledDeck = shuffle(action.deck);
