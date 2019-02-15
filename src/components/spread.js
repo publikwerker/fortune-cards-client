@@ -52,7 +52,12 @@ export function Spread(props) {
           <input type="text"
           className="comments"
           placeholder="We'll see..."></input>
-          <button>Save</button>
+          <button
+          className="save-history"
+          id="save-history"
+          type="submit"
+          onSubmit={handleSubmit}
+          >Save</button>
         </form>
         </div>
       )

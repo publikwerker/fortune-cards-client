@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import HistoryBlock from './historyBlock.js';
 
  class ReadingHistory extends React.Component {
   render(){
@@ -8,6 +9,7 @@ import { connect } from 'react-redux';
       return (
         <div className="history-container">
           <h2>{user}'s reading history</h2>
+          <HistoryBlock />
         </div>
       );
     } else return (<div></div>)

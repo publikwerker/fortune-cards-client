@@ -3,7 +3,10 @@ import {
   CLEAR_AUTH,
   AUTH_REQUEST,
   AUTH_SUCCESS,
-  AUTH_ERROR
+  AUTH_ERROR,
+  FETCH_HISTORY_ERROR,
+  FETCH_HISTORY_SUCCESS,
+  FETCH_HISTORY_REQUEST,
 } from '../actions/protected.js';
 
 const initialState = {
@@ -34,6 +37,21 @@ export default function reducer (state = initialState, action){
       currentUser: action.currentUser,
     });
   } else if (action.type === AUTH_ERROR){
+    return Object.assign({}, state, {
+      loading: false,
+      error: action.error,
+    });
+  } else if(action.type === FETCH_HISTORY_REQUEST ){
+    return Object.assign({}, state, {
+      loading: true,
+      error: null,
+    });
+  } else if(action.type === FETCH_HISTORY_SUCCESS){
+    return Object.assign({}, state, { 
+      loading: false,
+      history: action.history,
+    });
+  } else if(action.type === FETCH_HISTORY_ERROR){
     return Object.assign({}, state, {
       loading: false,
       error: action.error,

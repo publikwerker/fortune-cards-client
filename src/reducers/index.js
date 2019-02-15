@@ -99,23 +99,19 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       deck: [...shuffledDeck]
     });
-  }
-  if(action.type === TRIM_DECK){
+  } else if(action.type === TRIM_DECK){
     return Object.assign({}, state, {
       spreadNumber: action.values
     });
-  }
-  if(action.type === TAKE_QUERY){
+  } else if(action.type === TAKE_QUERY){
     return Object.assign({}, state, {
       textQuery: action.textQuery
     });
-  }
-  if(action.type === MAKE_SEARCH){
+  } else if(action.type === MAKE_SEARCH){
     return Object.assign({}, state, {
       searchTerm: action.searchTerm
     });
-  }
-  if(action.type === TOGGLE_LOGIN){
+  } else if(action.type === TOGGLE_LOGIN){
     console.log('toggle ran');
     if(state.login === true){
       return Object.assign({}, state, {
@@ -125,8 +121,7 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       login: true
     });
-  }
-  if(action.type === TOGGLE_SIGNIN){
+  } else if(action.type === TOGGLE_SIGNIN){
     console.log('toggle signin ran');
     if(state.signin){
       return Object.assign({}, state, {
@@ -137,18 +132,16 @@ export const deckReducer = (state=initialState, action) => {
         signIn: true
       });
     }
-  }
-  if(action.type === OPEN_HISTORY){
+  } else if(action.type === OPEN_HISTORY){
     if (state.readingHistory === true){
       return Object.assign({}, state, {
         readingHistory: false,
       });
     } else {
       return Object.assign({}, state, {
-        readingHistory: true
+        readingHistory: true,
       });
     }
-  }
-
+  };
   return state;
 };
