@@ -1,5 +1,8 @@
+import { API_BASE_URL } from '../config.js';
 import { 
+  set_deck,
   SET_DECK, 
+  GET_DECK,
   TRIM_DECK, 
   TAKE_QUERY, 
   MAKE_SEARCH,
@@ -12,6 +15,7 @@ const shuffle = require('shuffle-array');
 
 const initialState = {
 spreadNumber: 0,
+history: [],
 deck: [
   {
     id: '0',
@@ -94,7 +98,15 @@ deck: [
 };
 
 export const deckReducer = (state=initialState, action) => {
-  if(action.type === SET_DECK){
+  if(action.type === GET_DECK){
+    return fetch(`${API_BASE_URL}/tarotDeck`)
+    .then(res => {
+      if (!res.ok){
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    });
+  } else if(action.type === SET_DECK){
     let shuffledDeck = shuffle(action.deck);
     function direction(){
       return Math.floor(Math.random() * Math.floor(4));
@@ -105,7 +117,8 @@ export const deckReducer = (state=initialState, action) => {
     });
   } else if(action.type === TRIM_DECK){
     return Object.assign({}, state, {
-      spreadNumber: action.values
+      spreadNumber: action.values,
+      cardsDealt: [...state.deck.slice(0, action.values)]
     });
   } else if(action.type === TAKE_QUERY){
     return Object.assign({}, state, {

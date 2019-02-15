@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { trim_deck, take_query }  from '../actions/index.js';
+import { get_deck, set_deck, trim_deck, take_query }  from '../actions/index.js';
 import './query.css';
 //import store from './store.js';
 
@@ -39,18 +39,21 @@ export class Query extends React.Component {
   }
 }
 
+function mapStateToProps(state){
+  return {
+    login: state.tarot.login,
+    deck: state.tarot.deck,
+  };
+}
+
 const queryForm = reduxForm({
   form: 'query',
   onSubmit: (values, dispatch) => { 
     dispatch(trim_deck(values.spreadNumber));
     dispatch(take_query(values.textQuery));
+    // dispatch(get_deck())
+    // .then(data => dispatch(set_deck(data)));
   }
 })(Query);
-
-function mapStateToProps(state){
-  return {
-    login: state.tarot.login
-  };
-}
 
 export default connect(mapStateToProps)(queryForm);

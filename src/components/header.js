@@ -16,7 +16,7 @@ export class Header extends React.Component {
             <MemberButton />
           </nav>
           <form className="searchBar" onSubmit={handleSubmit}>
-            <Field component="input" 
+            {/* <Field component="input" 
               type="text" 
               name="searchTerm"
               className="search-field"
@@ -26,7 +26,7 @@ export class Header extends React.Component {
               id="search-button"
               type="submit"
               className="search-button"
-              disabled={this.props.pristine || this.props.submitting}>Search</button>
+              disabled={this.props.pristine || this.props.submitting}>Search</button> */}
           </form>
           <h1 className="banner">FORTUNE CARDS</h1>
         </header>

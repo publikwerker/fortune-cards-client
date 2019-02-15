@@ -4,6 +4,11 @@ export const trim_deck = (values)  => ({
   values
 });
 
+export const GET_DECK = 'GET_DECK';
+export const get_deck = () => ({
+  type: GET_DECK,
+});
+
 export const SET_DECK = 'SET_DECK';
 export const set_deck = (deck) => ({
   type: SET_DECK,
