@@ -38,6 +38,7 @@ export function Spread(props) {
   //display the comment and save form
   function saveToHistory() {
     function handleSubmit(e) {
+      e.preventDefault();
       console.log(e);
     }
 
@@ -72,7 +73,7 @@ export function Spread(props) {
       <ul className="spread">
         {cardDescriptions}
       </ul>
-        {historyForm}
+        {/* {historyForm} */}
     </div>
   );
 }
