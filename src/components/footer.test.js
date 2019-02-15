@@ -10,7 +10,7 @@ describe('<Footer />', () => {
 
   it('Should contain a <p>', () => {
     const wrapper = shallow(<Footer />);
-    expect(wrapper.containsMatchingElement( <p className="copy-info">All images and text copyright 2019 Publikwerks, LLC.</p> )).toEqual(true);
+    expect(wrapper.containsMatchingElement( <p className="copy-info">All images and text &copy; 2019 Publikwerks, LLC.</p> )).toEqual(true);
   });
 
   it('Should have class: footer', () => {
