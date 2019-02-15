@@ -1,7 +1,6 @@
 
 import { 
   RESET,
-  LOAD_DECK,
   SET_DECK, 
   TRIM_DECK, 
   TAKE_QUERY, 
@@ -9,6 +8,7 @@ import {
   TOGGLE_LOGIN, 
   OPEN_HISTORY,
   TOGGLE_SIGNIN,
+  SHUFFLE_DECK,
 } from '../actions/index.js';
 
 const shuffle = require('shuffle-array');
@@ -106,9 +106,14 @@ export const deckReducer = (state=initialState, action) => {
       readingHistory: null,
       textQuery: null,
     });
-  } else if(action.type === LOAD_DECK){
+  } else if(action.type === SHUFFLE_DECK){
+    let newDeck = shuffle(state.deck);
+    function direction(){
+      return Math.floor(Math.random() * Math.floor(4));
+    }
+    newDeck.map(card => card.facing = direction());
     return Object.assign({}, state, {
-      deck: [...action.deck]
+      deck: [...newDeck]
     });
   } else if(action.type === SET_DECK){
     let shuffledDeck = shuffle(action.deck);

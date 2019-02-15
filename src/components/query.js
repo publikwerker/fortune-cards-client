@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import {  LoadDeck, trim_deck, take_query }  from '../actions/index.js';
+import {  shuffle_deck, trim_deck, take_query }  from '../actions/index.js';
 import './query.css';
 //import store from './store.js';
 
@@ -51,6 +51,7 @@ const queryForm = reduxForm({
   onSubmit: (values, dispatch) => { 
     dispatch(trim_deck(values.spreadNumber));
     dispatch(take_query(values.textQuery));
+    dispatch(shuffle_deck());
   }
 })(Query);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import{ Field, reduxForm, focus } from 'redux-form';
-import { toggle_login, toggle_signin } from '../actions/index.js';
+import { toggle_signin } from '../actions/index.js';
 import { Login } from '../actions/protected.js';
 import  Register  from './register.js';
 import './login.css';

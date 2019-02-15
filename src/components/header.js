@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import MemberButton from './memberButton.js';
 import { make_search } from '../actions/index.js';
 import './header.css';
