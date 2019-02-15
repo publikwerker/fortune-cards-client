@@ -3,13 +3,12 @@ button {
   color: black;
   padding: 2px 20px;
   text-align: center;
-  font-size: calc(4px + 2vmin);
+  font-size: calc(6px + 2vmin);
   border: none;
   border-radius: 15px
 }
 
 .card-description {
- 
   margin-top: 5px;
 }
 .card-image {
@@ -28,6 +27,7 @@ button {
   height: 150px;
   width: 200px;
   text-align: center;
+  font-size: calc(4px + 2vmin);
 }
 
 .history-form {

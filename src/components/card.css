@@ -50,3 +50,16 @@
 .rotate3{
   transform: rotate(-90deg);
 }
+
+@media only screen and (min-width: 600px) {
+  .card-description {
+    width: 75vw;
+    max-width: 800px;
+    margin-left:auto;
+    margin-right: auto;
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+  
+}
+}

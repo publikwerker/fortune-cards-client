@@ -43,4 +43,6 @@
   width: 200px;
   text-align: center;
   margin-top: 20px;
+
+  font-size: calc(3px + 2vmin);
 }
