@@ -58,8 +58,10 @@ export const fetchHistoryError = error => ({
 const storeAuthInfo = (authToken, dispatch) => {
   const decodedToken = jwtDecode(authToken);
   const currentUser = (decodedToken.user.username);
+  const userHistory = (decodedToken.user.history);
   dispatch(setAuthToken(authToken));
   dispatch(authSuccess(currentUser));
+  dispatch(fetchHistorySuccess(userHistory));
   saveAuthToken(authToken);
 };
 
@@ -176,7 +178,7 @@ export const addReadingToHistory = () => (dispatch, getState) => {
 
 export const fetchHistory = username => dispatch => {
   dispatch(fetchHistoryRequest());
-  return fetch(`${API_BASE_URL}/auth/${username}/history`)
+  return fetch(`${API_BASE_URL}/auth/?id=${username}/`)
     .then( res => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
@@ -184,6 +186,13 @@ export const fetchHistory = username => dispatch => {
       return res.json();
     })
     .then(history => 
-      dispatch(fetchHistorySuccess(history.map(history => history.query))))
-    .catch(error => dispatch(fetchHistoryError(error)));
+      dispatch(fetchHistorySuccess(history)))
+    .catch(err => {
+      const { code } = err;
+      return Promise.reject(
+        new SubmissionError({
+          _error: code
+        })
+      );
+    })
 };

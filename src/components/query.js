@@ -7,7 +7,16 @@ import './query.css';
 
 export class Query extends React.Component {
   render () {
+    if (this.props.login !== true && this.props.cardsDealt.length>0){
+      return (
+        <div className="query-container">
+          <h3>Your query:</h3>
+          <p className="display-query">{this.props.textQuery}</p>
+        </div>
+      )
+    } else 
     if (this.props.login !== true){
+      console.log(this.props.cardsDealt.length)
       const { handleSubmit } = this.props;
       return (
         <div className="query-container">
@@ -43,6 +52,8 @@ function mapStateToProps(state){
   return {
     login: state.tarot.login,
     deck: state.tarot.deck,
+    cardsDealt: state.tarot.cardsDealt,
+    textQuery: state.tarot.textQuery,
   };
 }
 

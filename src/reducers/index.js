@@ -15,6 +15,7 @@ const shuffle = require('shuffle-array');
 
 const initialState = {
 spreadNumber: 0,
+cardsDealt: 0,
 history: [],
 deck: [
   {
@@ -105,6 +106,7 @@ export const deckReducer = (state=initialState, action) => {
       spreadNumber: 0,
       readingHistory: null,
       textQuery: null,
+      cardsDealt: 0,
     });
   } else if(action.type === SHUFFLE_DECK){
     let newDeck = shuffle(state.deck);

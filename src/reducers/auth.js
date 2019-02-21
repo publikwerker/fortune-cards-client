@@ -11,9 +11,10 @@ import {
 
 const initialState = {
   authToken:  null,
+  cardsDealt: 0,
   currentUser: null,
+  error: null,
   loading: false,
-  error: null
 };
 
 export default function reducer (state = initialState, action){
@@ -35,6 +36,7 @@ export default function reducer (state = initialState, action){
     return Object.assign({}, state, {
       loading: false,
       currentUser: action.currentUser,
+     // history: action.history,
     });
   } else if (action.type === AUTH_ERROR){
     return Object.assign({}, state, {
