@@ -7,15 +7,17 @@ import { connect } from 'react-redux';
     const user = this.props.user;
 
     const HistoryBlock = () => {
-      if (this.props.history.length > 0){
-      this.props.history.forEach(() => {
-      return(
-        <div>
-          <p>Q: {this.query}</p>
-          <p>Date: {this.createdAt}</p>
-        </div>
-      );
-    })} else return<div></div>};
+      if (this.props.history.length > 0){ 
+        return this.props.history.map(() => {
+            return (<div>
+              <p>Q: {this.query}</p>
+              <p>Date: {this.createdAt}</p>
+            </div>)
+        });
+        }
+       else return<div></div>
+    };
+
     if(this.props.readingHistory === true){
       return (
         <div className="history-container">
@@ -31,7 +33,7 @@ function mapStateToProps(state){
   return {
     readingHistory: state.tarot.readingHistory,
     user: state.auth.currentUser,
-    history: state.tarot.history,
+    history: state.auth.history,
   }
 }
 
