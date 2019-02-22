@@ -8,10 +8,10 @@ import { connect } from 'react-redux';
 
     const HistoryBlock = () => {
       if (this.props.history.length > 0){ 
-        return this.props.history.map(() => {
-            return (<div>
-              <p>Q: {this.query}</p>
-              <p>Date: {this.createdAt}</p>
+        return this.props.history.map((reading, index) => {
+            return (<div id={index}>
+              <p>Q: {reading.query}</p>
+              <p>Date: {reading.createdAt}</p>
             </div>)
         });
         }
