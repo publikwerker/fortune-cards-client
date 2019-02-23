@@ -7,6 +7,7 @@ describe('deckReducer', () => {
     expect(state).toEqual({
       history: [],
       spreadNumber: 0,
+      cardsDealt: 0,
       deck: [
         {
           id: '0',
@@ -94,6 +95,7 @@ describe('deckReducer', () => {
     expect(state).toEqual({
       history: [],
       spreadNumber: 0,
+      cardsDealt: 0,
       deck: [
         {
           id: '0',

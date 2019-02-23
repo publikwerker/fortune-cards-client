@@ -13,6 +13,7 @@ describe('auth reducer', () => {
   it('Should set the initial state when nothing is passed in', () => {
     const initialState = {
       authToken:  null,
+      cardsDealt: 0,
       currentUser: null,
       loading: false,
       error: null
@@ -24,6 +25,7 @@ describe('auth reducer', () => {
   it('Should return initial state if unknown action is passed', () => {
     const initialState = {
       authToken:  null,
+      cardsDealt: 0,
       currentUser: null,
       loading: false,
       error: null
