@@ -8,17 +8,16 @@ export class Query extends React.Component {
   render () {
     if (this.props.login !== true && this.props.cardsDealt.length>0){
       return (
-        <div className="query-container">
+        <section className="query-container">
           <h3>Your query:</h3>
           <p className="display-query">{this.props.textQuery}</p>
-        </div>
+        </section>
       )
     } else 
     if (this.props.login !== true){
-      console.log(this.props.cardsDealt.length)
       const { handleSubmit } = this.props;
       return (
-        <div className="query-container">
+        <section className="query-container">
           <form onSubmit={ handleSubmit }>
           <Field component="input"
             name="textQuery"
@@ -39,7 +38,7 @@ export class Query extends React.Component {
               id="deal-button"
               type="submit"  className="deal-button">Deal</button>
           </form>
-        </div>
+        </section>
       );
     } else {
       return (<div></div>);

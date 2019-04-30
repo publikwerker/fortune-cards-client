@@ -45,18 +45,18 @@ export function Spread(props) {
     if (props.cardsDealt.length>0){
       return (
         <div className="history-form">
-        <form>
-          <label>Comments:</label>
-          <input type="text"
-          className="comments"
-          placeholder="We'll see..."></input>
-            {/* <button
-            className="save-history"
-            id="save-history"
-            type="submit"
-            onSubmit={handleSubmit}
-            >Save</button> */}
-        </form>
+          <form>
+            <label>Comments:</label>
+            <input type="text"
+            className="comments"
+            placeholder="We'll see..."></input>
+              {/* <button
+              className="save-history"
+              id="save-history"
+              type="submit"
+              onSubmit={handleSubmit}
+              >Save</button> */}
+          </form>
         </div>
       )
     }

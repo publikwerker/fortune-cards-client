@@ -11,7 +11,6 @@ export function CardDescriptions(props) {
 };
 
 export function CardImages(props){
-  console.log(props.facing);
   let classes = `card-image rotate${props.facing}`
   return (
     <div className="card-image-container">

@@ -9,7 +9,8 @@ export class ClearButton extends React.Component {
           className="reset-button"
           id="reset-button"
           href="#" 
-          onClick={(e)=>this.props.dispatch(reset())}>Clear Reading</button>
+          onClick={(e)=>this.props.dispatch(reset())}
+          >Clear Reading</button>
       );
   }
 }

@@ -40,7 +40,7 @@ loadDeck(){
   render() {
     return (
       <Router>
-        <div className="App">
+        <main className="App">
           <Header />
           <LoginWindow />
           <Query />
@@ -48,7 +48,7 @@ loadDeck(){
           <ClearButton />
           <ReadingHistory />
           <Footer />
-        </div>
+        </main>
       </Router>
     );
   }

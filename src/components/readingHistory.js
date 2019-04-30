@@ -20,10 +20,10 @@ import { connect } from 'react-redux';
 
     if(this.props.readingHistory === true){
       return (
-        <div className="history-container">
+        <section className="history-container">
           <h2>{user}'s reading history</h2>
           <HistoryBlock />
-        </div>
+        </section>
       );
     } else return (<div></div>)
   };
