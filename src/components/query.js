@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {  shuffle_deck, trim_deck, take_query }  from '../actions/index.js';
-import './query.css';
 //import store from './store.js';
 
 export class Query extends React.Component {
@@ -25,7 +24,7 @@ export class Query extends React.Component {
             name="textQuery"
             className="text-query"
             type="text"
-            placeholder="What would you ask the cards?"
+            placeholder="Ask a question."
           />
           <label className="spreadNumber-label">number of cards to deal: </label>
           <Field component="input" 

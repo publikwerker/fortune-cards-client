@@ -4,7 +4,6 @@ import{ Field, reduxForm, focus } from 'redux-form';
 import { toggle_signin } from '../actions/index.js';
 import { Login } from '../actions/protected.js';
 import  Register  from './register.js';
-import './login.css';
 
 import { required, nonEmpty } from '../validators';
 

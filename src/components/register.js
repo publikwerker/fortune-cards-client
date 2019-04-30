@@ -1,7 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus } from 'redux-form';
 import { toggle_signin } from '../actions/index.js';
-import './register.css';
 import { CreateUser, Login } from '../actions/protected.js';
 
 import { required, nonEmpty } from '../validators';

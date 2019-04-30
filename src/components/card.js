@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './card.css';
-
 export function CardDescriptions(props) {
   return (
     <div className="card-description-box" id={props.id}>

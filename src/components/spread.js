@@ -1,5 +1,4 @@
 import React from 'react';
-import './spread.css';
 import { connect } from 'react-redux';
 import {CardImages, CardDescriptions } from './card';
 

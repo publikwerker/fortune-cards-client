@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { reset } from '../actions/index.js';
-import './clearButton.css';
 
 export class ClearButton extends React.Component {
   render (){
