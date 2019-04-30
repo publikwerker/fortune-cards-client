@@ -7,7 +7,7 @@ An image and description of each card is displayed, and the user may devine what
 
 
 deployed version available at: 
-https://damp-hamlet-47102.herokuapp.com/
+https://www.fortune.cards/
 
 Landing Page:
 ![react-capstone-landing](https://user-images.githubusercontent.com/42702189/52884666-7222a400-3123-11e9-8ff0-57e356c5ec26.png)
