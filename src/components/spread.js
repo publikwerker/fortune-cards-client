@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {CardImages, CardDescriptions } from './card';
+import { ClearButton } from './clearButton';
 
 export function Spread(props) {
 
@@ -8,7 +9,10 @@ export function Spread(props) {
   function yourReading(){
     if (props.cardsDealt.length>0){
       return (
-        <h2 className="reading-heading">Your Reading</h2>
+        <div>
+          <h2 className="reading-heading">Your Reading</h2>
+          <ClearButton dispatch={props.dispatch}/>
+        </div>
       )
     }
   }
@@ -65,7 +69,7 @@ export function Spread(props) {
   const historyForm = saveToHistory();
 
   return (
-    <div className="reading-display">
+    <section className="reading-display">
         {theHeading}
       <ul className="spread">
         {cardImages}
@@ -74,7 +78,7 @@ export function Spread(props) {
         {cardDescriptions}
       </ul>
         {historyForm}
-    </div>
+    </section>
   );
 }
 
