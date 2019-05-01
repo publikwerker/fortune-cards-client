@@ -102,11 +102,7 @@ deck: [
 export const deckReducer = (state=initialState, action) => {
   if(action.type === RESET){
     return Object.assign({}, state, {
-      login:  null,
-      signIn: null,
-      showInfo: null,
       spreadNumber: 0,
-      readingHistory: null,
       textQuery: null,
       cardsDealt: 0,
     });
