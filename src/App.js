@@ -10,6 +10,7 @@ import  Spread  from './components/spread.js';
 import ClearButton from './components/clearButton.js';
 import ReadingHistory from './components/readingHistory.js';
 import Footer from './components/footer.js';
+import Info from './components/Info';
 
 export class App extends Component {
 
@@ -42,6 +43,7 @@ loadDeck(){
       <Router>
         <main className="App">
           <Header />
+          <Info />
           <LoginWindow />
           <Query />
           <Spread />

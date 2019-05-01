@@ -167,6 +167,17 @@ label {
   margin-bottom: 15px;
 }
 
+.landing-modal {  
+  margin: 0 auto 20px;
+  top: 90px;
+  display: block;
+  background-color: #242424;
+  width: 90%;
+  border: 1.5px solid skyblue;
+  border-radius: 15px;
+  padding: 10px;
+}
+
 li {
   display: inline-block;
   margin-left: auto;
@@ -216,6 +227,7 @@ li {
   border: 1.5px solid skyblue;
   border-radius: 15px;
   padding: 10px;
+  width: 90%;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -275,6 +287,10 @@ li {
   border: 1.5px solid skyblue; font-size: calc(4px + 2vmin);
   color: white;
   background-color: #242424;
+}
+
+.show-info {
+  margin: 20px auto;
 }
 
 .signup-button {

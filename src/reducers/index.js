@@ -9,6 +9,7 @@ import {
   OPEN_HISTORY,
   TOGGLE_SIGNIN,
   SHUFFLE_DECK,
+  TOGGLE_INFO,
 } from '../actions/index.js';
 
 const shuffle = require('shuffle-array');
@@ -103,6 +104,7 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       login:  null,
       signIn: null,
+      showInfo: null,
       spreadNumber: 0,
       readingHistory: null,
       textQuery: null,
@@ -169,6 +171,16 @@ export const deckReducer = (state=initialState, action) => {
       return Object.assign({}, state, {
         readingHistory: true,
       });
+    }
+  } else if(action.type === TOGGLE_INFO){
+    if (state.showInfo === false){
+      return Object.assign({}, state, {
+        showInfo: true,
+      })
+    } else {
+      return Object.assign({}, state, {
+        showInfo: false,
+      })
     }
   };
   return state;

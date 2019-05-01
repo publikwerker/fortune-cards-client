@@ -37,6 +37,11 @@ export const toggle_login = () => ({
   type: TOGGLE_LOGIN
 });
 
+export const TOGGLE_INFO ='TOGGLE_INFO';
+export const toggle_info = () => ({
+  type: TOGGLE_INFO
+});
+
 export const TOGGLE_SIGNIN = 'TOGGLE_SIGNIN';
 export const toggle_signin = () => ({
   type: TOGGLE_SIGNIN,
