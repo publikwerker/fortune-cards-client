@@ -4,18 +4,11 @@ import { toggle_info } from '../actions/index.js';
 
 export class Info extends React.Component{
 
-  componentDidMount(){
-    console.log(this);
-    console.log(this.props);
-
-  }
-
   handleClick() {
     this.props.dispatch(toggle_info())
   }
 
   render () {
-    console.log(this.props.showInfo);
     let infoBlock;
     if(this.props.showInfo === false){
       infoBlock =<div></div>

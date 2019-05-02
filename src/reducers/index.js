@@ -138,7 +138,6 @@ export const deckReducer = (state=initialState, action) => {
       searchTerm: action.searchTerm
     });
   } else if(action.type === TOGGLE_LOGIN){
-    console.log('toggle ran');
     if(state.login === true){
       return Object.assign({}, state, {
         login: false
@@ -148,7 +147,6 @@ export const deckReducer = (state=initialState, action) => {
       login: true
     });
   } else if(action.type === TOGGLE_SIGNIN){
-    console.log('toggle signin ran');
     if(state.signin){
       return Object.assign({}, state, {
         signIn: !state.signIn

@@ -17,7 +17,6 @@ export class LoginWindow extends React.Component {
     let error;
     const {dispatch}=this.props;
     function signUp(){
-      console.log('signUp ran');
       dispatch(toggle_signin());
     }
     const {handleSubmit}= this.props;

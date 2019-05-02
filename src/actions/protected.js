@@ -83,7 +83,6 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 // create new user from register component
 export const CreateUser = (username, password) => (dispatch) => {
-  console.log('createUser ran');
   return (
     fetch(`${API_BASE_URL}/api/users`, {
       method: 'POST',
@@ -114,7 +113,6 @@ export const CreateUser = (username, password) => (dispatch) => {
 };
 
 export const Login = (username, password) => dispatch => {
-  console.log('login ran');
   dispatch(authRequest());
   return (
     fetch(`${API_BASE_URL}/api/auth/login`, {
