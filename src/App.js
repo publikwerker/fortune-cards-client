@@ -43,8 +43,8 @@ loadDeck(){
       <Router>
         <main className="App">
           <Header />
-          <Info />
           <LoginWindow />
+          <Info />
           <Query />
           <Spread />
           <ClearButton />

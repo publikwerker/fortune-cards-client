@@ -2,8 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { toggle_login, open_history } from '../actions/index.js';
 import { clearAuth } from '../actions/protected';
+import { reset } from '../actions/index';
 
 export class MemberButton extends React.Component {
+
+  handleLogout = () => {
+      this.props.dispatch(clearAuth());
+      this.props.dispatch(reset())
+  }
   render (){
     if (this.props.currentUser){
       return (<div>
@@ -16,7 +22,7 @@ export class MemberButton extends React.Component {
             className="header-link"
             id="logout-button"
             href="#" 
-            onClick={(e)=>this.props.dispatch(clearAuth())}>logout</button>
+            onClick={(e)=>this.handleLogout(e)}>logout</button>
         </div>
       )
     } else {
