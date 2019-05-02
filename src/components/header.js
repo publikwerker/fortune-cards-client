@@ -5,8 +5,6 @@ import { make_search } from '../actions/index.js';
 
 export class Header extends React.Component {
   render() {
-    let logoutButton;
-    logoutButton = <div>button</div>
     const { handleSubmit } = this.props;
     return (
       <div className="header-container">

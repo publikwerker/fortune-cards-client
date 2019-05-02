@@ -20,7 +20,7 @@ componentDidMount() {
 
 // grab a fresh deck from the server
 loadDeck(){
-  return fetch(`${API_BASE_URL}/tarotDeck`)
+  return fetch(`${API_BASE_URL}/api/tarotDeck`)
     .then(res => {
       if (!res.ok){
         return Promise.reject(res.statusText);

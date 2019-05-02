@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -172,10 +176,11 @@ label {
   top: 90px;
   display: block;
   background-color: #242424;
-  width: 90%;
+  width: 80%;
+  max-width: 800px;
   border: 1.5px solid skyblue;
   border-radius: 15px;
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 li {
@@ -227,8 +232,8 @@ li {
   border: 1.5px solid skyblue;
   border-radius: 15px;
   padding: 10px;
-  width: 90%;
-  max-width: 300px;
+  width: 80%;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -325,7 +330,8 @@ li {
   margin-right: auto;
   margin-bottom: 10px;
   height: 75px;
-  width: 200px;
+  width: 80%;
+  min-width: 200px;
   text-align: center;
   margin-top: 20px;
   font-size: calc(3px + 2vmin);

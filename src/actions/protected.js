@@ -69,7 +69,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 export const CreateUser = (username, password) => (dispatch) => {
   console.log('createUser ran');
   return (
-    fetch(`${API_BASE_URL}/users`, {
+    fetch(`${API_BASE_URL}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ export const Login = (username, password) => dispatch => {
   console.log('login ran');
   dispatch(authRequest());
   return (
-    fetch(`${API_BASE_URL}/auth/login`, {
+    fetch(`${API_BASE_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ export const Login = (username, password) => dispatch => {
 
 export const refreshAuthToken = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/auth/refresh`, {
+  return fetch(`${API_BASE_URL}/api/auth/refresh`, {
     method: 'POST',
     headers: {
       authorization: `Bearer ${authToken}`
@@ -156,7 +156,7 @@ export const addReadingToHistory = () => (dispatch, getState) => {
   const spread = getState().tarot.deck.slice(0, cards); 
   const query = getState().tarot.textQuery;
 
-  return fetch(`${API_BASE_URL}/auth/${userId}/add`, {
+  return fetch(`${API_BASE_URL}/api/auth/${userId}/add`, {
     method: 'PUT',
     headers: {
       authorization: `Bearer ${authToken}`,
@@ -178,7 +178,7 @@ export const addReadingToHistory = () => (dispatch, getState) => {
 
 export const fetchHistory = username => dispatch => {
   dispatch(fetchHistoryRequest());
-  return fetch(`${API_BASE_URL}/auth/?id=${username}/`)
+  return fetch(`${API_BASE_URL}/api/auth/?id=${username}/`)
     .then( res => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
