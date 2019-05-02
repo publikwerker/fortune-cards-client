@@ -53,6 +53,22 @@ export const fetchHistoryError = error => ({
   error
 });
 
+export const SAVE_HISTORY_REQUEST = 'SAVE_HISTORY_REQUEST';
+export const saveHistoryRequest = () => ({
+  type: SAVE_HISTORY_REQUEST,
+});
+
+export const SAVE_HISTORY_SUCCESS = 'SAVE_HISTORY_SUCCESS';
+export const saveHistorySuccess = history => ({
+  type: SAVE_HISTORY_SUCCESS,
+});
+
+export const SAVE_HISTORY_ERROR = 'SAVE_HISTORY_ERROR';
+export const saveHistoryError = error => ({
+  type: SAVE_HISTORY_ERROR,
+  error
+});
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {

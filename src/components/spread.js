@@ -40,10 +40,10 @@ export function Spread(props) {
 
   //display the comment and save form
   function saveToHistory() {
-    // function handleSubmit(e) {
-    //   e.preventDefault();
-    //   console.log(e);
-    // }
+    function handleSave(e) {
+      e.preventDefault();
+      console.log(e);
+    }
   
 
     if (props.cardsDealt.length>0){
@@ -54,12 +54,12 @@ export function Spread(props) {
             <input type="text"
             className="comments"
             placeholder="We'll see..."></input>
-              {/* <button
+            <button
               className="save-history"
               id="save-history"
               type="submit"
-              onSubmit={handleSubmit}
-              >Save</button> */}
+              onSubmit={(e)=>handleSave(e)}
+              >Save</button>
           </form>
         </div>
       )

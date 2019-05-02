@@ -7,6 +7,9 @@ import {
   FETCH_HISTORY_ERROR,
   FETCH_HISTORY_SUCCESS,
   FETCH_HISTORY_REQUEST,
+  SAVE_HISTORY_ERROR,
+  SAVE_HISTORY_SUCCESS,
+  SAVE_HISTORY_REQUEST,
 } from '../actions/protected.js';
 
 const initialState = {
@@ -54,6 +57,20 @@ export default function reducer (state = initialState, action){
       history: action.history,
     });
   } else if(action.type === FETCH_HISTORY_ERROR){
+    return Object.assign({}, state, {
+      loading: false,
+      error: action.error,
+    });
+  } else if(action.type === SAVE_HISTORY_REQUEST ){
+    return Object.assign({}, state, {
+      loading: true,
+      error: null,
+    });
+  } else if(action.type === SAVE_HISTORY_SUCCESS){
+    return Object.assign({}, state, { 
+      loading: false,
+    });
+  } else if(action.type === SAVE_HISTORY_ERROR){
     return Object.assign({}, state, {
       loading: false,
       error: action.error,
