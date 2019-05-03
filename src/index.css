@@ -353,10 +353,12 @@ li {
   border-radius: 15px;
   text-align: center;
   width: 40px;
+  font-size: 16px;
 }
 
 .spreadNumber-label {
   display: inline;
+  font-size: 20px;
 }
 
 .text-query {
@@ -372,7 +374,7 @@ li {
   min-width: 200px;
   text-align: center;
   margin-top: 20px;
-  font-size: calc(3px + 2vmin);
+  font-size: 18px;
 }
 
 ul {
