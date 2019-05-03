@@ -41,6 +41,13 @@ button {
   border-radius: 15px
 }
 
+button:hover {
+  border-radius: 15px;
+  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+}
+
 .card-description {
   display: block;
   background-color: #242424;
@@ -76,6 +83,12 @@ button {
   margin-right: auto;
 }
 
+.card-itself {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -99,6 +112,10 @@ code {
   margin-left: auto;
   margin-right: auto;
   text-justify: center;
+}
+
+#custom-button {
+  margin-right: 30px;
 }
 
 .deal-button {
@@ -139,6 +156,9 @@ div {
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
 }
 
 .header-link {
@@ -150,6 +170,17 @@ div {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
+}
+
+.header-link:hover {
+  border-radius: 2px;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
+}
+
+.hide-info {
+  margin: 20px auto;
 }
 
 .history-form {
@@ -173,14 +204,16 @@ label {
 
 .landing-modal {  
   margin: 0 auto 20px;
-  top: 90px;
+  padding: 10px 30px;
   display: block;
   background-color: #242424;
   width: 80%;
   max-width: 800px;
   border: 1.5px solid skyblue;
   border-radius: 15px;
-  padding: 10px 30px;
+  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
 }
 
 li {
@@ -228,6 +261,12 @@ li {
   color: skyblue;
 }
 
+.purchase-link {
+  position: absolute;
+  top: 10;
+  left: 0;
+}
+
 .query-container {
   border: 1.5px solid skyblue;
   border-radius: 15px;
@@ -236,6 +275,9 @@ li {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
 }
 
 .reading-display {
@@ -255,7 +297,7 @@ li {
   font-size: calc(4px + 2vmin);
   border: none;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .rotate0{
@@ -292,10 +334,6 @@ li {
   border: 1.5px solid skyblue; font-size: calc(4px + 2vmin);
   color: white;
   background-color: #242424;
-}
-
-.show-info {
-  margin: 20px auto;
 }
 
 .signup-button {

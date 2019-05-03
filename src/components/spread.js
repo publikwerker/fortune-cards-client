@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {CardImages, CardDescriptions } from './card';
-import { ClearButton } from './clearButton';
 
 export function Spread(props) {
 
@@ -11,7 +10,6 @@ export function Spread(props) {
       return (
         <div>
           <h2 className="reading-heading">Your Reading</h2>
-          <ClearButton dispatch={props.dispatch}/>
         </div>
       )
     }

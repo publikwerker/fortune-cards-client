@@ -19,7 +19,7 @@ describe('<CardImages />', () => {
     shallow(<CardImages/>);
   });
 
-  it('Should have classcard-image-container', () => {
+  it('Should have class card-image-container', () => {
     const wrapper = shallow(<CardImages />);
     expect(wrapper.hasClass('card-image-container')).toEqual(true);;
   });

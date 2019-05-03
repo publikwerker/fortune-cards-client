@@ -10,7 +10,7 @@ export class Header extends React.Component {
       <div className="header-container">
         <header className="App-header">
           <nav>
-            <a className="header-link"
+            <a className="header-link purchase-link"
               href="https://www.publikwerks.com/thelema-tarot-deck/tarot-deck-pre-order">Purchase Deck</a>
             <MemberButton />
           </nav>

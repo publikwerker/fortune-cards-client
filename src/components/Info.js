@@ -16,8 +16,8 @@ export class Info extends React.Component{
       infoBlock = <aside>
           <section className="landing-modal">
           <button
-            className="show-info"
-            id="show-info"
+            className="hide-info"
+            id="hide-info"
             href="#"
             onClick={(e)=>this.props.dispatch(toggle_info())}
             >hide info</button>

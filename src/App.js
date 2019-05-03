@@ -46,6 +46,7 @@ loadDeck(){
           <LoginWindow />
           <Info />
           <Query />
+          <ClearButton />
           <Spread />
           <ClearButton />
           <ReadingHistory />
