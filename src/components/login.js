@@ -8,7 +8,6 @@ import  Register  from './register.js';
 import { required, nonEmpty } from '../validators';
 
 function submit(values, dispatch) {
-  console.log('onSubmit ran');
   return dispatch(Login(values.username, values.password));
 }
 

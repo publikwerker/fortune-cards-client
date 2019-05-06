@@ -54,8 +54,9 @@ export const fetchHistoryError = error => ({
 });
 
 export const SAVE_HISTORY_REQUEST = 'SAVE_HISTORY_REQUEST';
-export const saveHistoryRequest = () => ({
+export const saveHistoryRequest = (values) => ({
   type: SAVE_HISTORY_REQUEST,
+  values
 });
 
 export const SAVE_HISTORY_SUCCESS = 'SAVE_HISTORY_SUCCESS';
@@ -98,7 +99,6 @@ export const CreateUser = (username, password) => (dispatch) => {
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
   .then(res => {
-    console.log(res);
     return res;
   })
   .catch(err => {
@@ -128,7 +128,6 @@ export const Login = (username, password) => dispatch => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(({authToken}) => {
-      console.log(authToken);
       dispatch(toggle_login());
       storeAuthInfo(authToken, dispatch)})
     .catch(err => {
@@ -163,23 +162,25 @@ export const refreshAuthToken = () => (dispatch, getState) => {
   });
 };
 
-export const addReadingToHistory = () => (dispatch, getState) => {
+export const addReadingToHistory = (values) => (dispatch, getState) => {
+  const username = getState().auth.currentUser;
   const userId = getState().auth.currentUser;
   const authToken = getState().auth.authToken;
-  const cards = getState().tarot.spreadNumber;
-  const spread = getState().tarot.deck.slice(0, cards); 
+  const cardsDealt = getState().tarot.cardsDealt;
+  const comments = values.comments; 
   const query = getState().tarot.textQuery;
 
-  return fetch(`${API_BASE_URL}/api/auth/${userId}/add`, {
+  return fetch(`${API_BASE_URL}/api/auth`, {
     method: 'PUT',
     headers: {
       authorization: `Bearer ${authToken}`,
     },
     body: {
-      comments: '',
+      username,
+      comments,
       query,
-      spread,
-      userId:'',
+      cardsDealt,
+      userId,
     }
   })
   .then(res => normalizeResponseErrors(res))
@@ -188,7 +189,7 @@ export const addReadingToHistory = () => (dispatch, getState) => {
   .catch(err => {
     clearAuthToken(authToken);
   });
-}
+};
 
 export const fetchHistory = username => dispatch => {
   dispatch(fetchHistoryRequest());
@@ -209,4 +210,8 @@ export const fetchHistory = username => dispatch => {
         })
       );
     })
+};
+
+export const saveToHistory = values => {
+  console.log(values);
 };

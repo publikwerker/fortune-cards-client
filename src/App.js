@@ -28,7 +28,6 @@ loadDeck(){
       return res.json();
     })   
     .then((data) => {
-      console.log(data);
       return this.props.dispatch(set_deck(data))
     })
     .catch(err =>

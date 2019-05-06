@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {  shuffle_deck, trim_deck, take_query }  from '../actions/index.js';
-//import store from './store.js';
 
 export class Query extends React.Component {
   render () {

@@ -14,7 +14,6 @@ import {
 
 const initialState = {
   authToken:  null,
-  cardsDealt: 0,
   currentUser: null,
   error: null,
   loading: false,
@@ -62,11 +61,14 @@ export default function reducer (state = initialState, action){
       error: action.error,
     });
   } else if(action.type === SAVE_HISTORY_REQUEST ){
+    console.log('savehistoryrequest ran');
     return Object.assign({}, state, {
       loading: true,
       error: null,
+      comments: action.values.comments,
     });
   } else if(action.type === SAVE_HISTORY_SUCCESS){
+    console.log('savehistorysuccess ran');
     return Object.assign({}, state, { 
       loading: false,
     });
