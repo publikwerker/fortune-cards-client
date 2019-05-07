@@ -14,7 +14,7 @@ export function Spread(props) {
       )
     }
   }
-
+  const historyParams = { cardsDealt:props.cardsDealt, currentUser:props.currentUser}
   //display the card images on top
   const theHeading = yourReading();
   const cardImages = props.cardsDealt.map((card)=> {
@@ -45,7 +45,7 @@ export function Spread(props) {
       <ul className="spread">
         {cardDescriptions}
       </ul>
-        <HistoryForm />
+        <HistoryForm params={historyParams}/>
     </section>
   );
 }

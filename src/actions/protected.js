@@ -151,7 +151,8 @@ export const refreshAuthToken = () => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/api/auth/refresh`, {
     method: 'POST',
     headers: {
-      authorization: `Bearer ${authToken}`
+      authorization: `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
     }
   })
   .then(res => normalizeResponseErrors(res))
@@ -174,17 +175,19 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
     method: 'PUT',
     headers: {
       authorization: `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
     },
-    body: {
-      username,
-      comments,
-      query,
-      cardsDealt,
-      userId,
-    }
+    body: JSON.stringify({
+      username:username,
+      comments:comments,
+      query: query,
+      cardsDealt: cardsDealt,
+      userId: userId,
+    })
   })
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
+  .then((username) => dispatch(fetchHistory(username))) 
   .then(({authToken}) => storeAuthInfo(authToken, dispatch))
   .catch(err => {
     clearAuthToken(authToken);

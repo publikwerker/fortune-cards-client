@@ -65,7 +65,6 @@ export default function reducer (state = initialState, action){
     return Object.assign({}, state, {
       loading: true,
       error: null,
-      comments: action.values.comments,
     });
   } else if(action.type === SAVE_HISTORY_SUCCESS){
     console.log('savehistorysuccess ran');

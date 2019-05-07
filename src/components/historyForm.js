@@ -11,10 +11,11 @@ function submit(values, dispatch){
 }
 
 export class HistoryForm extends React.Component {
+  currentUser = this.props.currentUser;
   render(){
     console.log(this.props);
-    console.log(this.props.currentUser);
-    console.log(this.props.cardsDealt);
+    let currentUser = this.props.params.currentUser;
+    let cardsDealt = this.props.params.cardsDealt;
     let error; 
     if (this.props.error) {
       error = (
@@ -26,9 +27,9 @@ export class HistoryForm extends React.Component {
     let historyForm=<div></div>;
     const { handleSubmit }=this.props;
     //display the comment and save form
-    if (this.props.cardsDealt){
+    if (cardsDealt.length){
       console.log('cards Dealt');
-      if (this.props.currentUser === null){
+      if (currentUser === null){
         historyForm =<div>
         <h3>Sign in to save your readings!</h3>
       </div>
@@ -61,17 +62,9 @@ export class HistoryForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    cardsDealt:state.tarot.cardsDealt,
-    currentUser:state.auth.currentUser,
-  };
-}
-
 HistoryForm  = reduxForm({
   form: 'save',
   onSubmit: submit,
 })(HistoryForm);
 
-export default connect(mapStateToProps)(HistoryForm);
+export default connect()(HistoryForm);
