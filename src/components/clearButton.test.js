@@ -10,8 +10,11 @@ describe('<ClearButton />', () => {
   });
 
   it('Should fire callback dispatch', () => {
+    const cardsDealt = [{
+      id:'queen', 
+      desc:'long lived'}];
     const dispatch = jest.fn();
-    const wrapper = mount(<ClearButton dispatch={dispatch}/>);
+    const wrapper = mount(<ClearButton dispatch={dispatch} cardsDealt={cardsDealt}/>);
     wrapper.find('button').simulate('click');
     expect(dispatch).toHaveBeenCalled();
   });
