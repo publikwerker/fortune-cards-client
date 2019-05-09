@@ -12,7 +12,7 @@ export class MemberButton extends React.Component {
   }
   render (){
     if (this.props.currentUser){
-      return (<div>
+      return (<div className="user-links">
           <button
             className="header-link"
             id="custom-button"

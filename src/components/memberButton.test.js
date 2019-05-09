@@ -17,7 +17,7 @@ describe('<MemberButton />', () => {
   it('Should have class: header-link with currentUser', () => {
     const currentUser = 'bob';
     const wrapper = shallow(<MemberButton currentUser={currentUser} />);
-    expect(wrapper.hasClass('header-link')).toEqual(true);
+    expect(wrapper.hasClass('user-links')).toEqual(true);
   });
 
   it('Should fire callback dispatch', () => {

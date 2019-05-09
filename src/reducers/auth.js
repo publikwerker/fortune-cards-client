@@ -17,6 +17,7 @@ const initialState = {
   currentUser: null,
   error: null,
   loading: false,
+  cardsDealt: 0,
 };
 
 export default function reducer (state = initialState, action){

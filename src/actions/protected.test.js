@@ -1,4 +1,16 @@
-import { SET_AUTH_TOKEN, setAuthToken, CLEAR_AUTH, clearAuth, AUTH_REQUEST, authRequest, AUTH_SUCCESS, authSuccess, AUTH_ERROR, authError, fetchHistory, fetchHistorySuccess, fetchHistoryRequest } from './protected.js';
+import { SET_AUTH_TOKEN, 
+  setAuthToken, 
+  CLEAR_AUTH, 
+  clearAuth, 
+  AUTH_REQUEST, 
+  authRequest, 
+  AUTH_SUCCESS, 
+  authSuccess, 
+  AUTH_ERROR, 
+  authError, 
+  fetchHistory, 
+  fetchHistorySuccess, 
+  fetchHistoryRequest } from './protected.js';
 import { API_BASE_URL } from '../config.js';
 
 describe('SET_AUTH_TOKEN action', () => {
@@ -58,7 +70,7 @@ describe('fetchHistory', () => {
     const dispatch = jest.fn();
     return fetchHistory(username)(dispatch)
     .then(() => {
-      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/auth/?id=${username}/`);
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/api/auth/?id=${username}/`);
       expect(dispatch).toHaveBeenCalledWith(fetchHistoryRequest());
       expect(dispatch).toHaveBeenCalledWith(fetchHistorySuccess(history));
     });

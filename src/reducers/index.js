@@ -1,4 +1,3 @@
-
 import { 
   RESET,
   SET_DECK, 
@@ -104,7 +103,7 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       spreadNumber: 0,
       textQuery: null,
-      cardsDealt: 0,
+      cardsDealt: [],
     });
   } else if(action.type === SHUFFLE_DECK){
     let newDeck = shuffle(state.deck);

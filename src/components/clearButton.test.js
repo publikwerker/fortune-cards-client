@@ -17,8 +17,14 @@ describe('<ClearButton />', () => {
   });
 
   it('Should dispatch the reset action', () => {
+    const cardsDealt = [{
+      id:'queen', 
+      desc:'long lived'}];
     const dispatch = jest.fn();
-    const wrapper = mount(<ClearButton dispatch={dispatch} />);
+    const wrapper = mount(<ClearButton
+      cardsDealt={cardsDealt} 
+      dispatch={dispatch} 
+      />);
     wrapper.find('#reset-button').simulate('click');
     expect(dispatch).toHaveBeenCalledWith(reset());
   });
