@@ -13,7 +13,6 @@ function submit(values, dispatch){
 export class HistoryForm extends React.Component {
   currentUser = this.props.currentUser;
   render(){
-    console.log(this.props);
     let currentUser = this.props.params.currentUser;
     let cardsDealt = this.props.params.cardsDealt;
     let error; 

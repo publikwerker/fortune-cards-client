@@ -7,10 +7,6 @@ import  Register  from './register.js';
 
 import { required, nonEmpty } from '../validators';
 
-function submit(values, dispatch) {
-  return dispatch(Login(values.username, values.password));
-}
-
 export class LoginWindow extends React.Component {
   render() {
     let error;
@@ -75,18 +71,21 @@ export class LoginWindow extends React.Component {
   }
 }
 
-export const loginForm = reduxForm({
-  form: 'login',
-  onSubmit: submit,
-  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-  }
-)(LoginWindow);
-
 function mapStatetoProps(state){
   return {
     login: state.tarot.login,
     signIn: state.tarot.signIn
   };
 }
+
+const loginForm  = reduxForm({
+  form: 'login',
+  onSubmit: (values, dispatch) => {
+    dispatch(Login(values.username, values.password));
+  },
+  onSubmitFail: (errors, dispatch) => {
+    dispatch(focus('login', 'username'))
+  }
+})(LoginWindow);
 
 export default connect(mapStatetoProps)(loginForm);

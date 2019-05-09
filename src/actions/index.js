@@ -1,17 +1,17 @@
+export const MAKE_SEARCH = 'MAKE_SEARCH';
+export const make_search = (searchTerm) => ({
+  type: MAKE_SEARCH,
+  searchTerm
+});
+
+export const OPEN_HISTORY = 'OPEN_HISTORY';
+export const open_history = () => ({
+  type: OPEN_HISTORY
+});
+
 export const RESET = 'RESET';
 export const reset = () =>({
   type: RESET,
-});
-
-export const TRIM_DECK = 'TRIM_DECK';
-export const trim_deck = (values)  => ({
-  type:  TRIM_DECK,
-  values
-});
-
-export const SHUFFLE_DECK = 'SHUFFLE_DECK';
-export const shuffle_deck = () => ({
-  type: SHUFFLE_DECK,
 });
 
 export const SET_DECK = 'SET_DECK';
@@ -20,16 +20,15 @@ export const set_deck = (deck) => ({
   deck
 });
 
+export const SHUFFLE_DECK = 'SHUFFLE_DECK';
+export const shuffle_deck = () => ({
+  type: SHUFFLE_DECK,
+});
+
 export const TAKE_QUERY = 'TAKE_QUERY';
 export const take_query = (textQuery) => ({
   type: TAKE_QUERY,
   textQuery
-});
-
-export const MAKE_SEARCH = 'MAKE_SEARCH';
-export const make_search = (searchTerm) => ({
-  type: MAKE_SEARCH,
-  searchTerm
 });
 
 export const TOGGLE_LOGIN ='TOGGLE_LOGIN';
@@ -47,7 +46,8 @@ export const toggle_signin = () => ({
   type: TOGGLE_SIGNIN,
 });
 
-export const OPEN_HISTORY = 'OPEN_HISTORY';
-export const open_history = () => ({
-  type: OPEN_HISTORY
+export const TRIM_DECK = 'TRIM_DECK';
+export const trim_deck = (values)  => ({
+  type:  TRIM_DECK,
+  values
 });
