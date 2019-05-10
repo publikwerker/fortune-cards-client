@@ -5,6 +5,9 @@ Jason Hoffman React Capstone Project for Thinkful Engineering Immersion course.
 The user is invited to ask a question of the cards, choose the number of cards to be dealt, and click Deal.
 An image and description of each card is displayed, and the user may devine whatever wisdom they may glean.
 
+Code for the back-end available at:
+https://github.com/publikwerker/fortune-cards-server
+
 
 deployed version available at: 
 https://www.fortune.cards/
