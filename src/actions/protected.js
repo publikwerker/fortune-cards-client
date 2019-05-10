@@ -60,7 +60,7 @@ export const saveHistoryRequest = (values) => ({
 });
 
 export const SAVE_HISTORY_SUCCESS = 'SAVE_HISTORY_SUCCESS';
-export const saveHistorySuccess = history => ({
+export const saveHistorySuccess = () => ({
   type: SAVE_HISTORY_SUCCESS,
 });
 
@@ -183,8 +183,9 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
   })
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
-  .then((username) => dispatch(fetchHistory(username))) 
   .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+  .then(() => dispatch(saveHistorySuccess()))
+  .then(() => dispatch(fetchHistory(username))) 
   .catch(err => {
     clearAuthToken(authToken);
   });
@@ -209,8 +210,4 @@ export const fetchHistory = username => dispatch => {
         })
       );
     })
-};
-
-export const saveToHistory = values => {
-  console.log(values);
 };

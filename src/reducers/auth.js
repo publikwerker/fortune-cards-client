@@ -68,7 +68,10 @@ export default function reducer (state = initialState, action){
     });
   } else if(action.type === SAVE_HISTORY_SUCCESS){
     return Object.assign({}, state, { 
-      loading: false,
+      loading: false,  
+      spreadNumber: 0,
+      textQuery: null,
+      cardsDealt: [],
     });
   } else if(action.type === SAVE_HISTORY_ERROR){
     return Object.assign({}, state, {
