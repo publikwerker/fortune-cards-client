@@ -4,7 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import { saveHistorySuccess, saveHistoryRequest, addReadingToHistory } from '../actions/protected.js';
 
 function submit(values, dispatch){
-  console.log(values);
   dispatch(saveHistoryRequest());
   dispatch(addReadingToHistory(values))
   .then(dispatch(saveHistorySuccess()));
@@ -27,7 +26,6 @@ export class HistoryForm extends React.Component {
     const { handleSubmit }=this.props;
     //display the comment and save form
     if (cardsDealt.length){
-      console.log('cards Dealt');
       if (currentUser === null){
         historyForm =<div>
         <h3>Sign in to save your readings!</h3>

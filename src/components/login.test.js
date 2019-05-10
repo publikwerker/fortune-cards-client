@@ -10,7 +10,7 @@ describe('<LoginWindow />', () => {
     shallow(<LoginWindow />);
   });
 
-  it('Should call Login when button is clicked', () => {
+  it.skip('Should call Login when button is clicked', () => {
     const login = true;
     const signIn = false;
     const dispatch = jest.fn();

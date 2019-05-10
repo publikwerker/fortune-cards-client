@@ -163,7 +163,6 @@ export const refreshAuthToken = () => (dispatch, getState) => {
 
 export const addReadingToHistory = (values) => (dispatch, getState) => {
   const username = getState().auth.currentUser;
-  const userId = getState().auth.currentUser;
   const authToken = getState().auth.authToken;
   const cardsDealt = getState().tarot.cardsDealt;
   const comments = values.comments; 
@@ -180,7 +179,6 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
       comments:comments,
       query: query,
       cardsDealt: cardsDealt,
-      userId: userId,
     })
   })
   .then(res => normalizeResponseErrors(res))
