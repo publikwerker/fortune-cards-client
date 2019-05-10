@@ -171,7 +171,7 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/auth`, {
     method: 'PUT',
     headers: {
-      'Access-Control-Allow-Origin': 'http://www.fortune.cards',
+      mode: 'no-cors',
       authorization: `Bearer ${authToken}`,
       'Content-Type': 'application/json'
     },
