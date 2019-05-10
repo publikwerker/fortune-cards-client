@@ -33,3 +33,5 @@ Testing was done using enzyme.
 
 The deck itself and the associated descriptions are located on the server side, and the frontend shuffles and deals from it.
 Each element on the screen is rendered as a separate component.
+
+All DOM rendering is handled through changes in State. I intentionally chose to not use <Route> or <Router> for this app.
