@@ -169,9 +169,9 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
   const query = getState().tarot.textQuery;
 
   return fetch(`${API_BASE_URL}/auth`, {
+    mode: 'no-cors',
     method: 'PUT',
     headers: {
-      mode: 'no-cors',
       authorization: `Bearer ${authToken}`,
       'Content-Type': 'application/json'
     },
