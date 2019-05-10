@@ -70,7 +70,7 @@ describe('fetchHistory', () => {
     const dispatch = jest.fn();
     return fetchHistory(username)(dispatch)
     .then(() => {
-      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/api/auth/?id=${username}/`);
+      expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/auth/?id=${username}/`);
       expect(dispatch).toHaveBeenCalledWith(fetchHistoryRequest());
       expect(dispatch).toHaveBeenCalledWith(fetchHistorySuccess(history));
     });

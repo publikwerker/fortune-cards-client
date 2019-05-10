@@ -85,7 +85,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 // create new user from register component
 export const CreateUser = (username, password) => (dispatch) => {
   return (
-    fetch(`${API_BASE_URL}/api/users`, {
+    fetch(`${API_BASE_URL}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -115,7 +115,7 @@ export const CreateUser = (username, password) => (dispatch) => {
 export const Login = (username, password) => dispatch => {
   dispatch(authRequest());
   return (
-    fetch(`${API_BASE_URL}/api/auth/login`, {
+    fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -146,7 +146,7 @@ export const Login = (username, password) => dispatch => {
 
 export const refreshAuthToken = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/api/auth/refresh`, {
+  return fetch(`${API_BASE_URL}/auth/refresh`, {
     method: 'POST',
     headers: {
       authorization: `Bearer ${authToken}`,
@@ -169,7 +169,7 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
   const comments = values.comments; 
   const query = getState().tarot.textQuery;
 
-  return fetch(`${API_BASE_URL}/api/auth`, {
+  return fetch(`${API_BASE_URL}/auth`, {
     method: 'PUT',
     headers: {
       authorization: `Bearer ${authToken}`,
@@ -194,7 +194,7 @@ export const addReadingToHistory = (values) => (dispatch, getState) => {
 
 export const fetchHistory = username => dispatch => {
   dispatch(fetchHistoryRequest());
-  return fetch(`${API_BASE_URL}/api/auth/?id=${username}/`)
+  return fetch(`${API_BASE_URL}/auth/?id=${username}/`)
     .then( res => {
       if (!res.ok) {
         return Promise.reject('Something went wrong');
