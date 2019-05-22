@@ -2,7 +2,7 @@ import React from 'react';
 
 export function CardDescriptions(props) {
   let facingText = '';
-  if (props.facing){
+  if (props.facing >= 0){
     switch (props.facing) {
       case 0:
         facingText = 'Facing upward.';
