@@ -3,12 +3,6 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveHistorySuccess, saveHistoryRequest, addReadingToHistory } from '../actions/protected.js';
 
-function submit(values, dispatch){
-  dispatch(saveHistoryRequest());
-  dispatch(addReadingToHistory(values))
-  .then(dispatch(saveHistorySuccess()));
-}
-
 export class HistoryForm extends React.Component {
   currentUser = this.props.currentUser;
   render(){
@@ -61,7 +55,11 @@ export class HistoryForm extends React.Component {
 
 HistoryForm  = reduxForm({
   form: 'save',
-  onSubmit: submit,
+  onSubmit: (values, dispatch) => { 
+    dispatch(saveHistoryRequest());
+    dispatch(addReadingToHistory(values))
+    .then(dispatch(saveHistorySuccess()));
+  }
 })(HistoryForm);
 
 export default connect()(HistoryForm);
