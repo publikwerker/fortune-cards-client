@@ -16,16 +16,16 @@ export class HistoryForm extends React.Component {
           </div>
       );
     }
-    let historyForm=<div></div>;
+    let historyForm=<div className="empty-div"></div>;
     const { handleSubmit }=this.props;
     //display the comment and save form
     if (cardsDealt.length){
       if (currentUser === null){
-        historyForm =<div>
+        historyForm =<div className="login-prompt">
         <h3>Sign in to save your readings!</h3>
       </div>
       } else {
-        historyForm =<div className="history-form">
+        historyForm =<div className="history-form-container">
           <form
             className="history-form" 
             onSubmit= { handleSubmit }>
