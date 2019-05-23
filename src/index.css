@@ -96,6 +96,7 @@ button:hover {
 }
 
 .card-popUp {
+  padding: 15px;
   margin: 0 auto;
   display: block;
   width: 90%;

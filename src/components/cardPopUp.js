@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {CardImages, CardDescriptions } from './card';
 
+let clicked = false;
+
 export function CardPopUp(card) {
   console.log(card);
-  let clicked = false;
   let display = <div className="empty-div"></div>;
-  function toggleDisplay(){
+  function toggleDisplay() {
     clicked = !clicked;
     if (clicked === true){
       display = 
@@ -16,12 +17,12 @@ export function CardPopUp(card) {
     }
   }
   return (
-    <section 
+    <div
       className="card-popUp" 
       key={card.name}
-      onClick={toggleDisplay()}>
+      onClick={() => toggleDisplay()}>
       <CardImages {...card}/>
       {display}
-    </section>
+    </div>
   )
 }
