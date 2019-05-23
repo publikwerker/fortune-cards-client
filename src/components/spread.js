@@ -18,24 +18,14 @@ export function Spread(props) {
   const historyParams = { cardsDealt:props.cardsDealt, currentUser:props.currentUser}
   //display the card images on top
   const theHeading = yourReading();
-  const cardImages = props.cardsDealt.map((card)=> {
+  const cardImages = props.cardsDealt.map((card, index)=> {
     return (
       <li className="card-block" key={card.name}>
-        <CardImages {...card}/>
+       <span className="position-indicator">Card position: {index+1}</span>
+        {/* <CardImages {...card}/> */}
         <CardPopUp {...card}/>
       </li>
     )
-  });
-
-  // display the card information below
-  const cardDescriptions = 
-    props.cardsDealt.map((card, index) => {
-      return(
-      <li className="card-description" key={card.name}>
-      <span className="position-indicator">Card position: {index+1}</span>
-      <CardDescriptions {...card}/>
-    </li>
-      )
   });
 
   return (
@@ -43,9 +33,6 @@ export function Spread(props) {
         {theHeading}
       <ul className="spread">
         {cardImages}
-      </ul>
-      <ul className="spread">
-        {cardDescriptions}
       </ul>
         <HistoryForm params={historyParams}/>
     </section>

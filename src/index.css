@@ -49,8 +49,9 @@ button:hover {
 }
 
 .card-block {
+  display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
 }
 
 .card-description {
@@ -361,6 +362,11 @@ li {
   border-radius: 15px;
 }
 
+.spread {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .spread-number {
   margin-left: auto;
   margin-right: auto;
@@ -412,6 +418,12 @@ ul {
 
 @media only screen and (min-width: 600px) {
 
+  .card-block {
+    display: inline-block;
+    margin: 0 auto;
+    width: 40%;
+  }
+
   .card-description {
     width: 75vw;
     max-width: 800px;
@@ -422,16 +434,13 @@ ul {
     padding: 5px;
   }
 
-  .card-popUp {
-    display: inline-block;
-    width: 40%;
-  }
 }
 
 @media only screen and (min-width: 1200px) {
 
-  .card-popUp {
+  .card-block {
     display: inline-block;
+    margin: 0 auto;
     width: 25%;
   }
 }
