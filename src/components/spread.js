@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {CardImages, CardDescriptions } from './card';
 import { HistoryForm } from './historyForm.js';
+import { CardPopUp } from './cardPopUp';
 
 export function Spread(props) {
   //display heading if cards have been dealt
@@ -19,8 +20,9 @@ export function Spread(props) {
   const theHeading = yourReading();
   const cardImages = props.cardsDealt.map((card)=> {
     return (
-      <li className="card-image" key={card.name}>
+      <li className="card-block" key={card.name}>
         <CardImages {...card}/>
+        <CardPopUp {...card}/>
       </li>
     )
   });

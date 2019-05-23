@@ -48,6 +48,11 @@ button:hover {
   -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
 }
 
+.card-block {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .card-description {
   display: block;
   background-color: #242424;
@@ -78,7 +83,7 @@ button:hover {
 .card-image {
   border-radius: 15px;
   padding: 5px;
-  width: 25vw;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -87,6 +92,16 @@ button:hover {
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-popUp {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.24), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.24), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.24), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 code {
@@ -396,6 +411,7 @@ ul {
 }
 
 @media only screen and (min-width: 600px) {
+
   .card-description {
     width: 75vw;
     max-width: 800px;
@@ -404,5 +420,18 @@ ul {
     align-content: center;
     align-items: center;
     padding: 5px;
+  }
+
+  .card-popUp {
+    display: inline-block;
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .card-popUp {
+    display: inline-block;
+    width: 25%;
   }
 }
