@@ -365,6 +365,7 @@ li {
 .spread {
   width: 90%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .spread-number {
@@ -421,7 +422,8 @@ ul {
   .card-block {
     display: inline-block;
     margin: 0 auto;
-    width: 40%;
+    width: 50%;
+    vertical-align: top;
   }
 
   .card-description {
@@ -439,7 +441,6 @@ ul {
 @media only screen and (min-width: 1200px) {
 
   .card-block {
-    display: inline-block;
     margin: 0 auto;
     width: 25%;
   }
