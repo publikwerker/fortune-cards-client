@@ -2,27 +2,26 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {CardImages, CardDescriptions } from './card';
 
-let clicked = false;
-
-export function CardPopUp(card) {
-  console.log(card);
+export function CardPopUp(card, props) {
   let display = <div className="empty-div"></div>;
-  function toggleDisplay() {
-    clicked = !clicked;
-    if (clicked === true){
+  if (props.showDescription === true){
       display = 
       <CardDescriptions {...card}/>
-    } else {
-      display = <div className="empty-div"></div>
     }
-  }
   return (
     <div
       className="card-popUp" 
-      key={card.name}
-      onClick={() => toggleDisplay()}>
+      key={card.name}>
       <CardImages {...card}/>
       {display}
     </div>
   )
 }
+
+function mapStateToProps(state){
+  return {
+    showDescription: state.tarot.showDescription,
+  }
+}
+
+export default connect(mapStateToProps)(CardPopUp);

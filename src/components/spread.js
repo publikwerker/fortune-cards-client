@@ -1,29 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {CardImages, CardDescriptions } from './card';
 import { HistoryForm } from './historyForm.js';
 import { CardPopUp } from './cardPopUp';
+import { toggleDescription } from '../actions/index.js';
 
-export function Spread(props) {
-  //display heading if cards have been dealt
-  function yourReading(){
-    if (props.cardsDealt.length>0){
-      return (
-        <div>
-          <h2 className="reading-heading">Your Reading</h2>
-        </div>
-      )
+export class Spread extends React.Component {
+
+  render() {
+    //display heading if cards have been dealt
+    let theHeading;
+      if (this.props.cardsDealt.length>0){
+        theHeading = <div>
+            <h2 className="reading-heading">Your Reading</h2>
+          </div>
+      } else {
+        theHeading=<div className="empty-div"></div>
+      }
+    const historyParams = { cardsDealt:this.props.cardsDealt, currentUser:this.props.currentUser}
+
+    const handleClick = () => dispatch => {
+      console.log(`handleClick ran`);
+      dispatch(toggleDescription());
     }
-  }
-  const historyParams = { cardsDealt:props.cardsDealt, currentUser:props.currentUser}
-  //display the card images on top
-  const theHeading = yourReading();
-  const cardImages = props.cardsDealt.map((card, index)=> {
-    return (
-      <li className="card-block" key={card.name}>
-       <span className="position-indicator">Card position: {index+1}</span>
+    const cardImages = this.props.cardsDealt.map((card, index)=> {
+      return (
+        <li className="card-block" key={card.name}>
+        <span     className="position-indicator">Card position: {index+1}</span>
         {/* <CardImages {...card}/> */}
-        <CardPopUp {...card}/>
+        <CardPopUp 
+          onClick={() => handleClick()}
+          {...card}/>
       </li>
     )
   });
@@ -38,12 +44,13 @@ export function Spread(props) {
     </section>
   );
 }
-
+}
 // @cardsDealt: deal the appropriate number of cards
 function mapStateToProps(state) {
   return {
     cardsDealt:state.tarot.deck.slice(0, state.tarot.spreadNumber),
     currentUser:state.auth.currentUser,
+    showDescription: state.tarot.showDescription,
   };
 };
 
