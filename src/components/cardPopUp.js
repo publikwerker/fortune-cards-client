@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardDescriptions } from './card';
+import { CardImages, CardDescriptions } from './card';
 
 export default class CardPopUp extends React.Component {
   constructor(props){
@@ -10,26 +10,24 @@ export default class CardPopUp extends React.Component {
     }
   }
 
-  CardImages= () => {
-    let classes = `card-image card-itself rotate${this.state.card.facing}`
-    return (
-          <img 
-            className={classes} 
-            src={this.state.card.img} 
-            alt={this.state.card.name} />
-    )
+  handleClick = () => {
+    if (this.state.expanded){
+      this.setState({expanded:false})
+    } else {
+      this.setState({expanded:true});
+    }
   }
+
   render() {
-    console.log(this.props);
     let display = <div className="empty-div"></div>;
     if (this.state.expanded === true){
-      display = <div>
-        {this.CardImages}
+      display = <div onClick={this.handleClick}>
+        <CardImages {...this.state.card}/>
         <CardDescriptions {...this.state.card}/>
       </div>
     } else {
-      display = <div>
-        {this.CardImages}
+      display = <div onClick={this.handleClick}>
+        <CardImages {...this.state.card}/>
       </div>
     }
     return (
