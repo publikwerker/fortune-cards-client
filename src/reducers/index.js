@@ -4,7 +4,6 @@ import {
   TRIM_DECK, 
   TAKE_QUERY, 
   MAKE_SEARCH,
-  TOGGLE_DESCRIPTION,
   TOGGLE_INFO,
   TOGGLE_LOGIN, 
   OPEN_HISTORY,
@@ -139,16 +138,6 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       searchTerm: action.searchTerm
     });
-  } else if(action.type === TOGGLE_DESCRIPTION){
-    if(state.showDescription === true){
-      return Object.assign({}, state, {
-        showDescription: false,
-      })
-    } else {
-      return Object.assign({}, state, {
-        showDescription: true,
-      })
-    }
   } else if(action.type === TOGGLE_LOGIN){
     if(state.login === true){
       return Object.assign({}, state, {

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { HistoryForm } from './historyForm.js';
 import CardPopUp from './cardPopUp';
-import { toggleDescription } from '../actions/index.js';
 
 export class Spread extends React.Component {
 

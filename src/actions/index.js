@@ -31,12 +31,6 @@ export const take_query = (textQuery) => ({
   textQuery
 });
 
-
-export const TOGGLE_DESCRIPTION ='TOGGLE_DESCRIPTION';
-export const toggleDescription = () => ({
-  type: TOGGLE_DESCRIPTION
-});
-
 export const TOGGLE_LOGIN ='TOGGLE_LOGIN';
 export const toggle_login = () => ({
   type: TOGGLE_LOGIN

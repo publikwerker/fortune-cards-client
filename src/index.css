@@ -83,8 +83,7 @@ button:hover {
 
 .card-image {
   border-radius: 15px;
-  padding: 5px;
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
