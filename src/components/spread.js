@@ -12,6 +12,7 @@ export class Spread extends React.Component {
       if (this.props.cardsDealt.length>0){
         theHeading = <div>
             <h2 className="reading-heading">Your Reading</h2>
+            <p>Click the card to toggle description.</p>
           </div>
       } else {
         theHeading=<div className="empty-div"></div>
@@ -25,7 +26,6 @@ export class Spread extends React.Component {
         <li className="card-block" key={card.name}>
         <span
          className="position-indicator">Card position: {index+1}</span>
-        {/* <CardImages {...card}/> */}
         <CardPopUp {...card}/>
       </li>
     )
