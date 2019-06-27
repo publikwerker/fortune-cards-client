@@ -46,8 +46,7 @@ export class Spread extends React.Component {
 function mapStateToProps(state) {
   return {
     cardsDealt:state.tarot.deck.slice(0, state.tarot.spreadNumber),
-    currentUser:state.auth.currentUser,
-    showDescription: state.tarot.showDescription,
+    currentUser:state.auth.currentUser
   };
 };
 

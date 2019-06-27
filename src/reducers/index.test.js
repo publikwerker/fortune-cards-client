@@ -13,7 +13,6 @@ describe('deckReducer', () => {
     const state = deckReducer(undefined, {});
     expect(state).toEqual({
       showInfo: false,
-      showDescription: false,
       history: [],
       spreadNumber: 0,
       cardsDealt: 0,
@@ -103,7 +102,6 @@ describe('deckReducer', () => {
     const state = deckReducer(undefined, {type: 'UNKNOWN'});
     expect(state).toEqual({
       showInfo: false,
-      showDescription: false,
       spreadNumber: 0,
       cardsDealt: 0,
       history: [],
