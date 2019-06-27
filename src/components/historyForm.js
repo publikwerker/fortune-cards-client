@@ -3,12 +3,6 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveHistorySuccess, saveHistoryRequest, addReadingToHistory } from '../actions/protected.js';
 
-function submit(values, dispatch){
-  dispatch(saveHistoryRequest());
-  dispatch(addReadingToHistory(values))
-  .then(dispatch(saveHistorySuccess()));
-}
-
 export class HistoryForm extends React.Component {
   currentUser = this.props.currentUser;
   render(){
@@ -22,16 +16,16 @@ export class HistoryForm extends React.Component {
           </div>
       );
     }
-    let historyForm=<div></div>;
+    let historyForm=<div className="empty-div"></div>;
     const { handleSubmit }=this.props;
     //display the comment and save form
     if (cardsDealt.length){
       if (currentUser === null){
-        historyForm =<div>
+        historyForm =<div className="login-prompt">
         <h3>Sign in to save your readings!</h3>
       </div>
       } else {
-        historyForm =<div className="history-form">
+        historyForm =<div className="history-form-container">
           <form
             className="history-form" 
             onSubmit= { handleSubmit }>
@@ -61,7 +55,11 @@ export class HistoryForm extends React.Component {
 
 HistoryForm  = reduxForm({
   form: 'save',
-  onSubmit: submit,
+  onSubmit: (values, dispatch) => { 
+    dispatch(saveHistoryRequest());
+    dispatch(addReadingToHistory(values))
+    .then(dispatch(saveHistorySuccess()));
+  }
 })(HistoryForm);
 
 export default connect()(HistoryForm);

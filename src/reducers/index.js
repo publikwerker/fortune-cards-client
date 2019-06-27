@@ -4,19 +4,20 @@ import {
   TRIM_DECK, 
   TAKE_QUERY, 
   MAKE_SEARCH,
+  TOGGLE_INFO,
   TOGGLE_LOGIN, 
   OPEN_HISTORY,
   TOGGLE_SIGNIN,
   SHUFFLE_DECK,
-  TOGGLE_INFO,
 } from '../actions/index.js';
 
 const shuffle = require('shuffle-array');
 
 const initialState = {
-spreadNumber: 0,
-cardsDealt: 0,
-history: [],
+  showInfo: false,
+  spreadNumber: 0,
+  cardsDealt: 0,
+  history: [],
 deck: [
   {
     id: '0',
