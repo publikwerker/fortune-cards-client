@@ -1,27 +1,43 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {CardImages, CardDescriptions } from './card';
+import { CardDescriptions } from './card';
 
-export function CardPopUp(card, props) {
-  let display = <div className="empty-div"></div>;
-  if (props.showDescription === true){
-      display = 
-      <CardDescriptions {...card}/>
+export default class CardPopUp extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      expanded: false,
+      card: this.props
     }
-  return (
-    <div
-      className="card-popUp" 
-      key={card.name}>
-      <CardImages {...card}/>
+  }
+
+  CardImages= () => {
+    let classes = `card-image card-itself rotate${this.state.card.facing}`
+    return (
+          <img 
+            className={classes} 
+            src={this.state.card.img} 
+            alt={this.state.card.name} />
+    )
+  }
+  render() {
+    console.log(this.props);
+    let display = <div className="empty-div"></div>;
+    if (this.state.expanded === true){
+      display = <div>
+        {this.CardImages}
+        <CardDescriptions {...this.state.card}/>
+      </div>
+    } else {
+      display = <div>
+        {this.CardImages}
+      </div>
+    }
+    return (
+      <div
+      className="card-popUp"
+      key={this.state.card.name}>
       {display}
     </div>
-  )
-}
-
-function mapStateToProps(state){
-  return {
-    showDescription: state.tarot.showDescription,
+    )
   }
 }
-
-export default connect(mapStateToProps)(CardPopUp);

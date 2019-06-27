@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { HistoryForm } from './historyForm.js';
-import { CardPopUp } from './cardPopUp';
+import CardPopUp from './cardPopUp';
 import { toggleDescription } from '../actions/index.js';
 
 export class Spread extends React.Component {
 
   render() {
-    //display heading if cards have been dealt
+    //display heading "Your Reading" 
+    //if cards have been dealt
     let theHeading;
       if (this.props.cardsDealt.length>0){
         theHeading = <div>
@@ -16,20 +17,17 @@ export class Spread extends React.Component {
       } else {
         theHeading=<div className="empty-div"></div>
       }
-    const historyParams = { cardsDealt:this.props.cardsDealt, currentUser:this.props.currentUser}
+    const historyParams = { 
+      cardsDealt:this.props.cardsDealt,
+      currentUser:this.props.currentUser}
 
-    const handleClick = () => dispatch => {
-      console.log(`handleClick ran`);
-      dispatch(toggleDescription());
-    }
     const cardImages = this.props.cardsDealt.map((card, index)=> {
       return (
         <li className="card-block" key={card.name}>
-        <span     className="position-indicator">Card position: {index+1}</span>
+        <span
+         className="position-indicator">Card position: {index+1}</span>
         {/* <CardImages {...card}/> */}
-        <CardPopUp 
-          onClick={() => handleClick()}
-          {...card}/>
+        <CardPopUp {...card}/>
       </li>
     )
   });
