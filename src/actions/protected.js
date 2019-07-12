@@ -102,10 +102,10 @@ export const CreateUser = (username, password) => (dispatch) => {
     return res;
   })
   .catch(err => {
-    const { code } = err;
+    const { code, message } = err;
     return Promise.reject(
       new SubmissionError({
-        _error: code
+        _error: {code, message}
       })
     );
   })
@@ -133,12 +133,12 @@ export const Login = (username, password) => dispatch => {
     .catch(err => {
       const { code } = err;
       const message =
-        code === 401
+        (code === 401)
           ? 'Incorrect username or password'
           : 'Unable to login, please try again';
       dispatch(authError(err));
       return new SubmissionError({
-          _error: message
+          _error: {code, message}
         });
     })
   );
@@ -204,10 +204,10 @@ export const fetchHistory = username => dispatch => {
     .then(history => 
       dispatch(fetchHistorySuccess(history)))
     .catch(err => {
-      const { code } = err;
+      const { code, message } = err;
       return Promise.reject(
         new SubmissionError({
-          _error: code
+          _error: {code, message}
         })
       );
     })

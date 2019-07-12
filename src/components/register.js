@@ -9,11 +9,17 @@ import { connect } from 'react-redux';
 
 export class Register extends React.Component{
   render(){
-    const {handleSubmit}=this.props;
+    console.log(this.props);
+    const {handleSubmit, error }=this.props;
+    let errorBlock = <p className='empty-div'></p>;
+    if (error){
+      errorBlock = <p className='error-text'>{`Error: ${error.message}`}</p>
+    }
     return (
       <div className="register-container">
             <form className="form-container"  
               onSubmit={handleSubmit}>
+              {errorBlock}
             <label className="label">User Name</label>
             <Field component="input"
               name="username"

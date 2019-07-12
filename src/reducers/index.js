@@ -1,14 +1,14 @@
 import { 
+  MAKE_SEARCH,
+  OPEN_HISTORY,
   RESET,
   SET_DECK, 
-  TRIM_DECK, 
+  SHUFFLE_DECK,
   TAKE_QUERY, 
-  MAKE_SEARCH,
   TOGGLE_INFO,
   TOGGLE_LOGIN, 
-  OPEN_HISTORY,
   TOGGLE_SIGNIN,
-  SHUFFLE_DECK,
+  TRIM_DECK, 
 } from '../actions/index.js';
 
 const shuffle = require('shuffle-array');

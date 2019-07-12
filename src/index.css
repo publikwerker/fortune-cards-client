@@ -155,6 +155,10 @@ div {
   background-color: #242424;
 }
 
+.error-text {
+  color:red;
+}
+
 .footer {
   position: relative;
   bottom: 10px;
