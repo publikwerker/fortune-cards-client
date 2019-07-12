@@ -29,7 +29,7 @@ export class Register extends React.Component{
               name="password"
               type="password"
               className="password"
-              validate={[required, nonEmpty]}
+              validators={[required, nonEmpty]}
             /><br />
             <button name="signup-button"
               type="submit"

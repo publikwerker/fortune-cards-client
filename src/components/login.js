@@ -5,7 +5,7 @@ import { toggle_signin } from '../actions/index.js';
 import { Login } from '../actions/protected.js';
 import  Register  from './register.js';
 
-import { required, nonEmpty } from '../validators';
+import { required, nonEmpty, isTrimmed } from '../validators';
 
 export class LoginWindow extends React.Component {
   render() {
@@ -47,14 +47,14 @@ export class LoginWindow extends React.Component {
             label="username"
             type="text"
             className="username"
-            validators={[required, nonEmpty]}
+            validators={[required, nonEmpty, isTrimmed]}
           /><br />
           <label className="label">Password</label>
           <Field component="input"
             name="password"
             type="password"
             className="password"
-            validate={[required, nonEmpty]}
+            validators={[required, nonEmpty, isTrimmed]}
           /><br />
           <button 
             name="login-button"
