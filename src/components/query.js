@@ -23,6 +23,7 @@ export class Query extends React.Component {
             className="text-query"
             type="text"
             placeholder="Ask a question."
+            value={this.props.textQuery}
           />
           <label className="spreadNumber-label">number of cards to deal: </label>
           <Field component="input" 
@@ -31,6 +32,7 @@ export class Query extends React.Component {
             type="number" 
             placeholder="all"
             min={1} max={78}
+            value={this.props.spreadNumber}
           /><br />
             <button 
               name="deal-button" 
@@ -51,6 +53,7 @@ function mapStateToProps(state){
     deck: state.tarot.deck,
     cardsDealt: state.tarot.cardsDealt,
     textQuery: state.tarot.textQuery,
+    spreadNumber: state.tarot.spreadNumber
   };
 }
 

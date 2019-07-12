@@ -16,7 +16,7 @@ const shuffle = require('shuffle-array');
 const initialState = {
   showInfo: false,
   spreadNumber: 0,
-  cardsDealt: 0,
+  cardsDealt: [],
   history: [],
 deck: [
   {

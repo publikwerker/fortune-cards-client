@@ -4,7 +4,7 @@ import { reset } from '../actions/index.js';
 
 export class ClearButton extends React.Component {
   render (){
-    let resetButton = <div></div>;
+    let resetButton = <div className="empty-div"></div>;
     if (this.props.cardsDealt){  
       if (this.props.cardsDealt.length > 0 ){
         resetButton = <button
