@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 export class Register extends React.Component{
   render(){
-    console.log(this.props);
     const {handleSubmit, error }=this.props;
     let errorBlock = <p className='empty-div'></p>;
     if (error){
