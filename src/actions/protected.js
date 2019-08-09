@@ -98,6 +98,7 @@ export const storeAuthInfo2 = (data, dispatch) => {
 
 // create new user from register component
 export const CreateUser = (username, password) => (dispatch) => {
+  dispatch(authRequest());
   return (
     fetch(`${API_BASE_URL}/users`, {
       method: 'POST',
@@ -113,7 +114,8 @@ export const CreateUser = (username, password) => (dispatch) => {
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
   .then(res => {
-    return res;
+    dispatch(toggle_login());
+    storeAuthInfo2(res, dispatch)
   })
   .catch(err => {
     const { code, message } = err;
@@ -143,7 +145,8 @@ export const Login = (username, password) => dispatch => {
     .then(res => res.json())
     .then((res) => {
       dispatch(toggle_login());
-      storeAuthInfo2(res, dispatch)})
+      storeAuthInfo2(res, dispatch)
+    })
     .catch(err => {
       const { code } = err;
       const message =
