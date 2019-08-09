@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus } from 'redux-form';
-import { toggle_signin } from '../actions/index.js';
-import { CreateUser, Login } from '../actions/protected.js';
+import { toggle_login } from '../actions/index.js';
+import { CreateUser, storeAuthInfo2 } from '../actions/protected.js';
 
 import { required, nonEmpty } from '../validators';
 import { connect } from 'react-redux';
@@ -47,10 +47,10 @@ export class Register extends React.Component{
 
 const registerForm = reduxForm({
   form: 'register',
-  onSubmit: (values, dispatch) => {
-   return dispatch(CreateUser(values.username, values.password))
-   .then(() => dispatch(Login(values.username, values.password)))
-   .then(() => dispatch(toggle_signin()));
+  onSubmit: async (values, dispatch) => {
+    const response = await dispatch(CreateUser(values.username, values.password));
+    await dispatch(storeAuthInfo2(response))
+    await dispatch(toggle_login());
   },
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(Register);

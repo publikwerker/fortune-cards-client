@@ -72,14 +72,28 @@ export const saveHistoryError = error => ({
 
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
-const storeAuthInfo = (authToken, dispatch) => {
+export const storeAuthInfo = (authToken, dispatch) => {
+  console.log(authToken)
   const decodedToken = jwtDecode(authToken);
+  console.log(decodedToken)
   const currentUser = (decodedToken.user.username);
   const userHistory = (decodedToken.user.history);
   dispatch(setAuthToken(authToken));
   dispatch(authSuccess(currentUser));
   dispatch(fetchHistorySuccess(userHistory));
   saveAuthToken(authToken);
+};
+
+// Stores the auth token in state and localStorage, and decodes and stores
+// the user data stored in the token usingnew db.js
+export const storeAuthInfo2 = (data, dispatch) => {
+  console.log(data);
+  console.log(data.user.history);
+  console.log(data.user.username);
+  dispatch(setAuthToken(data.token));
+  dispatch(authSuccess(data.user.username));
+  dispatch(fetchHistorySuccess(data.user.history));
+  saveAuthToken(data.token);
 };
 
 // create new user from register component
@@ -115,7 +129,7 @@ export const CreateUser = (username, password) => (dispatch) => {
 export const Login = (username, password) => dispatch => {
   dispatch(authRequest());
   return (
-    fetch(`${API_BASE_URL}/auth/login`, {
+    fetch(`${API_BASE_URL}/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -127,9 +141,9 @@ export const Login = (username, password) => dispatch => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({authToken}) => {
+    .then((res) => {
       dispatch(toggle_login());
-      storeAuthInfo(authToken, dispatch)})
+      storeAuthInfo2(res, dispatch)})
     .catch(err => {
       const { code } = err;
       const message =

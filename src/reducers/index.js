@@ -140,7 +140,8 @@ export const deckReducer = (state=initialState, action) => {
   } else if(action.type === TOGGLE_LOGIN){
     if(state.login === true){
       return Object.assign({}, state, {
-        login: false
+        login: false,
+        signIn: false
       })
     } else
     return Object.assign({}, state, {
