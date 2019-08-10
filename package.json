@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --forceExit --verbose=false",
+    "test": "enzyme test --watch",
     "eject": "react-scripts eject",
     "dev": "nodemon src/index.js"
   },
