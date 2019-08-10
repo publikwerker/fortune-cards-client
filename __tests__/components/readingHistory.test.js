@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../setupTests';
-import ReadingHistory from './readingHistory';
+import '../setup/setupTests';
+import ReadingHistory from '../../src/components/readingHistory';
 
 describe('<ReadingHistory />', () => {
   it('Renders without crashing', () => {

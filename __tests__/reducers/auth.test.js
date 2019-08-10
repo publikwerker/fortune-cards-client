@@ -5,9 +5,9 @@ import {
   authSuccess,
   authError,
   
-} from '../actions/protected.js';
+} from '../../src/actions/protected.js';
 
-import reducer from './auth.js';
+import reducer from '../../src/reducers/auth.js';
 
 describe('auth reducer', () => {
   it('Should set the initial state when nothing is passed in', () => {

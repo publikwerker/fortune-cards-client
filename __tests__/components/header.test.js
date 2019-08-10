@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../setupTests';
-import {Header} from './header.js';
+import '../setup/setupTests';
+import {Header} from '../../src/components/header.js';
 
 describe('<Header />', () => {
   it('Renders without crashing', () => {

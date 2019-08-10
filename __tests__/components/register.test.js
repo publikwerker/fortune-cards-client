@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../setupTests';
-import Register from './register.js';
+import '../setup/setupTests';
+import Register from '../../src/components/register.js';
 
 describe('<Register />', () => {
   it('Renders without crashing', () => {

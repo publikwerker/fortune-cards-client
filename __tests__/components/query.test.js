@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../setupTests';
-import Query from './query';
+import '../setup/setupTests';
+import Query from '../../src/components/query';
 
 describe('<Query />', () => {
   it('Renders without crashing', () => {

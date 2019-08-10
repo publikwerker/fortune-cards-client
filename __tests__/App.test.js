@@ -1,7 +1,7 @@
 import React from 'react';
-import {App} from './App';
+import {App} from '../src/App';
 import { shallow } from 'enzyme';
-import './setupTests';
+import './setup/setupTests';
 
 describe('<App />', () => {
   it('Renders without crashing', () => {

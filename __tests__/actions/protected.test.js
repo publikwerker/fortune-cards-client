@@ -10,8 +10,8 @@ import { SET_AUTH_TOKEN,
   authError, 
   fetchHistory, 
   fetchHistorySuccess, 
-  fetchHistoryRequest } from './protected.js';
-import { API_BASE_URL } from '../config.js';
+  fetchHistoryRequest } from '../../src/actions/protected.js';
+import { API_BASE_URL } from '../../src/config.js';
 
 describe('SET_AUTH_TOKEN action', () => {
   it('Should return the action', () => {

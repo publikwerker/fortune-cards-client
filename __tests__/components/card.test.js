@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../setupTests';
-import {CardDescriptions, CardImages} from './card.js';
+import '../setup/setupTests';
+import {CardDescriptions, CardImages} from '../../src/components/card.js';
 
 describe('<CardDescriptions />', () => {
   it('Renders without crashing', () => {

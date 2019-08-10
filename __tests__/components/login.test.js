@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import '../setupTests';
-import {LoginWindow} from './login.js';
-import { toggle_signin, toggle_login } from '../actions/index.js';
-import { Login } from '../actions/protected.js';
+import '../setup/setupTests';
+import {LoginWindow} from '../../src/components/login.js';
+import { toggle_signin, toggle_login } from '../../src/actions/index.js';
+import { Login } from '../../src/actions/protected.js';
 
 describe('<LoginWindow />', () => {
   it('Renders without crashing', () => {

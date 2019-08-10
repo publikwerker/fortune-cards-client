@@ -1,4 +1,4 @@
-import { deckReducer } from './index.js';
+import { deckReducer } from '../../src/reducers/index.js';
 import { reset, 
   trim_deck, 
   set_deck, 
@@ -6,7 +6,7 @@ import { reset,
   make_search, 
   toggle_login, 
   open_history, 
-  toggle_signin } from '../actions/index.js';
+  toggle_signin } from '../../src/actions/index.js';
 
 describe('deckReducer', () => {
   it('Should set the intitial state when nothing is passed in', () => {

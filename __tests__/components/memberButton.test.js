@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import '../setupTests';
-import { MemberButton } from './memberButton.js';
-import { toggle_login, open_history } from '../actions/index.js';
+import '../setup/setupTests';
+import { MemberButton } from '../../src/components/memberButton.js';
+import { toggle_login, open_history } from '../../src/actions/index.js';
 
 describe('<MemberButton />', () => {
   it('Renders without crashing', () => {

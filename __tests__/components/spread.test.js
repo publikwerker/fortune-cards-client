@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import '../setupTests';
-import Spread from './spread.js';
+import '../setup/setupTests';
+import Spread from '../../src/components/spread.js';
 
 describe('<Spread />', () => {
   it('Renders without crashing', () => {

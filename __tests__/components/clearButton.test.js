@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import '../setupTests';
-import { ClearButton } from './clearButton';
-import { reset } from '../actions/index.js';
+import '../setup/setupTests';
+import { ClearButton } from '../../src/components/clearButton';
+import { reset } from '../../src/actions/index.js';
 
 describe('<ClearButton />', () => {
   it('Renders without crashing', () => {
