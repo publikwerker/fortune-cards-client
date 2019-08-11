@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import '../setup/setupTests';
+//import '../setup/setupTests';
 import { ClearButton } from '../../src/components/clearButton';
 import { reset } from '../../src/actions/index.js';
 

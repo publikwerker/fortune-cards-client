@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import '../setup/setupTests';
+//import '../setup/setupTests';
 import {LoginWindow} from '../../src/components/login.js';
 import { toggle_signin, toggle_login } from '../../src/actions/index.js';
 import { Login } from '../../src/actions/protected.js';

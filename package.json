@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test" : "jest"
+    "test": "jest"
   },
   "browserslist": [
     ">0.2%",
@@ -34,12 +34,24 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "jest": "^24.8.0"
+    "enzyme-to-json": "^3.4.0",
+    "jest": "^24.8.0",
+    "redux-mock-store": "^1.5.3"
   },
   "jest": {
     "verbose": true,
     "setupFilesAfterEnv": [
-      "<rootDir>src/setupTests.js"
+      "<rootDir>/__tests__/setup/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setup/"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|ts)$": "babel-jest"
+    },
+    "testURL": "http://localhost/",
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!@jest/transform/build/ScriptTransformer)"
     ]
   }
 }
