@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-//import '../setup/setupTests';
+import '../setup/setupTests';
 import { MemberButton } from '../../src/components/memberButton.js';
 import { toggle_login, open_history } from '../../src/actions/index.js';
 

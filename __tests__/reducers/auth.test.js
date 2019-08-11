@@ -7,29 +7,24 @@ import {
   
 } from '../../src/actions/protected.js';
 
+const initialState = {
+  authToken:  null,
+  cardsDealt: [],
+  currentUser: null,
+  loading: false,
+  error: null,
+  spreadNumber: 0
+};
+
 import reducer from '../../src/reducers/auth.js';
 
 describe('auth reducer', () => {
   it('Should set the initial state when nothing is passed in', () => {
-    const initialState = {
-      authToken:  null,
-      cardsDealt: 0,
-      currentUser: null,
-      loading: false,
-      error: null
-    };
     const state = reducer(undefined, {});
     expect(state).toEqual(initialState);
   });
 
   it('Should return initial state if unknown action is passed', () => {
-    const initialState = {
-      authToken:  null,
-      cardsDealt: 0,
-      currentUser: null,
-      loading: false,
-      error: null
-    };
     const state = reducer(undefined, {type: 'UNKNOWN'});
     expect(state).toEqual(initialState);
   });
