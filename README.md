@@ -1,9 +1,7 @@
-Jason Hoffman React Capstone Project for Thinkful Engineering Immersion course.
-
 ## "Fortune Cards" tarot reading app
 
 The user is invited to ask a question of the cards, choose the number of cards to be dealt, and click Deal.
-An image and description of each card is displayed, and the user may devine whatever wisdom they may glean.
+An image of each card is displayed, and the user may devine whatever wisdom they may glean. Clicking the image will provide more insight.
 
 Code for the back-end available at:
 https://github.com/publikwerker/fortune-cards-server
@@ -29,7 +27,7 @@ Member Screen:
 
 
 The app uses react-redux on the frontend, mongodb for the database, and uses express and node on the backend.
-Testing was done using enzyme.
+Testing was done using enzyme and jest.
 
 The deck itself and the associated descriptions are located on the server side, and the frontend shuffles and deals from it.
 Each element on the screen is rendered as a separate component.
