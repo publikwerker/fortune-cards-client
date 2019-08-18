@@ -155,7 +155,7 @@ export const Login = (username, password) => dispatch => {
           : 'Unable to login, please try again';
       dispatch(authError(err));
       return new SubmissionError({
-          _error: {code, message}
+          error: {code, message}
         });
     })
   );

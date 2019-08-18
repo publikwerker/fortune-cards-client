@@ -9,18 +9,19 @@ import { required, nonEmpty, isTrimmed } from '../validators';
 
 export class LoginWindow extends React.Component {
   render() {
-    let error;
-    const {dispatch}=this.props;
+    const { error, dispatch, handleSubmit }=this.props;
     function signUp(){
       dispatch(toggle_signin());
     }
-    const {handleSubmit}= this.props;
-    if (this.props.error) {
-      error = (
-        <div className="form-error" aria-live="polite">
-          {this.props.error}
-          </div>
-      );
+    let errorMess;
+    if (error) {
+      if(error.message) { 
+        errorMess = (
+          <div className="form-error" aria-live="polite">
+            {error.message}
+            </div>
+        );
+      }
     }
     if (this.props.login === true){
       if (this.props.signIn === true){
@@ -33,7 +34,7 @@ export class LoginWindow extends React.Component {
           <form 
             className="form-container"  
             onSubmit={handleSubmit}>
-            {error}
+            {errorMess}
           <button 
             name="newuser-button"
             id="newuser-button"
@@ -73,6 +74,7 @@ export class LoginWindow extends React.Component {
 
 function mapStatetoProps(state){
   return {
+    error: state.auth.error,
     login: state.tarot.login,
     signIn: state.tarot.signIn
   };
@@ -83,7 +85,7 @@ const loginForm  = reduxForm({
   onSubmit: (values, dispatch) => {
     dispatch(Login(values.username, values.password));
   },
-  onSubmitFail: (errors, dispatch) => {
+  onSubmitFail: (error, dispatch) => {
     dispatch(focus('login', 'username'))
   }
 })(LoginWindow);
