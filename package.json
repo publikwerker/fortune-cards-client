@@ -1,5 +1,6 @@
 {
   "name": "tarot_client",
+  "homepage": "https://www.fortune.cards",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +23,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --forceExit --verbose=false",
     "eject": "react-scripts eject",
     "dev": "nodemon src/index.js"
   },
