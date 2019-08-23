@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import{ Field, reduxForm, focus } from 'redux-form';
+import{ Field, reduxForm } from 'redux-form';
 import { toggle_signin } from '../actions/index.js';
 import { Login } from '../actions/protected.js';
 import  Register  from './register.js';
@@ -8,20 +8,16 @@ import  Register  from './register.js';
 import { required, nonEmpty, isTrimmed } from '../validators';
 
 export class LoginWindow extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      ...props
+    }
+  }
   render() {
-    const { error, dispatch, handleSubmit }=this.props;
+    const { dispatch, handleSubmit } = this.props;
     function signUp(){
       dispatch(toggle_signin());
-    }
-    let errorMess;
-    if (error) {
-      if(error.message) { 
-        errorMess = (
-          <div className="form-error" aria-live="polite">
-            {error.message}
-            </div>
-        );
-      }
     }
     if (this.props.login === true){
       if (this.props.signIn === true){
@@ -34,7 +30,6 @@ export class LoginWindow extends React.Component {
           <form 
             className="form-container"  
             onSubmit={handleSubmit}>
-            {errorMess}
           <button 
             name="newuser-button"
             id="newuser-button"
@@ -68,7 +63,7 @@ export class LoginWindow extends React.Component {
         </div>
         );
       }
-    } else return (<div></div>);
+    } else return (<div className="empty-div"></div>);
   }
 }
 
@@ -84,9 +79,6 @@ const loginForm  = reduxForm({
   form: 'login',
   onSubmit: (values, dispatch) => {
     dispatch(Login(values.username, values.password));
-  },
-  onSubmitFail: (error, dispatch) => {
-    dispatch(focus('login', 'username'))
   }
 })(LoginWindow);
 
