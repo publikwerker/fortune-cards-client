@@ -8,14 +8,12 @@ import  Register  from './register.js';
 import { required, nonEmpty, isTrimmed } from '../validators';
 
 export class LoginWindow extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      ...props
-    }
-  }
   render() {
-    const { dispatch, handleSubmit } = this.props;
+    const { dispatch, handleSubmit, error } = this.props;
+    let errorBlock = <p className='empty-div'></p>;
+    if (error){
+      errorBlock = <p className='error-text'>{`Error: ${error.message}`}</p>
+    }
     function signUp(){
       dispatch(toggle_signin());
     }
@@ -30,6 +28,7 @@ export class LoginWindow extends React.Component {
           <form 
             className="form-container"  
             onSubmit={handleSubmit}>
+          {errorBlock}
           <button 
             name="newuser-button"
             id="newuser-button"
@@ -67,19 +66,20 @@ export class LoginWindow extends React.Component {
   }
 }
 
-function mapStatetoProps(state){
-  return {
-    error: state.auth.error,
-    login: state.tarot.login,
-    signIn: state.tarot.signIn
-  };
-}
-
 const loginForm  = reduxForm({
   form: 'login',
   onSubmit: (values, dispatch) => {
     dispatch(Login(values.username, values.password));
   }
 })(LoginWindow);
+
+function mapStatetoProps(state){
+  console.log(state)
+  return {
+    error: state.auth.error,
+    login: state.tarot.login,
+    signIn: state.tarot.signIn
+  };
+}
 
 export default connect(mapStatetoProps)(loginForm);

@@ -1,11 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {Field, reduxForm, focus } from 'redux-form';
 import { toggle_login } from '../actions/index.js';
 import { CreateUser, storeAuthInfo2 } from '../actions/protected.js';
 
 import { required, nonEmpty } from '../validators';
-import { connect } from 'react-redux';
-
 
 export class Register extends React.Component{
   render(){

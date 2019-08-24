@@ -14,9 +14,9 @@ import Info from './components/Info';
 
 export class App extends Component {
 
-componentDidMount() {
-  this.loadDeck();
-}
+  componentDidMount() {
+    this.loadDeck();
+  }
 
 // grab a fresh deck from the server
 loadDeck(){
@@ -59,6 +59,7 @@ loadDeck(){
 function mapStateToProps(state) {
   return {
     deck: state.tarot.deck,
+    error: state.auth.error
   };
 }
 
