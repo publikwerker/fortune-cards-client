@@ -103,7 +103,7 @@ describe('deckReducer', () => {
     expect(state).toEqual({
       showInfo: false,
       spreadNumber: 0,
-      cardsDealt: 0,
+      cardsDealt: [],
       history: [],
       deck: [
         {
