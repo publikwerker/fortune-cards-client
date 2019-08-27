@@ -15,7 +15,7 @@ describe('deckReducer', () => {
       showInfo: false,
       history: [],
       spreadNumber: 0,
-      cardsDealt: 0,
+      cardsDealt: [],
       deck: [
         {
           id: '0',
