@@ -1,6 +1,15 @@
-* {
-  box-sizing: border-box;
-}
+@import 'abstracts/mixins';
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+
+$color-black: #111;
+$color-blue-light: skyblue;
+$color-border-light: #faf0e615;
+$color-drop-shadow-light: #e4d1a430;
+$color-grey-dark-1: #292929;
+$color-grey-dark-2: #242424;
+$color-white: #eee;
 
 .App {
   text-align: center;
@@ -10,30 +19,17 @@
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 2vmin);
-  color: white;
+  color: $color-white;
   margin-top: 20px;
 }
 
 .banner {
-  text-shadow: 2px 1px 1px #292929;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #242424;
-  height: 100vh;
-  color: white;
-  align-content: center;
-  text-align: center;
+  text-shadow: 2px 1px 1px $color-grey-dark-1;
 }
 
 button {
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2px 20px;
   text-align: center;
   font-size: calc(6px + 2vmin);
@@ -43,9 +39,9 @@ button {
 
 button:hover {
   border-radius: 15px;
-  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
 }
 
 .card-block {
@@ -56,10 +52,10 @@ button:hover {
 
 .card-description {
   display: block;
-  background-color: #242424;
+  background-color: $color-grey-dark-2;
   border-radius: 5px;
-  border:1px solid rgba(250, 240, 230, 0.084);
-  color: white;
+  border:1px solid rgba($color-border-light, 0.084);
+  color: $color-white;
   max-width: 300px;
   margin-top: 5px;
   margin-left:auto;
@@ -71,10 +67,10 @@ button:hover {
 
 .card-description-box {
   display: block;
-  background-color: #242424;
+  background-color: $color-grey-dark-2;
   border-radius: 5px;
-  border:1px solid rgba(250, 240, 230, 0.084);
-  color: white;
+  border:1px solid rgba($color-border-light, 0.084);
+  color: $color-white;
   margin-left:auto;
   margin-right: auto;
   align-content: center;
@@ -89,9 +85,9 @@ button:hover {
 }
 
 .card-itself {
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 3px 5px 0 rgba($color-black, 0.24), 0 5px 20px 0 rgba($color-black, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba($color-black, 0.24), 0 5px 20px 0 rgba($color-black, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba($color-black, 0.24), 0 5px 20px 0 rgba($color-black, 0.19);
 }
 
 .card-popUp {
@@ -100,9 +96,9 @@ button:hover {
   display: block;
   width: 90%;
   border-radius: 15px;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.24), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.24), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.24), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 6px 10px 0 rgba($color-black, 0.24), 0 10px 20px 0 rgba($color-black, 0.19);
+  -moz-box-shadow: 0 6px 10px 0 rgba($color-black, 0.24), 0 10px 20px 0 rgba($color-black, 0.19);
+  -webkit-box-shadow: 0 6px 10px 0 rgba($color-black, 0.24), 0 10px 20px 0 rgba($color-black, 0.19);
 }
 
 code {
@@ -135,8 +131,8 @@ code {
 }
 
 .deal-button {
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -152,7 +148,7 @@ code {
 }
 
 div {
-  background-color: #242424;
+  background-color: $color-grey-dark-2;
 }
 
 .error-text {
@@ -169,21 +165,21 @@ div {
 .form-container {
   margin: 10px;
   padding: 20px 0px;
-  border: 1.5px solid skyblue;
+  border: 1.5px solid $color-blue-light;
   border-radius: 15px;
   margin-bottom: 20px;
   width: 50%;
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
 }
 
 .header-link {
-  background-color: #242424;
-  color: white;
+  background-color: $color-grey-dark-2;
+  color: $color-white;
   text-decoration: none;
   font-size: calc(8px + 2vmin);
   display: inline-block;
@@ -194,9 +190,9 @@ div {
 
 .header-link:hover {
   border-radius: 2px;
-  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
-  -moz-box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
-  -webkit-box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 5px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 3px 5px 0 rgba($color-black,0.24), 0 5px 20px 0 rgba($color-black,0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba($color-black,0.24), 0 5px 20px 0 rgba($color-black,0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba($color-black,0.24), 0 5px 20px 0 rgba($color-black,0.19);
 }
 
 .hide-info {
@@ -226,14 +222,14 @@ label {
   margin: 0 auto 20px;
   padding: 10px 30px;
   display: block;
-  background-color: #242424;
+  background-color: $color-grey-dark-2;
   width: 80%;
   max-width: 800px;
-  border: 1.5px solid skyblue;
+  border: 1.5px solid $color-blue-light;
   border-radius: 15px;
-  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
 }
 
 li {
@@ -243,8 +239,8 @@ li {
 }
 
 .login-button {
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2px 20px;
   text-align: center;
   font-size: calc(4px + 2vmin);
@@ -258,8 +254,8 @@ li {
 }
 
 .newuser-button {
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2px 20px;
   text-align: center;
   font-size: calc(4px + 2vmin);
@@ -278,7 +274,7 @@ li {
 }
 
 .position-indicator {
-  color: skyblue;
+  color: $color-blue-light;
 }
 
 .purchase-link {
@@ -288,16 +284,16 @@ li {
 }
 
 .query-container {
-  border: 1.5px solid skyblue;
+  border: 1.5px solid $color-blue-light;
   border-radius: 15px;
   padding: 10px;
   width: 80%;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -moz-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
-  -webkit-box-shadow: 0 3px 5px 0 rgba(228, 209, 209, 0.24), 0 5px 20px 0 rgba(228, 209, 164, 0.19);
+  box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -moz-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
+  -webkit-box-shadow: 0 3px 5px 0 rgba($color-drop-shadow-light, 0.24), 0 5px 20px 0 rgba($color-drop-shadow-light, 0.19);
 }
 
 .reading-display {
@@ -310,8 +306,8 @@ li {
 }
 
 .reset-button {
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2px 20px;
   text-align: center;
   font-size: calc(4px + 2vmin);
@@ -337,8 +333,8 @@ li {
 }
 
 .search-button {
-  background-color: #242424;
-  color: white;
+  background-color: $color-grey-dark-2;
+  color: $color-white;
   margin-top: 5px;
   text-align: center;
   font-size: calc(4px + 2vmin);
@@ -351,14 +347,14 @@ li {
   width: 80%;
   max-width: 300px;
   border-radius: 15px;
-  border: 1.5px solid skyblue; font-size: calc(4px + 2vmin);
-  color: white;
-  background-color: #242424;
+  border: 1.5px solid $color-blue-light; font-size: calc(4px + 2vmin);
+  color: $color-white;
+  background-color: $color-grey-dark-2;
 }
 
 .signup-button {
-  background-color: white;
-  color: black;
+  background-color: $color-white;
+  color: $color-black;
   padding: 2px 20px;
   text-align: center;
   font-size: calc(4px + 2vmin);

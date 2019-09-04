@@ -36,7 +36,7 @@ export class HistoryForm extends React.Component {
               type="text"
               className="comments"
               placeholder="We'll see..."
-              autocomplete="off"
+              autoComplete="off"
             />
             <button
                 name="saveHistory"

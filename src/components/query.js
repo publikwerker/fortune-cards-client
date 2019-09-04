@@ -24,7 +24,7 @@ export class Query extends React.Component {
             type="text"
             placeholder="Ask a question."
             value={this.props.textQuery}
-            autocomplete="off"
+            autoComplete="off"
           />
           <label className="spreadNumber-label">number of cards to deal: </label>
           <Field component="input" 
@@ -34,7 +34,7 @@ export class Query extends React.Component {
             placeholder="all"
             min={1} max={78}
             value={this.props.spreadNumber}
-            autocomplete="off"
+            autoComplete="off"
           /><br />
             <button 
               name="deal-button" 
