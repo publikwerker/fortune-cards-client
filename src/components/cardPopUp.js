@@ -19,23 +19,28 @@ export default class CardPopUp extends React.Component {
   }
 
   render() {
-    let display = <div className="empty-div"></div>;
+    let display = <div 
+      className="empty-div"></div>;
     if (this.state.expanded === true){
-      display = <div onClick={this.handleClick}>
-        <CardImages {...this.state.card}/>
+      display = <div 
+        className="card-popUp"
+        key={this.state.card.name}
+        onClick={this.handleClick}>
+        <div className="card-float">
+          <CardImages {...this.state.card}/>
+        </div>
         <CardDescriptions {...this.state.card}/>
       </div>
     } else {
-      display = <div onClick={this.handleClick}>
-        <CardImages {...this.state.card}/>
+      display = <div 
+        className="card-popUp"
+        key={this.state.card.name} 
+        onClick={this.handleClick}>
+        <div className="card-float">
+          <CardImages {...this.state.card}/>
+        </div>
       </div>
     }
-    return (
-      <div
-      className="card-popUp"
-      key={this.state.card.name}>
-      {display}
-    </div>
-    )
+    return display;
   }
 }

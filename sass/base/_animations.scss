@@ -1,14 +1,16 @@
 @keyframes moveInTop {
   0% {
     opacity: 0;
-    transform: translateY(10rem);
+    transform: translateY(10rem) rotate(-180deg);
+    //dropshadow wide and diffuse
   }
 
   80% {
     opacity: 1;
+    //dropshadow equivalent to component
   }
 
   100% {
-    transform: translate(0);
+    transform: translate(0) rotate(0deg);
   }
 }
