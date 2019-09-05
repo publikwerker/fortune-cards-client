@@ -7,7 +7,7 @@ export class Query extends React.Component {
   render () {
     if (this.props.login !== true && this.props.cardsDealt.length>0){
       return (
-        <section className="query-container">
+        <section className="query__container">
           <h3>Your query:</h3>
           <p className="display-query">{this.props.textQuery}</p>
         </section>
@@ -16,7 +16,7 @@ export class Query extends React.Component {
     if (this.props.login !== true){
       const { handleSubmit } = this.props;
       return (
-        <section className="query-container">
+        <section className="query__container">
           <form onSubmit={ handleSubmit }>
           <Field component="input"
             name="textQuery"

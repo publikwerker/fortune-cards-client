@@ -8,9 +8,9 @@ describe('<CardDescriptions />', () => {
     shallow(<CardDescriptions />);
   });
 
-  it('Should have class: card-description-box', () => {
+  it('Should have class: card__description--box', () => {
     const wrapper = shallow(<CardDescriptions />);
-    expect(wrapper.hasClass('card-description-box')).toEqual(true);
+    expect(wrapper.hasClass('card__description--box')).toEqual(true);
   });
 });
 
@@ -19,8 +19,8 @@ describe('<CardImages />', () => {
     shallow(<CardImages/>);
   });
 
-  it('Should have class card-image-container', () => {
+  it('Should have class card__image-container', () => {
     const wrapper = shallow(<CardImages />);
-    expect(wrapper.hasClass('card-image card-itself')).toEqual(true);;
+    expect(wrapper.hasClass('card__image')).toEqual(true);;
   });
 });

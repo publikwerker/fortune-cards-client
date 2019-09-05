@@ -21,17 +21,17 @@ export function CardDescriptions(props) {
     }
   }
   return (
-    <div className="card-description-box" id={props.id}>
+    <div className="card__description--box" id={props.id}>
       <h3>{props.id}</h3>
       <h4>{props.name}</h4>
       <h5>{facingText}</h5>
-      <p className="desc-text">{props.desc}</p>
+      <p className="card__description--text">{props.desc}</p>
     </div>
   );
 };
 
 export function CardImages(props){
-  let classes = `card-image rotate${props.facing}`
+  let classes = `card__image rotate${props.facing}`
   return (
         <img 
           className={classes} 
