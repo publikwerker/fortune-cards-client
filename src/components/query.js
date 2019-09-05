@@ -26,10 +26,10 @@ export class Query extends React.Component {
             value={this.props.textQuery}
             autoComplete="off"
           />
-          <label className="spreadNumber-label">number of cards to deal: </label>
+          <label className="spread--number-label">number of cards to deal: </label>
           <Field component="input" 
             name="spreadNumber" 
-            className="spread-number" 
+            className="spread--number" 
             type="number" 
             placeholder="all"
             min={1} max={78}
@@ -44,7 +44,7 @@ export class Query extends React.Component {
         </section>
       );
     } else {
-      return (<div></div>);
+      return (<div className="empty-div"></div>);
     }
   }
 }

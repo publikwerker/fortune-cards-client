@@ -8,8 +8,8 @@ describe('<Spread />', () => {
     shallow(<Spread />);
   });
 
-  it('Should have class: reading-display', () => {
+  it('Should have class: reading__display', () => {
     const wrapper = shallow(<Spread />);
-    expect(wrapper.hasClass('reading-display'));
+    expect(wrapper.hasClass('reading__display'));
   });
 });

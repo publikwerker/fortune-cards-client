@@ -4,9 +4,11 @@
 @import 'base/base';
 @import 'base/typography';
 @import 'components/button';
-@import 'components/card';
 @import 'layout/body';
+@import 'layout/card';
 @import 'layout/header';
+@import 'layout/landingModal';
+@import 'layout/spread';
 
 .comments {
   display: block;
@@ -20,12 +22,6 @@
   width: 20rem;
   text-align: center;
   font-size: calc(.4rem + 2vmin);
-}
-
-.copy-info {
-  margin-left: auto;
-  margin-right: auto;
-  text-justify: center;
 }
 
 #custom-button {
@@ -42,17 +38,6 @@
   font-size: calc(.4rem + 2vmin);
   border: none;
   border-radius: 1.5rem;
-}
-
-div {
-  background-color: $color-grey-dark-2;
-}
-
-.footer {
-  position: relative;
-  bottom: 1rem;
-  align-content: center;
-  padding-top: 2rem;
 }
 
 .form-container {
@@ -109,20 +94,6 @@ div {
 label {
   display: block;
   margin-bottom: 1.5rem;
-}
-
-.landing-modal {  
-  margin: 0 auto 2rem;
-  padding: 1rem 3rem;
-  display: block;
-  background-color: $color-grey-dark-2;
-  width: 80%;
-  max-width: 80rem;
-  border: .1rem solid $color-blue-light;
-  border-radius: 1.5rem;
-  box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
-  -moz-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
-  -webkit-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
 }
 
 li {
@@ -249,27 +220,6 @@ li {
   font-size: calc(.4rem + 2vmin);
   border: none;
   border-radius: 1.5rem;
-}
-
-.spread {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.spread-number {
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-  border-radius: 1.5rem;
-  text-align: center;
-  width: 4rem;
-  font-size: 1.6rem;
-}
-
-.spreadNumber-label {
-  display: inline;
-  font-size: 2rem;
 }
 
 .text-query {

@@ -24,6 +24,11 @@ code {
   color: $color-red-error;
 }
 
+.footer__copy-info {
+  margin: 0 auto;
+  text-justify: center;
+}
+
 .header {
   font-size: calc(1rem + 2vmin);
   color: $color-white;

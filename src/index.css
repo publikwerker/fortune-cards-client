@@ -21,6 +21,12 @@ body {
   height: 100vh;
   box-sizing: border-box; }
 
+footer {
+  position: relative;
+  bottom: 1rem;
+  align-content: center;
+  padding-top: 2rem; }
+
 body {
   background-color: #242424;
   color: #eee;
@@ -41,6 +47,10 @@ code {
 
 .error-text {
   color: red; }
+
+.footer__copy-info {
+  margin: 0 auto;
+  text-justify: center; }
 
 .header {
   font-size: calc(1rem + 2vmin);
@@ -69,6 +79,12 @@ button {
     box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19);
     -moz-box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19);
     -webkit-box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19); }
+
+body {
+  margin: 0;
+  padding: 0;
+  align-content: center;
+  background-color: #242424; }
 
 .card__block {
   display: inline-block;
@@ -121,15 +137,39 @@ button {
 .card__position-indicator {
   color: skyblue; }
 
-body {
-  margin: 0;
-  padding: 0;
-  align-content: center; }
-
 .header {
   align-items: center;
   justify-content: center;
   margin-top: 2rem; }
+
+.landing-modal {
+  margin: 0 auto 2rem;
+  padding: 1rem 3rem;
+  display: block;
+  background-color: #242424;
+  width: 80%;
+  max-width: 80rem;
+  border: 0.1rem solid skyblue;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19);
+  -moz-box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19);
+  -webkit-box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19); }
+
+.spread {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+  .spread--number {
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: 4rem;
+    font-size: 1.6rem; }
+    .spread--number-label {
+      display: inline;
+      font-size: 2rem; }
 
 .comments {
   display: block;
@@ -144,11 +184,6 @@ body {
   text-align: center;
   font-size: calc(.4rem + 2vmin); }
 
-.copy-info {
-  margin-left: auto;
-  margin-right: auto;
-  text-justify: center; }
-
 #custom-button {
   margin-right: 3rem; }
 
@@ -162,15 +197,6 @@ body {
   font-size: calc(.4rem + 2vmin);
   border: none;
   border-radius: 1.5rem; }
-
-div {
-  background-color: #242424; }
-
-.footer {
-  position: relative;
-  bottom: 1rem;
-  align-content: center;
-  padding-top: 2rem; }
 
 .form-container {
   margin: 1rem;
@@ -220,19 +246,6 @@ div {
 label {
   display: block;
   margin-bottom: 1.5rem; }
-
-.landing-modal {
-  margin: 0 auto 2rem;
-  padding: 1rem 3rem;
-  display: block;
-  background-color: #242424;
-  width: 80%;
-  max-width: 80rem;
-  border: 0.1rem solid skyblue;
-  border-radius: 1.5rem;
-  box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19);
-  -moz-box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19);
-  -webkit-box-shadow: 0 0.3rem 0.5rem 0 rgba(228, 209, 164, 0.24), 0 0.5rem 2rem 0 rgba(228, 209, 164, 0.19); }
 
 li {
   display: inline-block;
@@ -343,24 +356,6 @@ li {
   font-size: calc(.4rem + 2vmin);
   border: none;
   border-radius: 1.5rem; }
-
-.spread {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center; }
-
-.spread-number {
-  margin-left: auto;
-  margin-right: auto;
-  border: none;
-  border-radius: 1.5rem;
-  text-align: center;
-  width: 4rem;
-  font-size: 1.6rem; }
-
-.spreadNumber-label {
-  display: inline;
-  font-size: 2rem; }
 
 .text-query {
   display: block;

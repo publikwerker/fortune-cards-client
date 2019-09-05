@@ -1,0 +1,13 @@
+.landing-modal {  
+  margin: 0 auto 2rem;
+  padding: 1rem 3rem;
+  display: block;
+  background-color: $color-grey-dark-2;
+  width: 80%;
+  max-width: 80rem;
+  border: .1rem solid $color-blue-light;
+  border-radius: 1.5rem;
+  box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
+  -moz-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
+  -webkit-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
+}
