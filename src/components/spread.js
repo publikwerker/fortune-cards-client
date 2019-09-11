@@ -37,7 +37,7 @@ export class Spread extends React.Component {
       <ul className="spread">
         {cardImages}
       </ul>
-        <HistoryForm params={historyParams}/>
+        {/* <HistoryForm params={historyParams}/> */}
     </section>
   );
 }

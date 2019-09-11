@@ -1,13 +1,20 @@
 @keyframes moveInTop {
   0% {
     opacity: 0;
-    transform: translateY(10rem) rotate(-180deg);
-    //dropshadow wide and diffuse
+    transform: translateY(-200rem) translateX(-200rem) scale(1.1) rotate(-180deg);
+    
+    box-shadow: 0 1rem 2rem 0 $color-black, 0 2rem 4rem 0 $color-black;
+    -moz-box-shadow: 0 1rem 2rem 0 $color-black, 0 2rem 4rem 0 $color-black;
+    -webkit-box-shadow: 0 1rem 2rem 0 $color-black, 0 2rem 4rem 0 $color-black;
   }
 
   80% {
     opacity: 1;
-    //dropshadow equivalent to component
+    transform: scale(1);
+    
+    box-shadow: 0 1rem 2rem 0 $color-black, 0 1rem 2rem 0 $color-black;
+    -moz-box-shadow: 0 1rem 2rem 0 $color-black, 0 1rem 2rem 0 $color-black;
+    -webkit-box-shadow: 0 1rem 2rem 0 $color-black, 0 1rem 2rem 0 $color-black;
   }
 
   100% {

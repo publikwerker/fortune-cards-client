@@ -12,7 +12,7 @@ export class Header extends React.Component {
           <nav>
             <a className="header-link purchase-link"
               href="https://www.publikwerks.com/thelema-tarot-deck/tarot-deck-pre-order">Purchase Deck</a>
-            <MemberButton />
+            {/* <MemberButton /> */}
           </nav>
           <form className="searchBar" onSubmit={handleSubmit}>
             {/* <Field component="input" 

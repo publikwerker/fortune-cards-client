@@ -41,15 +41,15 @@ loadDeck(){
     return (
       <main className="App">
           <Header />
-        <ErrorBoundary>
+        {/* <ErrorBoundary>
           <LoginForm />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
           <Info />
           <Query />
           <ClearButton />
           <Spread />
           <ClearButton />
-          <ReadingHistory />
+          {/* <ReadingHistory /> */}
           <Footer />
       </main>
     );

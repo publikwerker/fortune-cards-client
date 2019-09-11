@@ -55,24 +55,6 @@
   -webkit-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
 }
 
-.header-link {
-  background-color: $color-grey-dark-2;
-  color: $color-white;
-  text-decoration: none;
-  font-size: calc(8px + 2vmin);
-  display: inline-block;
-  padding: .5rem 1rem;
-  border: none;
-  border-radius: .5rem;
-}
-
-.header-link:hover {
-  border-radius: .2rem;
-  box-shadow: 0 .3rem .5rem 0 rgba($color-black,0.24), 0 .5rem 2rem 0 rgba($color-black,0.19);
-  -moz-box-shadow: 0 .3rem .5rem 0 rgba($color-black,0.24), 0 .5rem 2rem 0 rgba($color-black,0.19);
-  -webkit-box-shadow: 0 .3rem .5rem 0 rgba($color-black,0.24), 0 .5rem 2rem 0 rgba($color-black,0.19);
-}
-
 .hide-info {
   margin: 2rem auto;
 }
