@@ -7,7 +7,7 @@ export class Info extends React.Component{
   render () {
     let infoBlock;
     if(this.props.showInfo === false){
-      infoBlock =<div className="empty-div"></div>
+      infoBlock = <div className="empty-div"></div>
     } else {
       infoBlock = <aside>
           <section className="landing-modal">

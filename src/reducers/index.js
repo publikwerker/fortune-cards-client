@@ -14,7 +14,7 @@ import {
 const shuffle = require('shuffle-array');
 
 const initialState = {
-  showInfo: false,
+  showInfo: true,
   spreadNumber: 0,
   cardsDealt: [],
   history: [],

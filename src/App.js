@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { set_deck } from './actions/index.js';
 import { API_BASE_URL } from './config.js';
-import  LoginForm  from './components/login.js';
+// import  LoginForm  from './components/login.js';
 import  Query  from './components/query.js';
-import ErrorBoundary from './components/ErrorBoundary.js';
+// import ErrorBoundary from './components/ErrorBoundary.js';
 import  Header  from './components/header.js';
 import  Spread  from './components/spread.js';
 import ClearButton from './components/clearButton.js';
-import ReadingHistory from './components/readingHistory.js';
+// import ReadingHistory from './components/readingHistory.js';
 import Footer from './components/footer.js';
 import Info from './components/Info';
 
