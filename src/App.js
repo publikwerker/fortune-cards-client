@@ -51,8 +51,7 @@ loadDeck(){
 
 function mapStateToProps(state) {
   return {
-    deck: state.tarot.deck,
-    error: state.auth.error
+    deck: state.tarot.deck
   };
 }
 
