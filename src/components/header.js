@@ -14,7 +14,7 @@ export class Header extends React.Component {
               href="https://www.publikwerks.com/thelema-tarot-deck/tarot-deck-pre-order">Purchase Deck</a>
             {/* <MemberButton /> */}
           </nav>
-          <form className="searchBar" onSubmit={handleSubmit}>
+          {/* <form className="searchBar" onSubmit={handleSubmit}> */}
             {/* <Field component="input" 
               type="text" 
               name="searchTerm"
@@ -26,7 +26,7 @@ export class Header extends React.Component {
               type="submit"
               className="search-button"
               disabled={this.props.pristine || this.props.submitting}>Search</button> */}
-          </form>
+          {/* </form> */}
           <h1 className="header__banner">FORTUNE CARDS</h1>
         </header>
       </div>
