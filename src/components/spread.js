@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { HistoryForm } from './historyForm.js';
 import CardPopUp from './cardPopUp';
 
 export class Spread extends React.Component {
@@ -17,9 +16,6 @@ export class Spread extends React.Component {
       } else {
         theHeading=<div className="empty-div"></div>
       }
-    const historyParams = { 
-      cardsDealt:this.props.cardsDealt,
-      currentUser:this.props.currentUser}
 
     const cardImages = this.props.cardsDealt.map((card, index)=> {
       return (
@@ -37,7 +33,6 @@ export class Spread extends React.Component {
       <ul className="spread">
         {cardImages}
       </ul>
-        {/* <HistoryForm params={historyParams}/> */}
     </section>
   );
 }
