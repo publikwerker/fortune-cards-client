@@ -14,10 +14,11 @@ html {
 body {
   height: 100vh;
   box-sizing: border-box;
+  position: relative;
 }
 
 footer {
-  position: relative;
+  position: absolute;
   bottom: 1rem;
   align-content: center;
   padding-top: 2rem;

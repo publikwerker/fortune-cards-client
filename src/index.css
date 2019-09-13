@@ -26,10 +26,11 @@ html {
 
 body {
   height: 100vh;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  position: relative; }
 
 footer {
-  position: relative;
+  position: absolute;
   bottom: 1rem;
   align-content: center;
   padding-top: 2rem; }
@@ -175,7 +176,7 @@ nav {
   padding: 1rem 3rem;
   display: block;
   background-color: #242424;
-  width: 80%;
+  width: 65%;
   max-width: 80rem;
   border: 0.1rem solid skyblue;
   border-radius: 1.5rem;
