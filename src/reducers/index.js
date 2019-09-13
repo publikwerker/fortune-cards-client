@@ -1,13 +1,9 @@
 import { 
-  MAKE_SEARCH,
-  OPEN_HISTORY,
   RESET,
   SET_DECK, 
   SHUFFLE_DECK,
   TAKE_QUERY, 
   TOGGLE_INFO,
-  TOGGLE_LOGIN, 
-  TOGGLE_SIGNIN,
   TRIM_DECK, 
 } from '../actions/index.js';
 
@@ -108,6 +104,7 @@ export const deckReducer = (state=initialState, action) => {
     });
   } else if(action.type === SHUFFLE_DECK){
     let newDeck = shuffle(state.deck);
+    // determines which direction cards face
     function direction(){
       return Math.floor(Math.random() * Math.floor(4));
     }
@@ -133,50 +130,10 @@ export const deckReducer = (state=initialState, action) => {
     return Object.assign({}, state, {
       textQuery: action.textQuery
     });
-  } else if(action.type === MAKE_SEARCH){
-    return Object.assign({}, state, {
-      searchTerm: action.searchTerm
-    });
-  } else if(action.type === TOGGLE_LOGIN){
-    if(state.login === true){
-      return Object.assign({}, state, {
-        login: false,
-        signIn: false
-      })
-    } else
-    return Object.assign({}, state, {
-      login: true
-    });
-  } else if(action.type === TOGGLE_SIGNIN){
-    if(state.signin){
-      return Object.assign({}, state, {
-        signIn: !state.signIn
-      })
-    } else {
-      return Object.assign({}, state, {
-        signIn: true
-      });
-    }
-  } else if(action.type === OPEN_HISTORY){
-    if (state.readingHistory === true){
-      return Object.assign({}, state, {
-        readingHistory: false,
-      });
-    } else {
-      return Object.assign({}, state, {
-        readingHistory: true,
-      });
-    }
   } else if(action.type === TOGGLE_INFO){
-    if (state.showInfo === false){
-      return Object.assign({}, state, {
-        showInfo: true,
-      })
-    } else {
-      return Object.assign({}, state, {
-        showInfo: false,
-      })
-    }
+    return Object.assign({}, state, {
+      showInfo: !state.showInfo,
+    });
   };
   return state;
 };
