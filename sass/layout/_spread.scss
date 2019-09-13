@@ -1,9 +1,13 @@
+.reading__display {
+  align-content: center;
+}
+
 .spread {
   width: 90%;
   margin: 0 auto;
   text-align: center;
   
-  &--number {
+  &__number {
     margin-left: auto;
     margin-right: auto;
     border: none;
@@ -17,4 +21,20 @@
       font-size: 2rem;
     }
   }
+}
+
+ul {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  text-justify: center;
+  padding-inline-start: 0;
+}
+
+
+li {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }

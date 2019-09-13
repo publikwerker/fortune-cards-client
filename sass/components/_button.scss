@@ -1,10 +1,9 @@
-
 button {
   background-color: $color-white;
   color: $color-black;
   padding: .2rem 2rem;
   text-align: center;
-  font-size: calc(.6rem + 2vmin);
+  font-size: calc(.4rem + 2vmin);
   border: none;
   border-radius: 1.5rem;
 
@@ -15,4 +14,17 @@ button {
     -moz-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
     -webkit-box-shadow: 0 .3rem .5rem 0 rgba($color-drop-shadow-light, 0.24), 0 .5rem 2rem 0 rgba($color-drop-shadow-light, 0.19);
   }
+}
+
+.clear-button {
+  margin: 2rem auto;
+}
+
+.deal-button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hide-info {
+  margin: 2rem auto;
 }
