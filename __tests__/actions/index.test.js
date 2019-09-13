@@ -1,4 +1,4 @@
-import { reset, RESET, TRIM_DECK, trim_deck, SET_DECK, set_deck, TAKE_QUERY, take_query, MAKE_SEARCH, make_search, TOGGLE_LOGIN, toggle_login, OPEN_HISTORY, open_history, TOGGLE_SIGNIN, toggle_signin } from '../../src/actions/index.js';
+import { reset, RESET, TRIM_DECK, trim_deck, SET_DECK, set_deck, TAKE_QUERY, take_query } from '../../src/actions/index.js';
 
 describe('RESET action', () => {
   it('Should return the action', () => {
@@ -31,35 +31,5 @@ describe('TAKE_QUERY action', () => {
     const action = take_query(textQuery);
     expect(action.type).toEqual(TAKE_QUERY);
     expect(action.textQuery).toEqual(textQuery);
-  });
-});
-
-describe('MAKE_SEARCH action', () => {
-  it('Should return the action', () => {
-    const searchTerm = 'ace';
-    const action = make_search(searchTerm);
-    expect(action.type).toEqual(MAKE_SEARCH);
-    expect(action.searchTerm).toEqual(searchTerm)
-  });
-});
-
-describe('TOGGLE_LOGIN action', () => {
-  it('Should return the action', () => {
-    const action = toggle_login();
-    expect(action.type).toEqual(TOGGLE_LOGIN);
-  });
-});
-
-describe('OPEN_HISTORY action', () => {
-  it('Should return the action', () => {
-    const action = open_history();
-    expect(action.type).toEqual(OPEN_HISTORY);
-  });
-});
-
-describe('TOGGLE_SIGNIN action', () => {
-  it('Should return the action', () => {
-    const action = toggle_signin();
-    expect(action.type).toEqual(TOGGLE_SIGNIN);
   });
 });

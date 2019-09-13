@@ -2,11 +2,7 @@ import { deckReducer } from '../../src/reducers/index.js';
 import { reset, 
   trim_deck, 
   set_deck, 
-  take_query, 
-  make_search, 
-  toggle_login, 
-  open_history, 
-  toggle_signin } from '../../src/actions/index.js';
+  take_query } from '../../src/actions/index.js';
 
 describe('deckReducer', () => {
   it('Should set the intitial state when nothing is passed in', () => {
@@ -254,26 +250,5 @@ describe('deckReducer', () => {
     const textQuery = 'why not?';
     const state = deckReducer(undefined, take_query(textQuery));
     expect(state.textQuery).toEqual(textQuery);
-  });
-
-  it('Should handle the make_search action', () => {
-    const searchTerm = 'love';
-    const state = deckReducer(undefined, make_search(searchTerm));
-    expect(state.searchTerm).toEqual(searchTerm);
-  });
-
-  it('Should handle the toggle_login action', () => {
-    const state = deckReducer(undefined, toggle_login());
-    expect(state.login).toEqual(true);
-  });
-
-  it('Should handle toggle_signin action', () => {
-    const state = deckReducer(undefined, toggle_signin());
-    expect(state.signIn).toEqual(true);
-  });
-
-  it('Should handle open_history action', () => {
-    const state = deckReducer(undefined, open_history());
-    expect(state.readingHistory).toEqual(true);
   });
 });

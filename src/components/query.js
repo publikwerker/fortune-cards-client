@@ -5,15 +5,14 @@ import {  shuffle_deck, trim_deck, take_query }  from '../actions/index.js';
 
 export class Query extends React.Component {
   render () {
-    if (this.props.login !== true && this.props.cardsDealt.length>0){
+    if (this.props.cardsDealt.length>0){
       return (
         <section className="query__container">
           <h3>Your query:</h3>
           <p className="display-query">{this.props.textQuery}</p>
         </section>
       )
-    } else 
-    if (this.props.login !== true){
+    } else {
       const { handleSubmit } = this.props;
       return (
         <section className="query__container">
@@ -43,15 +42,12 @@ export class Query extends React.Component {
           </form>
         </section>
       );
-    } else {
-      return (<div className="empty-div"></div>);
     }
   }
 }
 
 function mapStateToProps(state){
   return {
-    login: state.tarot.login,
     deck: state.tarot.deck,
     cardsDealt: state.tarot.cardsDealt,
     textQuery: state.tarot.textQuery,

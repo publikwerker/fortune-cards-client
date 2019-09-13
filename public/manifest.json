@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "https://www.fortune.cards",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "skyblue",
   "background_color": "#242424"
