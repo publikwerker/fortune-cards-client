@@ -8,7 +8,7 @@ describe('deckReducer', () => {
   it('Should set the intitial state when nothing is passed in', () => {
     const state = deckReducer(undefined, {});
     expect(state).toEqual({
-      showInfo: false,
+      showInfo: true,
       history: [],
       spreadNumber: 0,
       cardsDealt: [],
