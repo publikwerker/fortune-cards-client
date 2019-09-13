@@ -97,7 +97,7 @@ describe('deckReducer', () => {
   it('Should return the current state on an unknown action', () => {
     const state = deckReducer(undefined, {type: 'UNKNOWN'});
     expect(state).toEqual({
-      showInfo: false,
+      showInfo: true,
       spreadNumber: 0,
       cardsDealt: [],
       history: [],
