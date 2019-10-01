@@ -12,6 +12,15 @@
 @import 'layout/landingModal';
 @import 'layout/spread';
 
+@media only screen and (min-width: 40rem) {
+  .landing-modal {
+    width: 65%;
+  }
+  .query__container {
+    width: 65%;
+  }
+}
+
 @media only screen and (min-width: 50rem) {
 
   .card__block {
@@ -29,10 +38,6 @@
     align-content: center;
     align-items: center;
     padding: .5rem;
-  }
-
-  .query__container {
-    width: 65%;
   }
 }
 
