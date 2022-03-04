@@ -114,6 +114,7 @@ export const deckReducer = (state=initialState, action) => {
     });
   } else if(action.type === SET_DECK){
     let shuffledDeck = shuffle(action.deck);
+    console.log("shuffling deck");
     function direction(){
       return Math.floor(Math.random() * Math.floor(4));
     }
