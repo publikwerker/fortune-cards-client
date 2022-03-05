@@ -13,12 +13,10 @@ export class App extends Component {
 
   componentDidMount() {
     this.loadDeck();
-    console.log("deck loaded")
   }
 
 // grab a fresh deck from the server
 loadDeck(){
-  console.log( "loadDeck called" );
   return fetch(`${API_BASE_URL}/tarotDeck`)
     .then(res => {
       if (!res.ok){
