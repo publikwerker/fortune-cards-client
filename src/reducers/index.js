@@ -105,6 +105,7 @@ export const deckReducer = ( state=initialState, action ) => {
 
   // shuffles deck
   } else if( action.type === SHUFFLE_DECK ){
+    console.log( "shuffling deck" );
     let newDeck = shuffle( state.deck );
     // determines which direction cards face
     function direction(){
@@ -117,18 +118,14 @@ export const deckReducer = ( state=initialState, action ) => {
 
   // shuffle new deck and set to state
   } else if( action.type === SET_DECK ){
-    let shuffledDeck = shuffle(action.deck);
-    console.log( "shuffling deck" );
-    function direction(){
-      return Math.floor( Math.random() * Math.floor( 4 ) );
-    }
-    shuffledDeck.map(card => card.facing = direction());
+    console.log( "setting deck");
     return Object.assign({}, state, {
-      deck: [...shuffledDeck]
+      deck: [...action.deck]
     });
 
   // cut deck to number user requested
   } else if(action.type === TRIM_DECK){
+    console.log( "trimming deck" );
     return Object.assign({}, state, {
       spreadNumber: action.values,
       cardsDealt: [...state.deck.slice(0, action.values)]
@@ -146,6 +143,6 @@ export const deckReducer = ( state=initialState, action ) => {
       showInfo: !state.showInfo,
     });
   };
-  
+
   return state;
 };

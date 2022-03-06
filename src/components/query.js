@@ -58,9 +58,9 @@ function mapStateToProps(state){
 const queryForm = reduxForm({
   form: 'query',
   onSubmit: (values, dispatch) => { 
-    dispatch(trim_deck(values.spreadNumber));
     dispatch(take_query(values.textQuery));
     dispatch(shuffle_deck());
+    dispatch(trim_deck(values.spreadNumber));
   }
 })(Query);
 

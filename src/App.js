@@ -17,21 +17,21 @@ export class App extends Component {
 
 // grab a fresh deck from the server
 loadDeck(){
-  return fetch(`${API_BASE_URL}/tarotDeck`)
-    .then(res => {
-      if (!res.ok){
-        return Promise.reject(res.statusText);
+  return fetch( `${API_BASE_URL}/tarotDeck` )
+    .then( res => {
+      if ( !res.ok ){
+        return Promise.reject( res.statusText );
       }
       return res.json();
-    })   
-    .then((data) => {
+    } )   
+    .then( ( data ) => {
       console.log( "data: ", data );
       return this.props.dispatch( set_deck( data ) )
-    })
-    .catch(err =>
-      this.setState({
+    } )
+    .catch( err =>
+      this.setState( {
         error: 'could not load deck'
-      })
+      } )
     );
   }
   
@@ -50,10 +50,10 @@ loadDeck(){
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps( state ) {
   return {
     deck: state.tarot.deck
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect( mapStateToProps )( App );
