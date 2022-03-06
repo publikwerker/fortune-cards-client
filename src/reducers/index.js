@@ -7,14 +7,14 @@ import {
   TRIM_DECK, 
 } from '../actions/index.js';
 
-const shuffle = require('shuffle-array');
+const shuffle = require( 'shuffle-array' );
 
 const initialState = {
   showInfo: true,
   spreadNumber: 0,
   cardsDealt: [],
   history: [],
-deck: [
+  deck: [
   {
     id: '0',
     name: 'fool',
@@ -92,49 +92,60 @@ deck: [
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=500w',
     facing: 0,
   },
-]
+  ]
 };
 
-export const deckReducer = (state=initialState, action) => {
-  if(action.type === RESET){
-    return Object.assign({}, state, {
+export const deckReducer = ( state=initialState, action ) => {
+  if( action.type === RESET ){
+    return Object.assign( {}, state, {
       spreadNumber: 0,
       textQuery: null,
       cardsDealt: [],
     });
-  } else if(action.type === SHUFFLE_DECK){
-    let newDeck = shuffle(state.deck);
+
+  // shuffles deck
+  } else if( action.type === SHUFFLE_DECK ){
+    let newDeck = shuffle( state.deck );
     // determines which direction cards face
     function direction(){
-      return Math.floor(Math.random() * Math.floor(4));
+      return Math.floor( Math.random() * Math.floor( 4 ) );
     }
-    newDeck.map(card => card.facing = direction());
-    return Object.assign({}, state, {
+    newDeck.map( card => card.facing = direction() );
+    return Object.assign( {}, state, {
       deck: [...newDeck]
     });
-  } else if(action.type === SET_DECK){
+
+  // shuffle new deck and set to state
+  } else if( action.type === SET_DECK ){
     let shuffledDeck = shuffle(action.deck);
-    console.log("shuffling deck");
+    console.log( "shuffling deck" );
     function direction(){
-      return Math.floor(Math.random() * Math.floor(4));
+      return Math.floor( Math.random() * Math.floor( 4 ) );
     }
     shuffledDeck.map(card => card.facing = direction());
     return Object.assign({}, state, {
       deck: [...shuffledDeck]
     });
+
+  // cut deck to number user requested
   } else if(action.type === TRIM_DECK){
     return Object.assign({}, state, {
       spreadNumber: action.values,
       cardsDealt: [...state.deck.slice(0, action.values)]
     });
+
+  // record user query
   } else if(action.type === TAKE_QUERY){
     return Object.assign({}, state, {
       textQuery: action.textQuery
     });
+
+  // toggles more info modal
   } else if(action.type === TOGGLE_INFO){
     return Object.assign({}, state, {
       showInfo: !state.showInfo,
     });
   };
+  
   return state;
 };
