@@ -1,5 +1,7 @@
 import { 
   RESET,
+  SAVE_NOTES,
+  SAVE_READING,
   SET_DECK, 
   SHUFFLE_DECK,
   TAKE_QUERY, 
@@ -10,9 +12,12 @@ import {
 const shuffle = require( 'shuffle-array' );
 
 const initialState = {
+  username: null,
+  id: null,
   showInfo: true,
   spreadNumber: 0,
   cardsDealt: [],
+  notes: '',
   history: [],
   deck: [
   {
@@ -116,6 +121,20 @@ export const deckReducer = ( state=initialState, action ) => {
       deck: [...newDeck]
     });
 
+  // saves notes to current reading
+  } else if ( action.type === SAVE_NOTES ) {
+    console.log( "saving notes" );
+    return Object.assign( {}, state, {
+      notes: action.notes
+    });
+
+  // adds current reading to history
+  } else if ( action.type === SAVE_READING ) {
+    console.log( "saving reading" );
+    return Object.assign( {}, state, {
+      history: [ ...state.history, action.reading]
+    });
+
   // shuffle new deck and set to state
   } else if( action.type === SET_DECK ){
     console.log( "setting deck");
@@ -142,6 +161,7 @@ export const deckReducer = ( state=initialState, action ) => {
     return Object.assign({}, state, {
       showInfo: !state.showInfo,
     });
+
   };
 
   return state;

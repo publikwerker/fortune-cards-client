@@ -3,8 +3,20 @@ export const reset = () =>({
   type: RESET,
 });
 
+export const SAVE_NOTES = 'SAVE_NOTES';
+export const save_notes = ( notes ) => ({
+  type: SAVE_NOTES,
+  notes
+});
+
+export const SAVE_READING = 'SAVE_READING';
+export const save_reading = ( reading ) => ({
+  type: SAVE_READING,
+  reading
+});
+
 export const SET_DECK = 'SET_DECK';
-export const set_deck = (deck) => ({
+export const set_deck = ( deck ) => ({
   type: SET_DECK,
   deck
 });
