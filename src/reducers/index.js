@@ -16,6 +16,7 @@ const initialState = {
   id: null,
   showInfo: true,
   spreadNumber: 0,
+  textQuery: null,
   cardsDealt: [],
   notes: '',
   history: [],

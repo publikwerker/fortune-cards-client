@@ -1,19 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
 import {  shuffle_deck, trim_deck, take_query }  from '../actions/index.js';
 
+// if the cardsDealt array is longer than 0
+// the query component is displayed
+// else the form is displayed
 export class Query extends React.Component {
+
   render () {
-    if (this.props.cardsDealt.length>0){
+
+    if ( this.props.cardsDealt.length > 0 ){
+
       return (
         <section className="query__container">
           <h3>Your query:</h3>
-          <p className="display-query">{this.props.textQuery}</p>
+          <p className="display-query">{ this.props.textQuery }</p>
         </section>
       )
+
     } else {
       const { handleSubmit } = this.props;
+
       return (
         <section className="query__container">
           <form onSubmit={ handleSubmit }>
@@ -21,8 +29,8 @@ export class Query extends React.Component {
             name="textQuery"
             className="text-query"
             type="text"
-            placeholder="Ask a question."
-            value={this.props.textQuery}
+            placeholder={ this.props.textQuery? this.props.textQuery : "Ask a question." }
+            value={ this.props.textQuery }
             autoComplete="off"
           />
           <label className="spread__number-label">number of cards to deal: </label>
@@ -31,8 +39,8 @@ export class Query extends React.Component {
             className="spread__number" 
             type="number" 
             placeholder="all"
-            min={1} max={78}
-            value={this.props.spreadNumber}
+            min={ 1 } max={ 78 }
+            value={ this.props.spreadNumber }
             autoComplete="off"
           /><br />
             <button 
@@ -46,7 +54,7 @@ export class Query extends React.Component {
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps( state ){
   return {
     deck: state.tarot.deck,
     cardsDealt: state.tarot.cardsDealt,
@@ -57,11 +65,12 @@ function mapStateToProps(state){
 
 const queryForm = reduxForm({
   form: 'query',
-  onSubmit: (values, dispatch) => { 
-    dispatch(take_query(values.textQuery));
-    dispatch(shuffle_deck());
-    dispatch(trim_deck(values.spreadNumber));
+  onSubmit: ( values, dispatch ) => { 
+    dispatch( take_query( values.textQuery ) );
+    dispatch( shuffle_deck( ) );
+    dispatch( trim_deck( values.spreadNumber ) );
+    dispatch( reset( 'query' ) );
   }
-})(Query);
+})( Query );
 
-export default connect(mapStateToProps)(queryForm);
+export default connect( mapStateToProps )( queryForm );
